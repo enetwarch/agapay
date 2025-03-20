@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Log In</title>
+        <link rel="icon" type="image/svg+xml" href="img/agapay.svg">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://kit.fontawesome.com/0541e3b46f.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <form id="logInForm" class="log-in">
+            <i id="backArrow" class="log-in__back-arrow fa-solid fa-arrow-left"></i>
+            <div class="log-in__container">
+                <h1 class="log-in__header-text">Log in</h1>
+                <div class="log-in__field">
+                    <label class="log-in__field-label" for="phoneNumber">Phone Number</label>
+                    <input class="log-in__field-input" id="phoneNumber" type="number" placeholder="+6390123456789" required>
+                </div>
+                <div class="log-in__field">
+                    <label class="log-in__field-label" for="password">Password</label>
+                    <input class="log-in__field-input" id="password" type="password" placeholder="************" minlength="12" required>
+                </div>
+            </div>
+            <div class="log-in__container">
+                <button class="log-in__button" type="submit">Log in</button>
+                <p class="log-in__footer-text">2025 Agapay | All Rights Reserved</p>
+            </div>
+        </form>
+        <script src="js/script.js" async defer></script>
+        <script src="js/log-in.js" async defer></script>
+    </body>
+</html>
