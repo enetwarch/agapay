@@ -59,7 +59,7 @@ a {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    gap: 2rem;
+    gap: 4rem;
     justify-content: space-between;
     width: 100%;
 }
@@ -111,7 +111,7 @@ a {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    gap: 2rem;
+    gap: 4rem;
     justify-content: space-between;
     width: 100%;
 }
@@ -173,6 +173,77 @@ a {
 }
 
 .log-in__footer-text {
+    margin-top: 1rem;
+    opacity: 0.5;
+    text-align: center;
+}
+
+.sign-up {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 4rem;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.sign-up__back-arrow {
+    border-radius: 100px;
+    font-size: 1.5rem;
+    height: 3rem;
+    padding-top: 0.75rem;
+    position: absolute;
+    text-align: center;
+    transition: background-color 0.25s;
+    width: 3rem;
+}
+
+.sign-up__back-arrow:active {
+    background-color: var(--gray);
+}
+
+.sign-up__container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sign-up__header-text {
+    color: var(--primary);
+    text-align: center;
+}
+
+.sign-up__field {
+    display: flex;
+    flex-direction: column;
+}
+
+.sign-up__field-input {
+    background-color: var(--gray);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.sign-up__field-input:focus {
+    outline: 2px solid black;
+}
+
+.sign-up__button {
+    background-color: var(--primary);
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    font-weight: bold;
+    padding: 1rem;
+    transition: opacity 0.25s;
+}
+
+.sign-up__button:active {
+    opacity: 0.8;
+}
+
+.sign-up__footer-text {
     margin-top: 1rem;
     opacity: 0.5;
     text-align: center;

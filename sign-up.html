@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Sign Up</title>
+        <link rel="icon" type="image/svg+xml" href="img/agapay.svg">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://kit.fontawesome.com/0541e3b46f.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <form id="signUpForm" class="sign-up">
+            <i id="backArrow" class="sign-up__back-arrow fa-solid fa-arrow-left"></i>
+            <div class="sign-up__container">
+                <h1 class="sign-up__header-text">Sign up</h1>
+                <div class="sign-up__field">
+                    <label class="sign-up__field-label" for="firstName">First Name</label>
+                    <input class="sign-up__field-input" id="firstName" type="text" placeholder="Jan Marti" pattern="[a-zA-Z ]+" required>
+                </div>
+                <div class="sign-up__field">
+                    <label class="sign-up__field-label" for="middleName">Middle Name</label>
+                    <input class="sign-up__field-input" id="middleName" type="text" placeholder="Mendoza" pattern="[a-zA-Z ]+" required>
+                </div>
+                <div class="sign-up__field">
+                    <label class="sign-up__field-label" for="lastName">Last Name</label>
+                    <input class="sign-up__field-input" id="lastName" type="text" placeholder="Dizon" pattern="[a-zA-Z ]+" required>
+                </div>
+                <div class="sign-up__field">
+                    <label class="sign-up__field-label" for="phoneNumber">Phone Number</label>
+                    <input class="sign-up__field-input" id="phoneNumber" type="number" placeholder="+6390123456789" required>
+                </div>
+                <div class="sign-up__field">
+                    <label class="sign-up__field-label" for="password">Password</label>
+                    <input class="sign-up__field-input" id="password" type="password" placeholder="************" minlength="12" required>
+                </div>
+                <div class="sign-up__field">
+                    <label class="sign-up__field-label" for="confirmPassword">Confirm Password</label>
+                    <input class="sign-up__field-input" id="confirmPassword" type="password" placeholder="************" minlength="12" required>
+                </div>
+            </div>
+            <div class="sign-up__container">
+                <button class="sign-up__button" type="submit">Sign up</button>
+                <p class="sign-up__footer-text">2025 Agapay | All Rights Reserved</p>
+            </div>
+        </form>
+        <script src="js/script.js" async defer></script>
+        <script src="js/sign-up.js" async defer></script>
+    </body>
+</html>
