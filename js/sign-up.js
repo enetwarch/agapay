@@ -4,9 +4,6 @@ backArrowElement.addEventListener("click", () => {
 });
 
 const signUpFormElement = document.getElementById("signUpForm");
-const firstName = document.getElementById("firstName");
-const middleName = document.getElementById("middleName");
-const lastName = document.getElementById("lastName");
 const phoneNumber = document.getElementById("phoneNumber");
 const password = document.getElementById("password");
 const confirmPassword = document.getElementById("confirmPassword");
@@ -94,6 +91,35 @@ function deleteAuthNumber(maxLength) {
         }
     }
     changeFocus(maxLength);
+}
+
+let cooldownInterval;
+let onCooldown = false;
+let cooldownSeconds = 10;
+
+const resendCodeElement = document.getElementById("resendCode");
+resendCodeElement.addEventListener("click", () => {
+    if (onCooldown) return;
+    onCooldown = true;
+    resendCodeElement.innerText = "Code sent successfully!";
+    setTimeout(() => {
+        startCooldown();
+    }, 2000);
+});
+
+function startCooldown() {
+    cooldownInterval = setInterval(() => {
+        if (cooldownSeconds < 0) {
+            clearInterval(cooldownInterval);
+            onCooldown = false;
+            cooldownSeconds = 10;
+            resendCodeElement.innerText = "Resend Code";
+            return;
+        }
+        const cooldownTimer = `Resend cooldown ${cooldownSeconds}s`;
+        resendCodeElement.innerText = cooldownTimer;
+        cooldownSeconds--;
+    }, 1000);
 }
 
 const signUpModalFormElement = document.getElementById("signUpModalForm");
