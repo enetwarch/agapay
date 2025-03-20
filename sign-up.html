@@ -11,32 +11,32 @@
     </head>
     <body>
         <form id="signUpForm" class="sign-up">
-            <i id="backArrow" class="sign-up__back-arrow fa-solid fa-arrow-left"></i>
+            <i id="backArrow" class="sign-up__back fa-solid fa-arrow-left"></i>
             <div class="sign-up__container">
                 <h1 class="sign-up__header-text">Sign up</h1>
                 <div class="sign-up__field">
                     <label class="sign-up__field-label" for="firstName">First Name</label>
-                    <input class="sign-up__field-input" id="firstName" type="text" placeholder="Jan Marti" pattern="[a-zA-Z ]+" required>
+                    <input class="sign-up__field-input" id="firstName" type="text" placeholder="Jan Marti" pattern="[a-zA-Z ]+">
                 </div>
                 <div class="sign-up__field">
                     <label class="sign-up__field-label" for="middleName">Middle Name</label>
-                    <input class="sign-up__field-input" id="middleName" type="text" placeholder="Mendoza" pattern="[a-zA-Z ]+" required>
+                    <input class="sign-up__field-input" id="middleName" type="text" placeholder="Mendoza" pattern="[a-zA-Z ]+">
                 </div>
                 <div class="sign-up__field">
                     <label class="sign-up__field-label" for="lastName">Last Name</label>
-                    <input class="sign-up__field-input" id="lastName" type="text" placeholder="Dizon" pattern="[a-zA-Z ]+" required>
+                    <input class="sign-up__field-input" id="lastName" type="text" placeholder="Dizon" pattern="[a-zA-Z ]+">
                 </div>
                 <div class="sign-up__field">
                     <label class="sign-up__field-label" for="phoneNumber">Phone Number</label>
-                    <input class="sign-up__field-input" id="phoneNumber" type="number" placeholder="+6390123456789" required>
+                    <input class="sign-up__field-input" id="phoneNumber" type="number" placeholder="+6390123456789">
                 </div>
                 <div class="sign-up__field">
                     <label class="sign-up__field-label" for="password">Password</label>
-                    <input class="sign-up__field-input" id="password" type="password" placeholder="************" minlength="12" required>
+                    <input class="sign-up__field-input" id="password" type="password" placeholder="************" minlength="12">
                 </div>
                 <div class="sign-up__field">
                     <label class="sign-up__field-label" for="confirmPassword">Confirm Password</label>
-                    <input class="sign-up__field-input" id="confirmPassword" type="password" placeholder="************" minlength="12" required>
+                    <input class="sign-up__field-input" id="confirmPassword" type="password" placeholder="************" minlength="12">
                 </div>
             </div>
             <div class="sign-up__container">
@@ -44,6 +44,21 @@
                 <p class="sign-up__footer-text">2025 Agapay | All Rights Reserved</p>
             </div>
         </form>
+        <dialog id="signUpModal" class="sign-up__modal">
+            <form id="signUpModalForm" class="sign-up__modal-form">
+                <div class="sign-up__container">
+                    <i id="closeModal" class="sign-up__back fa-solid fa-xmark"></i>
+                    <h1 class="sign-up__header-text">Authentication</h1>
+                    <div class="sign-up__field">
+                        <label class="sign-up__field-label" for="phoneNumberModal">Phone Number</label>
+                        <input class="sign-up__field-input" id="phoneNumberModal" type="number" placeholder="+6390123456789" required>
+                    </div>
+                </div>
+                <div class="sign-up__container">
+                    <button class="sign-up__button" type="button">Confirm</button>
+                </div>
+            </form>
+        </dialog>
         <script src="js/script.js" async defer></script>
         <script src="js/sign-up.js" async defer></script>
     </body>
