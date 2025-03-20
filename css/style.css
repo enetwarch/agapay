@@ -155,6 +155,7 @@ a {
 .log-in__field {
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .log-in__field-input {
@@ -166,6 +167,16 @@ a {
 
 .log-in__field-input:focus {
     outline: 2px solid var(--black);
+}
+
+.log-in__field-input--password {
+    padding-right: 3rem;
+}
+
+.log-in__password-view {
+    position: absolute;
+    right: 1rem;
+    top: 2.6rem;
 }
 
 .log-in__button {

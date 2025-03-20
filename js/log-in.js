@@ -1,3 +1,9 @@
+import Password from "./modules/password.js";
+
+window.addEventListener("load", () => {
+    new Password(document.getElementById("password"), "log-in");
+});
+
 const backArrowElement = document.getElementById("backArrow");
 backArrowElement.addEventListener("click", () => {
     window.location.href = "./";
@@ -13,6 +19,7 @@ phoneNumber.addEventListener("input", () => {
         phoneNumber.value = phoneNumber.value.slice(0, maxLength);
     }
 });
+
 
 const logInFormElement = document.getElementById("logInForm");
 const logInModalElement = document.getElementById("logInModal");
