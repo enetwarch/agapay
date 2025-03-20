@@ -20,7 +20,7 @@
                 </div>
                 <div class="log-in__field">
                     <label class="log-in__field-label" for="password">Password</label>
-                    <input class="log-in__field-input" id="password" type="password" placeholder="************" minlength="12" required>
+                    <input class="log-in__field-input" id="password" type="password" placeholder="************" minlength="8" required>
                 </div>
             </div>
             <div class="log-in__container">
@@ -28,6 +28,14 @@
                 <p class="log-in__footer-text">2025 Agapay | All Rights Reserved</p>
             </div>
         </form>
+        <dialog id="logInModal" class="log-in__modal">
+            <div class="log-in__modal-container">
+                <div class="log-in__container">
+                    <h1 class="log-in__header-text">Success</h1>
+                    <p class="log-in__information-text">Account log in successful. You will be redirected to the home page shortly.</p>
+                </div>
+            </div>
+        </dialog>
         <script src="js/script.js" async defer></script>
         <script src="js/log-in.js" async defer></script>
     </body>

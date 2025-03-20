@@ -189,6 +189,36 @@ a {
     text-align: center;
 }
 
+.log-in__modal {
+    border: none;
+    border-radius: 0.5rem;
+    left: 50%;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.log-in__modal::backdrop {
+    background-color: hsl(0, 0%, 0%, 0.5);
+}
+
+.log-in__modal-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    width: 100%;
+}
+
+.log-in__information-text {
+    background-color: var(--primary-translucent);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
 .sign-up {
     display: flex;
     flex-direction: column;
