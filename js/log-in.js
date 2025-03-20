@@ -1,10 +1,10 @@
-const htmlLocation = "log-in";
-
-const backArrowElement = document.getElementById("backArrow");
-backArrowElement.addEventListener("click", () => {
+const backArrow = document.getElementById("backArrow");
+backArrow.addEventListener("click", () => {
     window.location.href = "./";
 });
 
+const htmlLocation = "log-in";
+const password = document.getElementById("password");
 function Password(input) {
     if (!new.target) {
         throw Error(`Use the "new" keyword on the Password constructor.`);
@@ -45,7 +45,7 @@ Password.prototype.toggleView = function() {
     }
 }
 
-new Password(document.getElementById("password"));
+new Password(password);
 
 const phoneNumber = document.getElementById("phoneNumber");
 phoneNumber.addEventListener("input", () => {
@@ -58,9 +58,9 @@ phoneNumber.addEventListener("input", () => {
     }
 });
 
-const logInFormElement = document.getElementById("logInForm");
-const logInModalElement = document.getElementById("logInModal");
-logInFormElement.addEventListener("submit", event => {
+const logInForm = document.getElementById("logInForm");
+const logInModal = document.getElementById("logInModal");
+logInForm.addEventListener("submit", event => {
     event.preventDefault();
     // Internationally, phone numbers have a minimum of 7 characters.
     // Source: https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/ch04s03.html
@@ -69,12 +69,12 @@ logInFormElement.addEventListener("submit", event => {
         const validity = `Minimum phone number character length is ${minLength}.`;
         phoneNumber.setCustomValidity(validity);
     }
-    if (logInFormElement.checkValidity()) {
-        logInModalElement.showModal();
+    if (logInForm.checkValidity()) {
+        logInModal.showModal();
         setTimeout(() => {
             window.location.href = "./";
         }, 2000);
     } else {
-        logInFormElement.reportValidity();
+        logInForm.reportValidity();
     }
 });

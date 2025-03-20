@@ -1,15 +1,9 @@
-const htmlLocation = "sign-up";
-
-const backArrowElement = document.getElementById("backArrow");
-backArrowElement.addEventListener("click", () => {
+const backArrow = document.getElementById("backArrow");
+backArrow.addEventListener("click", () => {
     window.location.href = "./";
 });
 
-const signUpFormElement = document.getElementById("signUpForm");
 const phoneNumber = document.getElementById("phoneNumber");
-const password = document.getElementById("password");
-const confirmPassword = document.getElementById("confirmPassword");
-
 phoneNumber.addEventListener("input", () => {
     phoneNumber.setCustomValidity("");
     // Internationally, phone numbers have a maximum of 15 characters.
@@ -18,6 +12,13 @@ phoneNumber.addEventListener("input", () => {
     if (phoneNumber.value.length > maxLength) {
         phoneNumber.value = phoneNumber.value.slice(0, maxLength);
     }
+});
+
+const htmlLocation = "sign-up";
+const password = document.getElementById("password");
+const confirmPassword = document.getElementById("confirmPassword");
+confirmPassword.addEventListener("input", () => {
+    confirmPassword.setCustomValidity("");
 });
 
 function Password(input) {
@@ -60,16 +61,13 @@ Password.prototype.toggleView = function() {
     }
 }
 
-new Password(document.getElementById("password"));
-new Password(document.getElementById("confirmPassword"));
+new Password(password);
+new Password(confirmPassword);
 
-confirmPassword.addEventListener("input", () => {
-    confirmPassword.setCustomValidity("");
-});
-
-const phoneNumberModalElement = document.getElementById("phoneNumberModal");
-const signUpModalElement = document.getElementById("signUpModal");
-signUpFormElement.addEventListener("submit", event => {
+const signUpForm = document.getElementById("signUpForm");
+const phoneNumberModal = document.getElementById("phoneNumberModal");
+const signUpModal = document.getElementById("signUpModal");
+signUpForm.addEventListener("submit", event => {
     event.preventDefault();
     // Internationally, phone numbers have a minimum of 7 characters.
     // Source: https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/ch04s03.html
@@ -80,17 +78,17 @@ signUpFormElement.addEventListener("submit", event => {
     } else if (confirmPassword.value !== password.value) {
         confirmPassword.setCustomValidity("Passwords do not match.");
     }
-    if (signUpFormElement.checkValidity()) {
-        phoneNumberModalElement.innerText = phoneNumber.value;
-        signUpModalElement.showModal();
+    if (signUpForm.checkValidity()) {
+        phoneNumberModal.innerText = phoneNumber.value;
+        signUpModal.showModal();
     } else {
-        signUpFormElement.reportValidity();
+        signUpForm.reportValidity();
     }
 });
 
-const closeModalElement = document.getElementById("closeModal");
-closeModalElement.addEventListener("click", () => {
-    signUpModalElement.close();
+const closeModal = document.getElementById("closeModal");
+closeModal.addEventListener("click", () => {
+    signUpModal.close();
 });
 
 const authNumbers = document.querySelectorAll("#authNumbers > *");
@@ -141,11 +139,11 @@ let cooldownInterval;
 let onCooldown = false;
 let cooldownSeconds = 10;
 
-const resendCodeElement = document.getElementById("resendCode");
-resendCodeElement.addEventListener("click", () => {
+const resendCode = document.getElementById("resendCode");
+resendCode.addEventListener("click", () => {
     if (onCooldown) return;
     onCooldown = true;
-    resendCodeElement.innerText = "Code sent successfully!";
+    resendCode.innerText = "Code sent successfully!";
     setTimeout(() => {
         startCooldown();
     }, 2000);
@@ -157,17 +155,17 @@ function startCooldown() {
             clearInterval(cooldownInterval);
             onCooldown = false;
             cooldownSeconds = 10;
-            resendCodeElement.innerText = "Resend Code";
+            resendCode.innerText = "Resend Code";
             return;
         }
         const cooldownTimer = `Resend cooldown ${cooldownSeconds}s`;
-        resendCodeElement.innerText = cooldownTimer;
+        resendCode.innerText = cooldownTimer;
         cooldownSeconds--;
     }, 1000);
 }
 
-const signUpModalFormElement = document.getElementById("signUpModalForm");
-signUpModalFormElement.addEventListener("submit", event => {
+const signUpModalForm = document.getElementById("signUpModalForm");
+signUpModalForm.addEventListener("submit", event => {
     event.preventDefault();
     const container = document.createElement("div");
     container.classList.add("sign-up__container");
@@ -179,8 +177,8 @@ signUpModalFormElement.addEventListener("submit", event => {
     informationText.innerText = "Account created successfully. ";
     informationText.innerText += "You will be redirected to the log in page shortly";
     container.append(headerText, informationText);
-    signUpModalFormElement.innerHTML = "";
-    signUpModalFormElement.appendChild(container);
+    signUpModalForm.innerHTML = "";
+    signUpModalForm.appendChild(container);
     setTimeout(() => {
         window.location.href = "log-in";
     }, 2000);

@@ -1,9 +1,9 @@
-const signUpElement = document.getElementById("signUp");
-signUpElement.addEventListener("click", () => {
+const signUp = document.getElementById("signUp");
+signUp.addEventListener("click", () => {
     window.location.href = "sign-up";
 });
 
-const logInElement = document.getElementById("logIn");
-logInElement.addEventListener("click", () => {
+const logIn = document.getElementById("logIn");
+logIn.addEventListener("click", () => {
     window.location.href = "log-in";
 });
