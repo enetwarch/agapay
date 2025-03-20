@@ -25,6 +25,7 @@ confirmPassword.addEventListener("input", () => {
     confirmPassword.setCustomValidity("");
 });
 
+const phoneNumberModalElement = document.getElementById("phoneNumberModal");
 const signUpModalElement = document.getElementById("signUpModal");
 signUpFormElement.addEventListener("submit", event => {
     event.preventDefault();
@@ -38,6 +39,7 @@ signUpFormElement.addEventListener("submit", event => {
         confirmPassword.setCustomValidity("Passwords do not match.");
     }
     if (signUpFormElement.checkValidity()) {
+        phoneNumberModalElement.innerText = phoneNumber.value;
         signUpModalElement.showModal();
     } else {
         signUpFormElement.reportValidity();
@@ -93,3 +95,23 @@ function deleteAuthNumber(maxLength) {
     }
     changeFocus(maxLength);
 }
+
+const signUpModalFormElement = document.getElementById("signUpModalForm");
+signUpModalFormElement.addEventListener("submit", event => {
+    event.preventDefault();
+    const container = document.createElement("div");
+    container.classList.add("sign-up__container");
+    const headerText = document.createElement("h1");
+    headerText.classList.add("sign-up__header-text");
+    headerText.innerText = "Success";
+    const informationText = document.createElement("p");
+    informationText.classList.add("sign-up__information-text");
+    informationText.innerText = "Account created successfully. ";
+    informationText.innerText += "You will be redirected to the log in page shortly";
+    container.append(headerText, informationText);
+    signUpModalFormElement.innerHTML = "";
+    signUpModalFormElement.appendChild(container);
+    setTimeout(() => {
+        window.location.href = "log-in";
+    }, 2000);
+});
