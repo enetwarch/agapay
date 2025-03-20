@@ -95,6 +95,12 @@ body {
     opacity: 0.8;
 }
 
+.index__footer-text {
+    margin-top: 1rem;
+    opacity: 0.5;
+    text-align: center;
+}
+
 @media only screen and (min-width: 641px) {
     body *:not(.warning):not(.warning *) {
         display: none;
