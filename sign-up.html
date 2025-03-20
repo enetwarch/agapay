@@ -16,27 +16,27 @@
                 <h1 class="sign-up__header-text">Sign up</h1>
                 <div class="sign-up__field">
                     <label class="sign-up__field-label" for="firstName">First Name</label>
-                    <input class="sign-up__field-input" id="firstName" type="text" placeholder="Jan Marti" pattern="[a-zA-Z ]+">
+                    <input class="sign-up__field-input" id="firstName" type="text" placeholder="Jan Marti" pattern="[a-zA-Z\- ]+" required>
                 </div>
                 <div class="sign-up__field">
                     <label class="sign-up__field-label" for="middleName">Middle Name</label>
-                    <input class="sign-up__field-input" id="middleName" type="text" placeholder="Mendoza" pattern="[a-zA-Z ]+">
+                    <input class="sign-up__field-input" id="middleName" type="text" placeholder="Mendoza" pattern="[a-zA-Z\- ]+" required>
                 </div>
                 <div class="sign-up__field">
                     <label class="sign-up__field-label" for="lastName">Last Name</label>
-                    <input class="sign-up__field-input" id="lastName" type="text" placeholder="Dizon" pattern="[a-zA-Z ]+">
+                    <input class="sign-up__field-input" id="lastName" type="text" placeholder="Dizon" pattern="[a-zA-Z\- ]+" required>
                 </div>
                 <div class="sign-up__field">
                     <label class="sign-up__field-label" for="phoneNumber">Phone Number</label>
-                    <input class="sign-up__field-input" id="phoneNumber" type="number" placeholder="+6390123456789">
+                    <input class="sign-up__field-input" id="phoneNumber" type="number" placeholder="+6390123456789" required>
                 </div>
                 <div class="sign-up__field">
                     <label class="sign-up__field-label" for="password">Password</label>
-                    <input class="sign-up__field-input" id="password" type="password" placeholder="************" minlength="12">
+                    <input class="sign-up__field-input" id="password" type="password" placeholder="************" minlength="8" required>
                 </div>
                 <div class="sign-up__field">
                     <label class="sign-up__field-label" for="confirmPassword">Confirm Password</label>
-                    <input class="sign-up__field-input" id="confirmPassword" type="password" placeholder="************" minlength="12">
+                    <input class="sign-up__field-input" id="confirmPassword" type="password" placeholder="************" minlength="8" required>
                 </div>
             </div>
             <div class="sign-up__container">
@@ -48,12 +48,12 @@
             <form id="signUpModalForm" class="sign-up__modal-form">
                 <div class="sign-up__container">
                     <i id="closeModal" class="sign-up__back fa-solid fa-xmark"></i>
-                    <h1 class="sign-up__header-text">Authentication</h1>
+                    <h1 class="sign-up__header-text">Auth</h1>
                     <div class="sign-up__field sign-up__field--code">
-                        <input class="sign-up__field-input sign-up__field-input--code" type="number" min="0" max="9" required>
-                        <input class="sign-up__field-input sign-up__field-input--code" type="number" min="0" max="9" required>
-                        <input class="sign-up__field-input sign-up__field-input--code" type="number" min="0" max="9" required>
-                        <input class="sign-up__field-input sign-up__field-input--code" type="number" min="0" max="9" required>
+                        <input id="numberOne" class="sign-up__field-input sign-up__field-input--code" type="number" min="0" max="9" required>
+                        <input id="numberTwo" class="sign-up__field-input sign-up__field-input--code" type="number" min="0" max="9" required>
+                        <input id="numberThree" class="sign-up__field-input sign-up__field-input--code" type="number" min="0" max="9" required>
+                        <input id="numberFour" class="sign-up__field-input sign-up__field-input--code" type="number" min="0" max="9" required>
                     </div>
                     <p class="sign-up__information-text">We sent a 4-digit code to <strong id="phoneNumberModal" class="sign-up__important-text">###########</strong>.<br> This code will expire in 5 minutes.</p>
                     <p id="resendCode" class="sign-up__clickable-text">Resend Code</p>
