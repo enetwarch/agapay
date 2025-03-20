@@ -250,6 +250,22 @@ a {
     width: 4rem;
 }
 
+@media only screen and (max-width: 420px) {
+    .sign-up__field-input--code {
+        font-size: 1.75rem;
+        height: 3.5rem;
+        width: 3.5rem;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .sign-up__field-input--code {
+        font-size: 1.5rem;
+        height: 3rem;
+        width: 3rem;
+    }
+}
+
 .sign-up__field-input:focus {
     outline: 2px solid var(--black);
 }
