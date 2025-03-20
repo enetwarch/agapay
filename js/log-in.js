@@ -1,8 +1,3 @@
-const backArrow = document.getElementById("backArrow");
-backArrow.addEventListener("click", () => {
-    window.location.href = "./";
-});
-
 const htmlLocation = "log-in";
 const password = document.getElementById("password");
 function Password(input) {

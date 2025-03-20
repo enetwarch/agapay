@@ -1,8 +1,3 @@
-const backArrow = document.getElementById("backArrow");
-backArrow.addEventListener("click", () => {
-    window.location.href = "./";
-});
-
 const phoneNumber = document.getElementById("phoneNumber");
 phoneNumber.addEventListener("input", () => {
     phoneNumber.setCustomValidity("");
