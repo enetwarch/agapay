@@ -271,6 +271,11 @@ a {
     position: relative;
 }
 
+.sign-up__field--checkbox {
+    display: flex;
+    flex-direction: row;
+}
+
 .sign-up__field--code {
     display: flex;
     flex-direction: row;
@@ -283,6 +288,21 @@ a {
     border: none;
     border-radius: 0.5rem;
     padding: 1rem;
+}
+
+.sign-up__field-input--checkbox {
+    position: absolute;
+    top: 0.4rem;
+}
+
+.sign-up__field-input--checkbox:focus {
+    outline: none !important;
+}
+
+.sign-up__field-input--checkbox ~ *::before {
+    content: "";
+    display: inline-block;
+    width: 1.5rem;
 }
 
 .sign-up__field-input--code {
