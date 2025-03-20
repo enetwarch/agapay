@@ -13,8 +13,8 @@ const confirmPassword = document.getElementById("confirmPassword");
 
 phoneNumber.addEventListener("input", () => {
     phoneNumber.setCustomValidity("");
-    // According to https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/ch04s03.html.
     // Internationally, phone numbers have a maximum of 15 characters.
+    // Source: https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/ch04s03.html
     const maxLength = 15;
     if (phoneNumber.value.length > maxLength) {
         phoneNumber.value = phoneNumber.value.slice(0, maxLength);
@@ -28,10 +28,12 @@ confirmPassword.addEventListener("input", () => {
 const signUpModalElement = document.getElementById("signUpModal");
 signUpFormElement.addEventListener("submit", event => {
     event.preventDefault();
-    // According to https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/ch04s03.html.
     // Internationally, phone numbers have a minimum of 7 characters.
-    if (phoneNumber.value.length < 7) {
-        phoneNumber.setCustomValidity("Minimum phone number character length is 7.");
+    // Source: https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/ch04s03.html
+    const minLength = 7;
+    if (phoneNumber.value.length < minLength) {
+        const validity = `Minimum phone number character length is ${minLength}.`;
+        phoneNumber.setCustomValidity(validity);
     } else if (confirmPassword.value !== password.value) {
         confirmPassword.setCustomValidity("Passwords do not match.");
     }
@@ -46,3 +48,48 @@ const closeModalElement = document.getElementById("closeModal");
 closeModalElement.addEventListener("click", () => {
     signUpModalElement.close();
 });
+
+const authNumbers = document.querySelectorAll("#authNumbers > *");
+console.log(authNumbers);
+authNumbers.forEach(number => {
+    const maxLength = 1;
+    number.addEventListener("input", () => {
+        const pattern = /^[0-9]$/;
+        if (!pattern.test(number.value)) {
+            const length = number.value.length;
+            number.value = number.value.slice(0, length - 1);
+        }
+        if (number.value.length === maxLength) changeFocus(maxLength);
+    });
+    number.addEventListener("focus", event => {
+        if (event.target.value.length === maxLength) {
+            changeFocus(maxLength);
+        }
+    });
+    number.addEventListener("keydown", event => {
+        if (event.code === "Backspace") {
+            event.preventDefault();
+            deleteAuthNumber(maxLength);
+        }
+    });
+});
+
+function changeFocus(maxLength) {
+    for (const number of authNumbers) {
+        if (number.value.length !== maxLength) {
+            number.focus();
+            break;
+        }
+    }
+}
+
+function deleteAuthNumber(maxLength) {
+    const reversedAuthNumbers = Array.from(authNumbers).reverse();
+    for (const number of reversedAuthNumbers) {
+        if (number.value.length === maxLength) {
+            number.value = "";
+            break;
+        }
+    }
+    changeFocus(maxLength);
+}
