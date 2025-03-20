@@ -3,7 +3,10 @@
 
 :root {
     --primary: #9e4343;
+    --primary-translucent: #9e42421a;
+    --black: #000000;
     --gray: #e5e7eb;
+    --white: #ffffff;
 }
 
 * {
@@ -55,6 +58,12 @@ a {
     text-wrap: wrap;
 }
 
+@media only screen and (min-width: 641px) {
+    body *:not(.warning):not(.warning *) {
+        display: none;
+    }
+}
+
 .index {
     display: flex;
     flex-direction: column;
@@ -91,7 +100,7 @@ a {
     background-color: var(--primary);
     border: none;
     border-radius: 0.5rem;
-    color: white;
+    color: var(--white);
     font-weight: bold;
     padding: 1rem;
     text-align: center;
@@ -156,14 +165,14 @@ a {
 }
 
 .log-in__field-input:focus {
-    outline: 2px solid black;
+    outline: 2px solid var(--black);
 }
 
 .log-in__button {
     background-color: var(--primary);
     border: none;
     border-radius: 0.5rem;
-    color: white;
+    color: var(--white);
     font-weight: bold;
     padding: 1rem;
     text-align: center;
@@ -220,6 +229,13 @@ a {
     flex-direction: column;
 }
 
+.sign-up__field--code {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+}
+
 .sign-up__field-input {
     background-color: var(--gray);
     border: none;
@@ -227,15 +243,22 @@ a {
     padding: 1rem;
 }
 
+.sign-up__field-input--code {
+    font-size: 2rem;
+    height: 4rem;
+    text-align: center;
+    width: 4rem;
+}
+
 .sign-up__field-input:focus {
-    outline: 2px solid black;
+    outline: 2px solid var(--black);
 }
 
 .sign-up__button {
     background-color: var(--primary);
     border: none;
     border-radius: 0.5rem;
-    color: white;
+    color: var(--white);
     font-weight: bold;
     padding: 1rem;
     text-align: center;
@@ -262,22 +285,26 @@ a {
     width: 100%;
 }
 
+.sign-up__modal::backdrop {
+    background-color: hsl(0, 0%, 0%, 0.5);
+}
+
 .sign-up__modal-form {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 4rem;
     justify-content: center;
     padding: 2rem;
     position: relative;
     width: 100%;
 }
 
-.sign-up__modal::backdrop {
-    background-color: hsl(0, 0%, 0%, 0.5);
+.sign-up__information-text {
+    background-color: var(--primary-translucent);
+    border-radius: 0.5rem;
+    padding: 1rem;
 }
 
-@media only screen and (min-width: 641px) {
-    body *:not(.warning):not(.warning *) {
-        display: none;
-    }
+.sign-up__clickable-text {
+    text-align: center;
 }

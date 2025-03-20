@@ -49,13 +49,15 @@
                 <div class="sign-up__container">
                     <i id="closeModal" class="sign-up__back fa-solid fa-xmark"></i>
                     <h1 class="sign-up__header-text">Authentication</h1>
-                    <div class="sign-up__field">
-                        <label class="sign-up__field-label" for="phoneNumberModal">Phone Number</label>
-                        <input class="sign-up__field-input" id="phoneNumberModal" type="number" placeholder="+6390123456789" required>
+                    <div class="sign-up__field sign-up__field--code">
+                        <input class="sign-up__field-input sign-up__field-input--code" type="number" min="0" max="9" required>
+                        <input class="sign-up__field-input sign-up__field-input--code" type="number" min="0" max="9" required>
+                        <input class="sign-up__field-input sign-up__field-input--code" type="number" min="0" max="9" required>
+                        <input class="sign-up__field-input sign-up__field-input--code" type="number" min="0" max="9" required>
                     </div>
-                </div>
-                <div class="sign-up__container">
-                    <button class="sign-up__button" type="button">Confirm</button>
+                    <p class="sign-up__information-text">We sent a 4-digit code to <strong id="phoneNumberModal" class="sign-up__important-text">###########</strong>.<br> This code will expire in 5 minutes.</p>
+                    <p id="resendCode" class="sign-up__clickable-text">Resend Code</p>
+                    <button class="sign-up__button" type="submit">Continue</button>
                 </div>
             </form>
         </dialog>
