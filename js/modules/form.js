@@ -4,8 +4,10 @@ export default function Form(form, submit) {
     }
     this.form = form;
     this.submit = submit;
-    this.inputs = form.querySelectorAll("input");
+    this.inputs = this.form.querySelectorAll("input");
     this.inputs.forEach(input => this.constructInput(input));
+    this.codeNumbers = this.form.querySelectorAll(".form-field-code-input");
+    if (this.codeNumbers) new CodeNumbers(this.codeNumbers);
     this.form.addEventListener("submit", event => this.validateForm(event));
 }
 
@@ -31,7 +33,7 @@ function PhoneNumber(input, form) {
     this.input = input;
     this.minLength = 7;
     this.maxLength = 15;
-        // Internationally, phone numbers have a minimum of 7 and a maximum of 15 characters.
+    // Internationally, phone numbers have a minimum of 7 and a maximum of 15 characters.
     // Source: https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/ch04s03.html
     this.input.addEventListener("input", () => this.manageInput());
     form.addEventListener("submit", event => this.validateInput(event));
@@ -40,14 +42,14 @@ function PhoneNumber(input, form) {
 PhoneNumber.prototype.manageInput = function() {
     this.input.setCustomValidity("");
     if (this.input.value.length > this.maxLength) {
-        this.input.value = this.input.value.slice(0, maxLength);
+        this.input.value = this.input.value.slice(0, this.maxLength);
     }
 }
 
 PhoneNumber.prototype.validateInput = function(event) {
     event.preventDefault();
     if (this.input.value.length < this.minLength) {
-        const validity = `Minimum phone number character length is ${minLength}.`;
+        const validity = `Minimum phone number character length is ${this.minLength}.`;
         this.input.setCustomValidity(validity);
     } else {
         this.input.setCustomValidity("");
@@ -105,7 +107,7 @@ ConfirmPassword.prototype.manageInput = function() {
     this.input.setCustomValidity("");
     if (this.input.value.length > this.password.value.length) {
         const length = this.password.value.length;
-        this.input.value = this.input.value.slice(0, length - 1);
+        this.input.value = this.input.value.slice(0, length);
     }
 }
 
@@ -118,6 +120,45 @@ ConfirmPassword.prototype.validateInput = function(event) {
     }
 }
 
-function AuthenticationNumber() {
+function CodeNumbers(inputs) {
+    if (!new.target) {
+        throw Error(`Use the "new" keyword on the AuthenticationNumber constructor.`);
+    }
+    this.inputs = inputs;
+    this.maxLength = 1;
+    this.inputs.forEach(input => {
+        input.addEventListener("input", () => this.limitInput(input));
+        input.addEventListener("focus", () => this.changeFocus());
+        input.addEventListener("keydown", event => this.deleteNumber(event));
+    });
+}
 
+CodeNumbers.prototype.limitInput = function(input) {
+    const pattern = /^[0-9]$/;
+    if (!pattern.test(input.value)) {
+        const length = input.value.length;
+        input.value = input.value.slice(0, length - 1);
+    }
+    if (input.value.length === this.maxLength) this.changeFocus();
+}
+
+CodeNumbers.prototype.changeFocus = function() {
+    for (const input of this.inputs) {
+        if (input.value.length === this.maxLength) continue;
+        input.focus();
+        return;
+    }
+}
+
+CodeNumbers.prototype.deleteNumber = function(event) {
+    if (event.code !== "Backspace") return; 
+    event.preventDefault();
+    const reversedInputsArray = Array.from(this.inputs).reverse();
+    for (const input of reversedInputsArray) {
+        if (input.value.length === this.maxLength) {
+            input.value = "";
+            break;
+        }
+    }
+    this.changeFocus();
 }

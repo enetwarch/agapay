@@ -10,7 +10,7 @@
         <script src="https://kit.fontawesome.com/0541e3b46f.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <form id="signUpForm" class="body-container">
+        <form id="form" class="body-container">
             <a class="back" href="./">
                 <i class="fa-solid fa-arrow-left"></i>
             </a>
@@ -53,15 +53,15 @@
         <dialog id="modal" class="modal">
             <form id="modalForm" class="modal-container">
                 <div class="content-container">
-                    <a class="back">
+                    <div class="back">
                         <i id="modalClose" class="fa-solid fa-xmark"></i>
-                    </a>
+                    </div>
                     <h1 class="header-text">Auth</h1>
-                    <div id="authNumbers" class="form-field-code">
-                        <input id="numberOne" class="form-field-code-input" type="number" min="0" max="9" required>
-                        <input id="numberTwo" class="form-field-code-input" type="number" min="0" max="9" required>
-                        <input id="numberThree" class="form-field-code-input" type="number" min="0" max="9" required>
-                        <input id="numberFour" class="form-field-code-input" type="number" min="0" max="9" required>
+                    <div class="form-field-code">
+                        <input id="authenticationOne" class="form-field-code-input" type="number" min="0" max="9" required>
+                        <input id="authenticationTwo" class="form-field-code-input" type="number" min="0" max="9" required>
+                        <input id="authenticationThree" class="form-field-code-input" type="number" min="0" max="9" required>
+                        <input id="authenticationFour" class="form-field-code-input" type="number" min="0" max="9" required>
                     </div>
                     <p class="information-text">We sent a 4-digit code to <strong id="phoneNumberModal" class="sign-up__important-text">###########</strong>.<br> This code will expire in 5 minutes.</p>
                     <p id="resendCode" class="clickable-text">Resend Code</p>
@@ -69,7 +69,6 @@
                 </div>
             </form>
         </dialog>
-        <script src="js/script.js" async defer></script>
-        <script src="js/sign-up.js" async defer></script>
+        <script type="module" src="js/main.js" async defer></script>
     </body>
 </html>
