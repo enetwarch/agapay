@@ -12,11 +12,11 @@ function handleWarning(event) {
         const warning = document.createElement("div");
         warning.classList.add("warning");
         const warningContainer = document.createElement("div");
-        warningContainer.classList.add("warning__container");
+        warningContainer.classList.add("warning-container");
         const warningIcon = document.createElement("i");
-        warningIcon.classList.add("warning__icon", "fa-solid", "fa-mobile");
+        warningIcon.classList.add("warning-icon", "fa-solid", "fa-mobile");
         const warningText = document.createElement("h1");
-        warningText.classList.add("warning__text");
+        warningText.classList.add("warning-text");
         warningText.innerText = "Please view on mobile";
         warningContainer.append(warningIcon, warningText);
         warning.appendChild(warningContainer);

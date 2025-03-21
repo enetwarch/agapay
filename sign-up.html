@@ -10,60 +10,62 @@
         <script src="https://kit.fontawesome.com/0541e3b46f.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <form id="signUpForm" class="sign-up">
-            <a class="sign-up__back-container" href="./">
-                <i class="sign-up__back fa-solid fa-arrow-left"></i>
+        <form id="signUpForm" class="body-container">
+            <a class="back" href="./">
+                <i class="fa-solid fa-arrow-left"></i>
             </a>
-            <div class="sign-up__container">
-                <h1 class="sign-up__header-text">Sign up</h1>
-                <div class="sign-up__field">
-                    <label class="sign-up__field-label" for="firstName">First Name</label>
-                    <input class="sign-up__field-input" id="firstName" type="text" placeholder="Jan Marti" pattern="[a-zA-Z\- ]+" required>
+            <div class="content-container">
+                <h1 class="header-text">Sign up</h1>
+                <div class="form-field">
+                    <label for="firstName">First Name</label>
+                    <input class="form-field-input" id="firstName" type="text" placeholder="Jan Marti" pattern="[a-zA-Z\- ]+" required>
                 </div>
-                <div class="sign-up__field">
-                    <label class="sign-up__field-label" for="middleName">Middle Name</label>
-                    <input class="sign-up__field-input" id="middleName" type="text" placeholder="Mendoza" pattern="[a-zA-Z\- ]+" required>
+                <div class="form-field">
+                    <label for="middleName">Middle Name</label>
+                    <input class="form-field-input" id="middleName" type="text" placeholder="Mendoza" pattern="[a-zA-Z\- ]+" required>
                 </div>
-                <div class="sign-up__field">
-                    <label class="sign-up__field-label" for="lastName">Last Name</label>
-                    <input class="sign-up__field-input" id="lastName" type="text" placeholder="Dizon" pattern="[a-zA-Z\- ]+" required>
+                <div class="form-field">
+                    <label for="lastName">Last Name</label>
+                    <input class="form-field-input" id="lastName" type="text" placeholder="Dizon" pattern="[a-zA-Z\- ]+" required>
                 </div>
-                <div class="sign-up__field">
-                    <label class="sign-up__field-label" for="phoneNumber">Phone Number</label>
-                    <input class="sign-up__field-input" id="phoneNumber" type="number" placeholder="+6390123456789" required>
+                <div class="form-field">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input class="form-field-input" id="phoneNumber" type="number" placeholder="+6390123456789" required>
                 </div>
-                <div class="sign-up__field">
-                    <label class="sign-up__field-label" for="password">Password</label>
-                    <input class="sign-up__field-input sign-up__field-input--password" id="password" type="password" placeholder="************" minlength="8" required>
+                <div class="form-field">
+                    <label for="password">Password</label>
+                    <input class="form-field-password-input" id="password" type="password" placeholder="************" minlength="8" required>
                 </div>
-                <div class="sign-up__field">
-                    <label class="sign-up__field-label" for="confirmPassword">Confirm Password</label>
-                    <input class="sign-up__field-input sign-up__field-input--password" id="confirmPassword" type="password" placeholder="************" minlength="8" required>
+                <div class="form-field">
+                    <label class="form-field-label" for="confirmPassword">Confirm Password</label>
+                    <input class="form-field-password-input" id="confirmPassword" type="password" placeholder="************" minlength="8" required>
                 </div>
-                <div class="sign-up__field sign-up__field--checkbox">
-                    <input class="sign-up__field-input sign-up__field-input--checkbox" id="checkbox" type="checkbox" required>
-                    <label class="sign-up__field-label" for="checkbox">I agree to the <a>Terms and Conditions</a> and <a>Privacy Policy</a></label>
+                <div class="form-field-checkbox">
+                    <input class="form-field-checkbox-input" id="checkbox" type="checkbox" required>
+                    <label for="checkbox">I agree to the <a>Terms and Conditions</a> and <a>Privacy Policy</a></label>
                 </div>
             </div>
-            <div class="sign-up__container">
-                <button class="sign-up__button" type="submit">Sign up</button>
-                <p class="sign-up__footer-text">2025 Agapay | All Rights Reserved</p>
+            <div class="content-container">
+                <button class="button" type="submit">Sign up</button>
+                <p class="footer-text">2025 Agapay | All Rights Reserved</p>
             </div>
         </form>
-        <dialog id="signUpModal" class="sign-up__modal">
-            <form id="signUpModalForm" class="sign-up__modal-form">
-                <div class="sign-up__container">
-                    <i id="closeModal" class="sign-up__back fa-solid fa-xmark"></i>
-                    <h1 class="sign-up__header-text">Auth</h1>
-                    <div id="authNumbers" class="sign-up__field sign-up__field--code">
-                        <input id="numberOne" class="sign-up__field-input sign-up__field-input--code" type="number" min="0" max="9" required>
-                        <input id="numberTwo" class="sign-up__field-input sign-up__field-input--code" type="number" min="0" max="9" required>
-                        <input id="numberThree" class="sign-up__field-input sign-up__field-input--code" type="number" min="0" max="9" required>
-                        <input id="numberFour" class="sign-up__field-input sign-up__field-input--code" type="number" min="0" max="9" required>
+        <dialog id="signUpModal" class="modal">
+            <form id="signUpModalForm" class="modal-container">
+                <div class="content-container">
+                    <a class="back">
+                        <i id="closeModal" class="fa-solid fa-xmark"></i>
+                    </a>
+                    <h1 class="header-text">Auth</h1>
+                    <div id="authNumbers" class="form-field-code">
+                        <input id="numberOne" class="form-field-code-input" type="number" min="0" max="9" required>
+                        <input id="numberTwo" class="form-field-code-input" type="number" min="0" max="9" required>
+                        <input id="numberThree" class="form-field-code-input" type="number" min="0" max="9" required>
+                        <input id="numberFour" class="form-field-code-input" type="number" min="0" max="9" required>
                     </div>
-                    <p class="sign-up__information-text">We sent a 4-digit code to <strong id="phoneNumberModal" class="sign-up__important-text">###########</strong>.<br> This code will expire in 5 minutes.</p>
-                    <p id="resendCode" class="sign-up__clickable-text">Resend Code</p>
-                    <button class="sign-up__button" type="submit">Continue</button>
+                    <p class="information-text">We sent a 4-digit code to <strong id="phoneNumberModal" class="sign-up__important-text">###########</strong>.<br> This code will expire in 5 minutes.</p>
+                    <p id="resendCode" class="clickable-text">Resend Code</p>
+                    <button class="button" type="submit">Continue</button>
                 </div>
             </form>
         </dialog>
