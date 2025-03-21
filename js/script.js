@@ -23,61 +23,6 @@ function handleWarning(event) {
     }
 }
 
-let pathName = window.location.pathname;
-if (pathName.includes(".html")) pathName = pathName.replace(".html", "");
-
-window.addEventListener("DOMContentLoaded", () => {
-    switch (pathName) {
-        case "/sign-up": {
-            const modalElement = document.getElementById("modal");
-            const formElement = document.getElementById("form");
-            const modalFormElement = document.getElementById("modalForm");
-            const modal = new Modal(modalElement);
-            const form = new Form(formElement, () => modal.showModal());
-            const modalForm = new Form(modalFormElement, () => {
-                const header = "Success";
-                const sentences = [
-                    "Account created successfully.",
-                    "You will be redirected to the log in page shortly."
-                ];
-                const information = sentences.join(" ");
-                modal.changeModal(header, information);
-                redirect("log-in");
-            });
-            break;
-        }
-        case "/log-in": {
-            const modalElement = document.getElementById("modal");
-            const formElement = document.getElementById("form");
-            const modal = new Modal(modalElement);
-            const form = new Form(formElement, () => {
-                modal.showModal();
-                redirect("./");
-            });
-            break;
-        }
-        case "/forgot-password": {
-            const modalElement = document.getElementById("modal");
-            const formElement = document.getElementById("form");
-            const modalFormElement = document.getElementById("modalForm");
-            const modal = new Modal(modalElement);
-            const form = new Form(formElement, () => modal.showModal());
-            const modalForm = new Form(modalFormElement, () => {
-                const header = "Success";
-                const sentences = [
-                    "Password recovery successful.",
-                    "Check your notifications for more details.",
-                    "You will be redirected to the log in page shortly."
-                ];
-                const information = sentences.join(" ");
-                modal.changeModal(header, information);
-                redirect("log-in");
-            });
-            break;
-        }
-    }    
-});
-
 function redirect(href) {
     setTimeout(() => {
         window.location.href = href;
@@ -320,3 +265,57 @@ ResendCode.prototype.startCooldown = function() {
         this.cooldownSeconds--;
     }, 1000);
 }
+
+window.addEventListener("DOMContentLoaded", () => {
+    let pathName = window.location.pathname;
+    if (pathName.includes(".html")) pathName = pathName.replace(".html", "");
+    switch (pathName) {
+        case "/sign-up": {
+            const modalElement = document.getElementById("modal");
+            const formElement = document.getElementById("form");
+            const modalFormElement = document.getElementById("modalForm");
+            const modal = new Modal(modalElement);
+            const form = new Form(formElement, () => modal.showModal());
+            const modalForm = new Form(modalFormElement, () => {
+                const header = "Success";
+                const sentences = [
+                    "Account created successfully.",
+                    "You will be redirected to the log in page shortly."
+                ];
+                const information = sentences.join(" ");
+                modal.changeModal(header, information);
+                redirect("log-in");
+            });
+            break;
+        }
+        case "/log-in": {
+            const modalElement = document.getElementById("modal");
+            const formElement = document.getElementById("form");
+            const modal = new Modal(modalElement);
+            const form = new Form(formElement, () => {
+                modal.showModal();
+                redirect("./");
+            });
+            break;
+        }
+        case "/forgot-password": {
+            const modalElement = document.getElementById("modal");
+            const formElement = document.getElementById("form");
+            const modalFormElement = document.getElementById("modalForm");
+            const modal = new Modal(modalElement);
+            const form = new Form(formElement, () => modal.showModal());
+            const modalForm = new Form(modalFormElement, () => {
+                const header = "Success";
+                const sentences = [
+                    "Password recovery successful.",
+                    "Check your notifications for more details.",
+                    "You will be redirected to the log in page shortly."
+                ];
+                const information = sentences.join(" ");
+                modal.changeModal(header, information);
+                redirect("log-in");
+            });
+            break;
+        }
+    }    
+});
