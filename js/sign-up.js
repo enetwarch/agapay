@@ -1,14 +1,3 @@
-const phoneNumber = document.getElementById("phoneNumber");
-phoneNumber.addEventListener("input", () => {
-    phoneNumber.setCustomValidity("");
-    // Internationally, phone numbers have a maximum of 15 characters.
-    // Source: https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/ch04s03.html
-    const maxLength = 15;
-    if (phoneNumber.value.length > maxLength) {
-        phoneNumber.value = phoneNumber.value.slice(0, maxLength);
-    }
-});
-
 const htmlLocation = "sign-up";
 const password = document.getElementById("password");
 const confirmPassword = document.getElementById("confirmPassword");
@@ -59,8 +48,18 @@ Password.prototype.toggleView = function() {
 new Password(password);
 new Password(confirmPassword);
 
+const phoneNumber = document.getElementById("phoneNumber");
+phoneNumber.addEventListener("input", () => {
+    phoneNumber.setCustomValidity("");
+    // Internationally, phone numbers have a maximum of 15 characters.
+    // Source: https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/ch04s03.html
+    const maxLength = 15;
+    if (phoneNumber.value.length > maxLength) {
+        phoneNumber.value = phoneNumber.value.slice(0, maxLength);
+    }
+});
+
 const signUpForm = document.getElementById("signUpForm");
-const phoneNumberModal = document.getElementById("phoneNumberModal");
 const signUpModal = document.getElementById("signUpModal");
 signUpForm.addEventListener("submit", event => {
     event.preventDefault();
@@ -74,7 +73,6 @@ signUpForm.addEventListener("submit", event => {
         confirmPassword.setCustomValidity("Passwords do not match.");
     }
     if (signUpForm.checkValidity()) {
-        phoneNumberModal.innerText = phoneNumber.value;
         signUpModal.showModal();
     } else {
         signUpForm.reportValidity();
