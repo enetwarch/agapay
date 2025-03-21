@@ -10,32 +10,32 @@
         <script src="https://kit.fontawesome.com/0541e3b46f.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <form id="logInForm" class="log-in">
-            <a class="log-in__back-container" href="./">
-                <i class="log-in__back fa-solid fa-arrow-left"></i>
+        <form id="logInForm" class="body-container">
+            <a class="back" href="./">
+                <i class="fa-solid fa-arrow-left"></i>
             </a>
-            <div class="log-in__container">
-                <h1 class="log-in__header-text">Log in</h1>
-                <div class="log-in__field">
-                    <label class="log-in__field-label" for="phoneNumber">Phone Number</label>
-                    <input class="log-in__field-input" id="phoneNumber" type="number" placeholder="+6390123456789" required>
+            <div class="content-container">
+                <h1 class="header-text">Log in</h1>
+                <div class="form-field">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input class="form-field-input" id="phoneNumber" type="number" placeholder="+6390123456789" required>
                 </div>
-                <div class="log-in__field">
-                    <label class="log-in__field-label" for="password">Password</label>
-                    <input class="log-in__field-input log-in__field-input--password" id="password" type="password" placeholder="************" minlength="8" required>
+                <div class="form-field">
+                    <label for="password">Password</label>
+                    <input class="form-field-password-input" id="password" type="password" placeholder="************" minlength="8" required>
                 </div>
             </div>
-            <div class="log-in__container">
-                <a class="log-in__clickable-text" href="forgot-password">Forgot Password?</a>
-                <button class="log-in__button" type="submit">Log in</button>
-                <p class="log-in__footer-text">2025 Agapay | All Rights Reserved</p>
+            <div class="content-container">
+                <a class="clickable-text" href="forgot-password">Forgot Password?</a>
+                <button class="button" type="submit">Log in</button>
+                <p class="footer-text">2025 Agapay | All Rights Reserved</p>
             </div>
         </form>
-        <dialog id="logInModal" class="log-in__modal">
-            <div class="log-in__modal-container">
-                <div class="log-in__container">
-                    <h1 class="log-in__header-text">Success</h1>
-                    <p class="log-in__information-text">Account log in successful. You will be redirected to the home page shortly.</p>
+        <dialog id="logInModal" class="modal">
+            <div class="modal-container">
+                <div class="content-container">
+                    <h1 class="header-text">Success</h1>
+                    <p class="information-text">Account log in successful. You will be redirected to the home page shortly.</p>
                 </div>
             </div>
         </dialog>
