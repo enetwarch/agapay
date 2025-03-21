@@ -1,6 +1,6 @@
 # Agapay
 
-This is a mobile e-wallet app coded in as a website. Just like `[hau-campus-erp](https://github.com/enetwarch/hau-campus-erp)`, it is not a school requirement but it is done for practice. The website is also deployed on [Github Pages](https://pages.github.com/) for the [live demo](https://enetwarch.github.io/agapay).
+This is a mobile e-wallet app coded in as a website. Just like [hau-campus-erp](https://github.com/enetwarch/hau-campus-erp), it is not a school requirement but it is done for practice. The website is also deployed on [Github Pages](https://pages.github.com/) for the [live demo](https://enetwarch.github.io/agapay).
 
 ### Tech Stack
 
