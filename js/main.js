@@ -26,14 +26,14 @@ function handleWarning(event) {
     }
 }
 
-const formElement = document.getElementById("form");
-const modalFormElement = document.getElementById("modalForm");
-const modalElement = document.getElementById("modal");
 let pathName = window.location.pathname;
 if (pathName.includes(".html")) pathName = pathName.replace(".html", "");
 
 switch (pathName) {
     case "/sign-up": {
+        const modalElement = document.getElementById("modal");
+        const formElement = document.getElementById("form");
+        const modalFormElement = document.getElementById("modalForm");
         const modal = new Modal(modalElement);
         const form = new Form(formElement, () => modal.showModal());
         const modalForm = new Form(modalFormElement, () => {
@@ -44,19 +44,24 @@ switch (pathName) {
             ];
             const information = sentences.join(" ");
             modal.changeModal(header, information);
-            modal.redirect("log-in");
+            redirect("log-in");
         });
         break;
     }
     case "/log-in": {
+        const modalElement = document.getElementById("modal");
+        const formElement = document.getElementById("form");
         const modal = new Modal(modalElement);
         const form = new Form(formElement, () => {
             modal.showModal();
-            modal.redirect("./");
+            redirect("./");
         });
         break;
     }
     case "/forgot-password": {
+        const modalElement = document.getElementById("modal");
+        const formElement = document.getElementById("form");
+        const modalFormElement = document.getElementById("modalForm");
         const modal = new Modal(modalElement);
         const form = new Form(formElement, () => modal.showModal());
         const modalForm = new Form(modalFormElement, () => {
@@ -64,15 +69,18 @@ switch (pathName) {
             const sentences = [
                 "Password recovery successful.",
                 "Check your notifications for more details.",
-                "You will be directed to the log in page shortly."
+                "You will be redirected to the log in page shortly."
             ];
             const information = sentences.join(" ");
             modal.changeModal(header, information);
-            modal.redirect("log-in");
+            redirect("log-in");
         });
         break;
     }
-    default: {
-        console.log(`${pathName} does not have any modifications.`);
-    }
+}
+
+function redirect(href) {
+    setTimeout(() => {
+        window.location.href = href;
+    }, 2000);
 }

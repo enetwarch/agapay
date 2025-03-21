@@ -5,7 +5,7 @@ export default function Modal(modal) {
     this.modal = modal;
     this.modalContainer = modal.querySelector(".modal-container");
     this.modalClose = modal.querySelector("#modalClose");
-    if (modalClose) this.modalClose.addEventListener("click", () => this.modal.close());
+    if (this.modalClose) this.modalClose.addEventListener("click", () => this.modal.close());
     this.phoneNumberModal = modal.querySelector("#phoneNumberModal");
     this.resendCode = modal.querySelector("#resendCode");
     if (this.resendCode) new ResendCode(this.resendCode);
@@ -32,12 +32,6 @@ Modal.prototype.changeModal = function(header, information) {
     this.modalContainer.innerHTML = "";
     this.modalContainer.appendChild(container);
 
-}
-
-Modal.prototype.redirect = function(href) {
-    setTimeout(() => {
-        window.location.href = href;
-    }, 2000);
 }
 
 function ResendCode(resendCode) {
