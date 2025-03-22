@@ -13,7 +13,6 @@ This is a mobile e-wallet app coded in as a website. Just like [hau-campus-erp](
 ### Resources
 
 * [Google Fonts](https://fonts.google.com/): Used for the [Poppins](https://fonts.google.com/specimen/Poppins) font which is used in the styling of this website.
-* [Font Awesome](https://fontawesome.com/): Used for the icons.
+* [Font Awesome](https://fontawesome.com/): Source of every icon in this project.
     * [Building Columns](https://fontawesome.com/icons/building-columns): This serves as the website's favicon and logo.
-    * [Left Arrow](https://fontawesome.com/icons/arrow-left): For the "back" button of most pages.
-    * [X Mark](https://fontawesome.com/icons/xmark): "Back" option for modals.
+* [QR Code Generator](https://www.qr-code-generator.com/): Used to generate the website's QR Code which is used in the scan page.
