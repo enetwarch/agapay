@@ -16,7 +16,7 @@ function handleWarning(event) {
         const warningContainer = document.createElement("div");
         warningContainer.classList.add("warning-container");
         const warningIcon = document.createElement("i");
-        warningIcon.classList.add("warning-icon", "fa-solid", "fa-mobile");
+        warningIcon.classList.add("warning-icon", "fa-solid", "fa-mobile-screen");
         const warningText = document.createElement("h1");
         warningText.classList.add("warning-text");
         warningText.innerText = "Please view on mobile";
