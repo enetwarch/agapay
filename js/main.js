@@ -54,7 +54,7 @@ switch (pathName) {
         const modal = new Modal(modalElement);
         const form = new Form(formElement, () => {
             modal.showModal();
-            redirect("./");
+            redirect("home");
         });
         break;
     }

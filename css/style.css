@@ -99,6 +99,7 @@ a {
     text-align: center;
     transition: background-color 0.25s;
     width: 3rem;
+    z-index: 1;
 }
 
 .back:active {
@@ -113,6 +114,7 @@ a {
 
 .header-text {
     color: var(--primary);
+    font-weight: bold;
     text-align: center;
 }
 
@@ -265,4 +267,115 @@ a {
 .clickable-text {
     color: var(--primary);
     text-align: center;
+}
+
+.nav-container {
+    background-color: var(--gray);
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.nav-container + .body-container {
+    padding-bottom: 6rem;
+}
+
+.nav-field {
+    align-items: center;
+    border-radius: 100px;
+    display: flex;
+    flex-direction: column;
+    height: 4rem;
+    justify-content: center;
+    transition: background-color 0.25s;
+    width: 4rem;
+    z-index: 1;
+}
+
+.nav-field:active {
+    background-color: var(--primary-translucent);
+}
+
+.nav-field:not(#currentPage) {
+    opacity: 0.5;
+}
+
+.nav-icon {
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+.nav-text {
+    color: var(--primary);
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+.card-container {
+    background-color: var(--primary);
+    border-radius: 0.5rem;
+    color: var(--white);
+    display: flex;
+    height: 12rem;
+    position: relative;
+    width: 100%;
+}
+
+.action-container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 4rem);
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+.action-outer-field {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    min-width: 4rem;
+    width: 100%;
+}
+
+.action-inner-field {
+    align-items: center;
+    border-radius: 100px;
+    display: flex;
+    flex-direction: column;
+    height: 4rem;
+    justify-content: center;
+    transition: background-color 0.25s;
+    width: 4rem;
+}
+
+.action-inner-field:active {
+    background-color: var(--primary-translucent);
+}
+
+.action-icon {
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+.action-text {
+    color: var(--primary);
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+.promo-container {
+    background-color: var(--gray);
+    border-radius: 0.5rem;
+    color: var(--white);
+    display: flex;
+    height: 12rem;
+    position: relative;
+    width: 100%;
 }
