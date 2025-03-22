@@ -532,6 +532,7 @@ a {
 .button-container {
     display: flex;
     gap: 1rem;
+    justify-content: center;
     width: 100%;
 }
 
@@ -614,6 +615,68 @@ a {
 .scan-inner-icon {
     font-size: 13rem;
     position: absolute;
+}
+
+.full-screen-content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-height: calc(100vh - 12rem);
+}
+
+.small-button {
+    background-color: var(--primary);
+    border: none;
+    border-radius: 0.5rem;
+    color: var(--white);
+    display: flex;
+    flex-grow: 1;
+    font-size: 0.75rem;
+    font-weight: bold;
+    justify-content: center;
+    padding: 1rem;
+    transition: opacity 0.25s;
+}
+
+.small-button:active {
+    opacity: 0.8;
+}
+
+.inbox-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 1rem;
+    overflow: scroll;
+    width: 100%;
+}
+
+.inbox-entry {
+    background-color: var(--gray);
+    border-radius: 0.5rem;
+    display: inline-flex;
+    padding: 1rem;
+    position: relative;
+    transition: background-color 0.25s;
+}
+
+.inbox-entry:active {
+    background-color: var(--primary-translucent);
+}
+
+.inbox-icon {
+    position: absolute;
+    top: 1.25rem;
+}
+
+.inbox-text {
+    display: inline-block;
+}
+
+.inbox-text::before {
+    content: "";
+    display: inline-block;
+    width: 1.5rem;
 }
 
 .profile-container {
