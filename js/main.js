@@ -86,14 +86,14 @@ switch (path) {
 
     case "home": {
         const actionFields = [
-            ["fa-file-invoice-dollar", "Pay"],
-            ["fa-mobile", "Load"],
-            ["fa-ticket", "Voucher"],
-            ["fa-comments-dollar", "Send"],
-            ["fa-store", "Market"],
-            ["fa-gamepad", "Top Up"],
-            ["fa-bitcoin-sign", "Crypto"],
-            ["fa-ellipsis", "More"]
+            [undefined, "fa-file-invoice-dollar", "Pay"],
+            [undefined, "fa-mobile", "Load"],
+            [undefined, "fa-ticket", "Voucher"],
+            [undefined, "fa-comments-dollar", "Send"],
+            [undefined, "fa-store", "Market"],
+            [undefined, "fa-gamepad", "Top Up"],
+            [undefined, "fa-bitcoin-sign", "Crypto"],
+            [undefined, "fa-ellipsis", "More"]
         ];
         new Fields("action", actionFields);
         break;
@@ -101,10 +101,10 @@ switch (path) {
 
     case "profile": {
         const menuFields = [
-            ["fa-circle-check", "Account Verification"],
-            ["fa-gear", "Setting"],
-            ["fa-circle-question", "Help"],
-            ["fa-right-from-bracket", "Log Out"]
+            [undefined, "fa-circle-check", "Account Verification"],
+            [undefined, "fa-gear", "Setting"],
+            [undefined, "fa-circle-question", "Help"],
+            [undefined, "fa-right-from-bracket", "Log Out"]
         ];
         new Fields("menu", menuFields);
         break;
