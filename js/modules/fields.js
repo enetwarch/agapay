@@ -2,6 +2,8 @@ export default function Fields(type, fields) {
     if (!new.target) {
         throw Error(`Use the "new" keyword on the Fields constructor.`);
     }
+    this.type = type;
+    this.fields = fields;
     switch (type) {
         case "nav": {
             new Nav(fields);
@@ -9,6 +11,10 @@ export default function Fields(type, fields) {
         }
         case "action": {
             new Action(fields);
+            break;
+        }
+        case "menu": {
+            new Menu(fields);
             break;
         }
     }
@@ -73,4 +79,29 @@ Action.prototype.makeField = function(field) {
     innerFieldElement.append(iconElement, textElement);
     outerFieldElement.appendChild(innerFieldElement);
     this.action.appendChild(outerFieldElement);
+}
+
+function Menu(fields) {
+    if (!new.target) {
+        throw Error (`Use the "new" keyword on the Menu constructor`);
+    }
+    this.menu = document.createElement("div");
+    this.menu.classList.add("menu-container");
+    fields.forEach(field => this.makeField(field));
+    const profileElement = document.getElementById("profile");
+    profileElement.after(this.menu);
+}
+
+Menu.prototype.makeField = function(field) {
+    const icon = field[0];
+    const text = field[1];
+    const fieldElement = document.createElement("menu-field");
+    fieldElement.classList.add("menu-field");
+    const iconElement = document.createElement("i");
+    iconElement.classList.add("menu-icon", "fa-solid", icon);
+    const textElement = document.createElement("p");
+    textElement.classList.add("menu-text");
+    textElement.innerText = text;
+    fieldElement.append(iconElement, textElement);
+    this.menu.appendChild(fieldElement);
 }

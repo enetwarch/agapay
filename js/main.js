@@ -85,7 +85,7 @@ switch (path) {
     }
 
     case "home": {
-        const fields = [
+        const actionFields = [
             ["fa-file-invoice-dollar", "Pay"],
             ["fa-mobile", "Load"],
             ["fa-ticket", "Voucher"],
@@ -95,7 +95,18 @@ switch (path) {
             ["fa-bitcoin-sign", "Crypto"],
             ["fa-ellipsis", "More"]
         ];
-        new Fields("action", fields);
+        new Fields("action", actionFields);
+        break;
+    }
+
+    case "profile": {
+        const menuFields = [
+            ["fa-circle-check", "Account Verification"],
+            ["fa-gear", "Setting"],
+            ["fa-circle-question", "Help"],
+            ["fa-right-from-bracket", "Log Out"]
+        ];
+        new Fields("menu", menuFields);
         break;
     }
 
@@ -107,14 +118,14 @@ switch (path) {
     case "scan":
     case "inbox":
     case "profile": {
-        const fields = [
+        const navFields = [
             ["home", "fa-house", "Home"],
             ["cards", "fa-credit-card", "Cards"],
             ["scan", "fa-qrcode", "Scan"],
             ["inbox", "fa-envelope", "Inbox"],
             ["profile", "fa-user", "Profile"]
         ];
-        new Fields("nav", fields);
+        new Fields("nav", navFields);
         break;
     }
 }
