@@ -581,7 +581,7 @@ a {
     width: 50%;
 }
 
-.id-card-profile-background {
+.id-card-profile-container {
     align-items: center;
     background-color: var(--white);
     border-radius: 0.6rem;
@@ -614,4 +614,73 @@ a {
 .scan-inner-icon {
     font-size: 13rem;
     position: absolute;
+}
+
+.profile-container {
+    background-color: var(--primary);
+    border-radius: 0.5rem;
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.profile-picture-container {
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 100px;
+    display: flex;
+    height: 4rem;
+    justify-content: center;
+    width: 4rem;
+}
+
+.profile-picture-icon {
+    color: var(--primary);
+    font-size: 2rem;
+}
+
+.profile-text-continer {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.profile-header-text {
+    color: var(--white);
+    text-wrap: nowrap;
+}
+
+.profile-text {
+    color: var(--white);
+    text-wrap: nowrap;
+}
+
+.menu-container {
+    background-color: var(--primary);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.menu-entry {
+    align-items: center;
+    color: var(--white);
+    display: flex;
+    padding: 1rem;
+    text-overflow: ellipsis;
+    transition: background-color 0.25s;
+}
+
+.menu-entry:active {
+    background-color: var(--gray-translucent);
+}
+
+.menu-icon {
+    color: var(--white);
+    width: 2rem;
+}
+
+.menu-text {
+    color: var(--white);
 }
