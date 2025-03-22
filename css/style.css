@@ -303,7 +303,8 @@ a {
     background-color: var(--primary-translucent);
 }
 
-.nav-field:not(#currentPage) {
+.nav-field:not(#currentPage) > .nav-icon,
+.nav-field:not(#currentPage) > .nav-text {
     opacity: 0.5;
 }
 
