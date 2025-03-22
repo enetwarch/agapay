@@ -84,7 +84,14 @@ switch (path) {
     case "scan":
     case "inbox":
     case "profile": {
-        new Nav(path);
+        const fields = [
+            ["home", "fa-house", "Home"],
+            ["cards", "fa-credit-card", "Cards"],
+            ["scan", "fa-qrcode", "Scan"],
+            ["inbox", "fa-envelope", "Inbox"],
+            ["profile", "fa-user", "Profile"]
+        ];
+        new Nav(path, fields);
         break;
     }
 }

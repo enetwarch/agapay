@@ -1,17 +1,11 @@
-export default function Nav(path) {
+export default function Nav(path, fields) {
     if (!new.target) {
         throw Error(`Use the "new" keyword on the Nav constructor.`);
     }
     this.path = path;
+    this.fields = fields;
     this.nav = document.createElement("div");
     this.nav.classList.add("nav-container");
-    const fields = [
-        ["home", "fa-house", "Home"],
-        ["cards", "fa-credit-card", "Cards"],
-        ["scan", "fa-qrcode", "Scan"],
-        ["inbox", "fa-envelope", "Inbox"],
-        ["profile", "fa-user", "Profile"]
-    ];
     fields.forEach(field => this.makeField(field));
     document.body.prepend(this.nav);
 }
