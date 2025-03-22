@@ -1,6 +1,6 @@
 import Form from "./modules/form.js";
 import Modal from "./modules/modal.js";
-import Nav from "./modules/nav.js";
+import Field from "./modules/field.js";
 
 const mobile = window.matchMedia("(max-width: 640px)");
 mobile.addEventListener("change", event => handleWarning(event));
@@ -84,6 +84,10 @@ switch (path) {
         break;
     }
 
+    case "home": {
+
+    }
+
 }
 
 switch (path) {
@@ -99,7 +103,7 @@ switch (path) {
             ["inbox", "fa-envelope", "Inbox"],
             ["profile", "fa-user", "Profile"]
         ];
-        new Nav(path, fields);
+        new Field("nav", fields);
         break;
     }
 }

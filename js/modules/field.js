@@ -1,9 +1,24 @@
-export default function Nav(path, fields) {
+export default function Field(type, fields) {
+    if (!new.target) {
+        throw Error(`Use the "new" keyword on the Field constructor.`);
+    }
+    switch (type) {
+        case "nav": {
+            new Nav(fields);
+            break;
+        }
+    }
+}
+
+function Nav(fields) {
     if (!new.target) {
         throw Error(`Use the "new" keyword on the Nav constructor.`);
     }
-    this.path = path;
     this.fields = fields;
+    this.path = window.location.pathname;
+    this.path = this.path.split("/").slice(-1)[0];
+    this.path = this.path.replace(".html", "");
+    if (this.path === "") this.path = "agapay";
     this.nav = document.createElement("div");
     this.nav.classList.add("nav-container");
     fields.forEach(field => this.makeField(field));
