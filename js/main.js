@@ -29,6 +29,7 @@ function handleWarning(event) {
 let pathName = window.location.pathname;
 pathName = pathName.split("/").slice(-1)[0];
 pathName = pathName.replace(".html", "");
+if (pathName === "") pathName = "agapay";
 switch (pathName) {
     case "sign-up": {
         const modalElement = document.getElementById("modal");
