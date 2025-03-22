@@ -1,6 +1,6 @@
 import Form from "./modules/form.js";
 import Modal from "./modules/modal.js";
-import Field from "./modules/field.js";
+import Fields from "./modules/fields.js";
 
 const mobile = window.matchMedia("(max-width: 640px)");
 mobile.addEventListener("change", event => handleWarning(event));
@@ -85,7 +85,18 @@ switch (path) {
     }
 
     case "home": {
-
+        const fields = [
+            ["fa-file-invoice-dollar", "Pay"],
+            ["fa-mobile", "Load"],
+            ["fa-ticket", "Voucher"],
+            ["fa-comments-dollar", "Send"],
+            ["fa-store", "Market"],
+            ["fa-gamepad", "Top Up"],
+            ["fa-bitcoin-sign", "Crypto"],
+            ["fa-ellipsis", "More"]
+        ];
+        new Fields("action", fields);
+        break;
     }
 
 }
@@ -103,7 +114,7 @@ switch (path) {
             ["inbox", "fa-envelope", "Inbox"],
             ["profile", "fa-user", "Profile"]
         ];
-        new Field("nav", fields);
+        new Fields("nav", fields);
         break;
     }
 }
