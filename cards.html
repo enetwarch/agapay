@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Cards</title>
+        <link rel="icon" type="image/svg+xml" href="img/agapay.svg">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://kit.fontawesome.com/0541e3b46f.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="nav-container">
+            <a class="nav-field" href="home">
+                <i class="nav-icon fa-solid fa-house"></i>
+                <p class="nav-text">Home</p>
+            </a>
+            <a id="currentPage" class="nav-field" href="cards">
+                <i class="nav-icon fa-solid fa-credit-card"></i>
+                <p class="nav-text">Cards</p>
+            </a>
+            <a class="nav-field" href="scan">
+                <i class="nav-icon fa-solid fa-qrcode"></i>
+                <p class="nav-text">Scan</p>
+            </a>
+            <a class="nav-field" href="inbox">
+                <i class="nav-icon fa-solid fa-envelope"></i>
+                <p class="nav-text">Inbox</p>
+            </a>
+            <a class="nav-field" href="profile">
+                <i class="nav-icon fa-solid fa-user"></i>
+                <p class="nav-text">Profile</p>
+            </a>
+        </div>
+        <div class="body-container">
+            <div class="content-container">
+                <p class="header-text">Cards</p>
+                <div class="visa-card-container">
+                    <div class="visa-card-emv-chip"></div>
+                    <p class="visa-card-number">0000 0000 0000 0000</p>
+                    <i class="visa-card-icon fa-brands fa-cc-visa"></i>
+                    <i class="visa-card-agapay fa-solid fa-building-columns"></i>
+                </div>
+                <div class="button-container">
+                    <button class="button" type="button">Order</button>
+                    <button class="button" type="button">Link</button>
+                </div>
+                <div class="id-card-container">
+                    <div class="id-card-status-verified"></div>
+                    <div class="id-card-text-container">
+                        <h3 class="id-card-header-text">National ID</h3>
+                        <p class="id-card-text">No expiration</p>
+                    </div>
+                    <div class="id-card-profile-background">
+                        <i class="id-card-profile-icon fa-solid fa-user"></i>
+                    </div>
+                </div>
+                <div class="id-card-container">
+                    <div class="id-card-status-expired"></div>
+                    <div class="id-card-text-container">
+                        <h3 class="id-card-header-text">Driver's License</h3>
+                        <p class="id-card-text">Expiration: April 10, 2022</p>
+                    </div>
+                    <div class="id-card-profile-background">
+                        <i class="id-card-profile-icon fa-solid fa-user"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="js/main.js" async defer></script>
+    </body>
+</html>

@@ -10,6 +10,9 @@
     --white: #ffffff;
     --promo-one-primary: #01373f;
     --promo-one-secondary: #4cd181;
+    --emv-chip-gradient: linear-gradient(135deg, #d4af37 0%, #f8f8f8 50%, #d4af37 100%);
+    --verified-id: #6ec573;
+    --expired-id: #fc4f50;
 }
 
 * {
@@ -221,6 +224,7 @@ a {
     border-radius: 0.5rem;
     color: var(--white);
     display: flex;
+    flex-grow: 1;
     font-size: 1rem;
     font-weight: bold;
     justify-content: center;
@@ -479,4 +483,117 @@ a {
     left: 1rem;
     position: absolute;
     transform: rotate(-80deg);
+}
+
+.visa-card-container {
+    background-color: var(--primary);
+    border-radius: 0.5rem;
+    display: flex;
+    height: 12rem;
+    position: relative;
+    width: 100%;
+}
+
+.visa-card-emv-chip {
+    background: var(--emv-chip-gradient);
+    border-radius: 0.5rem;
+    height: 2rem;
+    left: 1rem;
+    position: absolute;
+    top: 2rem;
+    width: 3rem;
+}
+
+.visa-card-number {
+    color: var(--white);
+    font-weight: bold;
+    left: 1rem;
+    position: absolute;
+    top: 4rem;
+}
+
+.visa-card-icon {
+    bottom: 1rem;
+    color: var(--white);
+    font-size: 3rem;
+    left: 1rem;
+    position: absolute;
+}
+
+.visa-card-agapay {
+    color: var(--gray);
+    font-size: 6rem;
+    opacity: 0.5;
+    position: absolute;
+    right: 2rem;
+    top: 3rem;
+}
+
+.button-container {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+.id-card-container {
+    background-color: var(--gray);
+    border-radius: 0.5rem;
+    display: flex;
+    height: 12rem;
+    position: relative;
+    width: 100%;
+}
+
+.id-card-status-verified {
+    background-color: var(--verified-id);
+    border-radius: 0.5rem;
+    color: var(--white);
+    left: 1rem;
+    padding-block: 0.5rem;
+    padding-inline: 1rem;
+    position: absolute;
+    top: 1rem;
+}
+
+.id-card-status-verified::before {
+    content: "Verified";
+}
+
+.id-card-status-expired {
+    background-color: var(--expired-id);
+    border-radius: 0.5rem;
+    color: var(--white);
+    left: 1rem;
+    padding-block: 0.5rem;
+    padding-inline: 1rem;
+    position: absolute;
+    top: 1rem;
+}
+
+.id-card-status-expired::before {
+    content: "Expired";
+}
+
+.id-card-text-container {
+    left: 1rem;
+    position: absolute;
+    top: 4rem;
+    width: 50%;
+}
+
+.id-card-profile-background {
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 0.6rem;
+    display: flex;
+    height: 6rem;
+    justify-content: center;
+    position: absolute;
+    right: 1rem;
+    top: 3rem;
+    width: 6rem;
+}
+
+.id-card-profile-icon {
+    font-size: 3rem;
 }
