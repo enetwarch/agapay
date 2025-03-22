@@ -12,9 +12,20 @@ export default function Form(form, submit) {
 }
 
 Form.prototype.constructInput = function(input) {
-    if (input.id === "phoneNumber") new PhoneNumber(input, this.form);
-    if (input.id === "password") new Password(input);
-    if (input.id === "confirmPassword") new ConfirmPassword(this.inputs, input, this.form);
+    switch (input.id) {
+        case "phoneNumber": {
+            new PhoneNumber(input, this.form);
+            break;
+        }
+        case "password": {
+            new Password(input);
+            break;
+        }
+        case "confirmPassword": {
+            new ConfirmPassword(this.inputs, input, this.form);
+            break;
+        }
+    }
 }
 
 Form.prototype.validateForm = function(event) {
