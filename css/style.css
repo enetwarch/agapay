@@ -8,6 +8,8 @@
     --gray: #e5e7eb;
     --gray-translucent: #e5e7eb1a;
     --white: #ffffff;
+    --promo-one-primary: #01373f;
+    --promo-one-secondary: #4cd181;
 }
 
 * {
@@ -424,11 +426,52 @@ a {
 }
 
 .promo-container {
-    background-color: var(--gray);
     border-radius: 0.5rem;
-    color: var(--white);
     display: flex;
     height: 12rem;
+    overflow: hidden;
     position: relative;
     width: 100%;
+}
+
+.promo-one {
+    background-color: var(--promo-one-primary);
+    height: 100%;
+    padding: 1rem;
+    position: relative;
+    width: 100%;
+}
+
+.promo-one-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 70%;
+}
+
+.promo-one-header-text {
+    color: var(--white);
+}
+
+.promo-one-text {
+    color: var(--gray);
+    font-size: 0.75rem;
+}
+
+.promo-one-shape {
+    background-color: var(--promo-one-secondary);
+    border-radius: 0.5rem;
+    height: 6rem;
+    position: absolute;
+    right: 0;
+    transform: rotate(80deg);
+    width: 8rem;
+}
+
+.promo-one-shape-text {
+    bottom: 1.5rem;
+    color: var(--white);
+    left: 1rem;
+    position: absolute;
+    transform: rotate(-80deg);
 }
