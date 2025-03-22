@@ -1,6 +1,7 @@
 import Form from "./modules/form.js";
 import Modal from "./modules/modal.js";
 import Fields from "./modules/fields.js";
+import Entries from "./modules/entries.js";
 
 const mobile = window.matchMedia("(max-width: 640px)");
 mobile.addEventListener("change", event => handleWarning(event));
@@ -96,6 +97,26 @@ switch (path) {
             [undefined, "fa-ellipsis", "More"]
         ];
         new Fields("action", actionFields);
+        break;
+    }
+
+    case "inbox": {
+        const inboxEntries = [
+            "Purchased items worth ₱2,500 from SM Mall.",
+            "Sent ₱1,200 to Jane Dela Cruz.",
+            "Purchase ₱100 mobile load for Globe Telecom.",
+            "Your transfer of ₱3,000 to Jollibee Store is pending...",
+            "Successfully paid ₱850 for your water bill.",
+            "Your ₱549 Netflix subscription has been renewed.",
+            "You've earned ₱100 cashback from your purchase at Lazada.",
+            "You paid ₱320 at Starbucks using QR code.",
+            "Your Meralco electricity bill of ₱2,780 is due in 3 days.",
+            "Congratulations! Your e-wallet account is now fully verified.",
+            "Thank you for donating ₱500 to the Philippine Red Cross.",
+            "Spotify Premium failed to auto pay due to insufficient funds.",
+            "Your loan payment of ₱5,000 has been successfully processed."
+        ];
+        new Entries("inbox", inboxEntries);
         break;
     }
 
