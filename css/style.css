@@ -607,14 +607,9 @@ a {
     width: 100%;
 }
 
-.scan-outer-icon {
-    font-size: 20rem;
-    position: absolute;
-}
-
-.scan-inner-icon {
-    font-size: 13rem;
-    position: absolute;
+.scan-image {
+    height: 16rem;
+    width: auto;
 }
 
 .full-screen-content-container {
