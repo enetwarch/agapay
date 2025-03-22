@@ -726,7 +726,7 @@ a {
     width: 100%;
 }
 
-.menu-entry {
+.menu-field {
     align-items: center;
     color: var(--white);
     display: flex;
@@ -735,7 +735,7 @@ a {
     transition: background-color 0.25s;
 }
 
-.menu-entry:active {
+.menu-field:active {
     background-color: var(--gray-translucent);
 }
 
