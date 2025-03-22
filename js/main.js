@@ -1,5 +1,6 @@
 import Form from "./modules/form.js";
 import Modal from "./modules/modal.js";
+import Nav from "./modules/nav.js";
 
 const mobile = window.matchMedia("(max-width: 640px)");
 mobile.addEventListener("change", event => handleWarning(event));
@@ -26,11 +27,11 @@ function handleWarning(event) {
     }
 }
 
-let pathName = window.location.pathname;
-pathName = pathName.split("/").slice(-1)[0];
-pathName = pathName.replace(".html", "");
-if (pathName === "") pathName = "agapay";
-switch (pathName) {
+let path = window.location.pathname;
+path = path.split("/").slice(-1)[0];
+path = path.replace(".html", "");
+if (path === "") path = "agapay";
+switch (path) {
     case "sign-up": {
         const modalElement = document.getElementById("modal");
         const formElement = document.getElementById("form");
@@ -76,6 +77,14 @@ switch (pathName) {
             modal.changeModal(header, information);
             redirect("log-in");
         });
+        break;
+    }
+    case "home":
+    case "cards":
+    case "scan":
+    case "inbox":
+    case "profile": {
+        new Nav(path);
         break;
     }
 }
