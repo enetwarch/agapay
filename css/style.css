@@ -6,6 +6,7 @@
     --primary-translucent: #9e42421a;
     --black: #000000;
     --gray: #e5e7eb;
+    --gray-translucent: #e5e7eb1a;
     --white: #ffffff;
 }
 
@@ -318,11 +319,63 @@ a {
 .card-container {
     background-color: var(--primary);
     border-radius: 0.5rem;
-    color: var(--white);
     display: flex;
     height: 12rem;
     position: relative;
     width: 100%;
+    z-index: 1;
+}
+
+.card-balance-field {
+    display: flex;
+    flex-direction: column;
+    left: 1rem;
+    position: absolute;
+    top: 1rem;
+}
+
+.card-balance-header-text {
+    color: var(--white);
+}
+
+.card-balance-text {
+    color: var(--white);
+    line-height: 0.75;
+}
+
+.card-action-container {
+    bottom: 0.5rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 4rem);
+    position: absolute;
+    right: 1rem;
+}
+
+.card-action-field {
+    align-items: center;
+    border-radius: 100px;
+    display: flex;
+    flex-direction: column;
+    height: 4rem;
+    justify-content: center;
+    transition: background-color 0.25s;
+    width: 4rem;
+}
+
+.card-action-field:active {
+    background-color: var(--gray-translucent);
+}
+
+.card-action-icon {
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.card-action-text {
+    color: var(--white);
+    font-size: 0.75rem;
+    text-align: center;
 }
 
 .action-container {
@@ -356,7 +409,7 @@ a {
 }
 
 .action-inner-field:active {
-    background-color: var(--primary-translucent);
+    background-color: var(--gray);
 }
 
 .action-icon {
