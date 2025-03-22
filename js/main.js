@@ -31,7 +31,9 @@ let path = window.location.pathname;
 path = path.split("/").slice(-1)[0];
 path = path.replace(".html", "");
 if (path === "") path = "agapay";
+
 switch (path) {
+
     case "sign-up": {
         const modalElement = document.getElementById("modal");
         const formElement = document.getElementById("form");
@@ -46,20 +48,22 @@ switch (path) {
             ];
             const information = sentences.join(" ");
             modal.changeModal(header, information);
-            redirect("log-in");
+            setTimeout(() => window.location.href = "log-in", 2000);
         });
         break;
     }
+
     case "log-in": {
         const modalElement = document.getElementById("modal");
         const formElement = document.getElementById("form");
         const modal = new Modal(modalElement);
         const form = new Form(formElement, () => {
             modal.showModal();
-            redirect("home");
+            setTimeout(() => window.location.href = "home", 2000);
         });
         break;
     }
+
     case "forgot-password": {
         const modalElement = document.getElementById("modal");
         const formElement = document.getElementById("form");
@@ -75,10 +79,14 @@ switch (path) {
             ];
             const information = sentences.join(" ");
             modal.changeModal(header, information);
-            redirect("log-in");
+            setTimeout(() => window.location.href = "log-in", 2000);
         });
         break;
     }
+
+}
+
+switch (path) {
     case "home":
     case "cards":
     case "scan":
@@ -94,10 +102,4 @@ switch (path) {
         new Nav(path, fields);
         break;
     }
-}
-
-function redirect(href) {
-    setTimeout(() => {
-        window.location.href = href;
-    }, 2000);
 }
