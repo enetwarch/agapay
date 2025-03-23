@@ -233,7 +233,7 @@ a {
 }
 
 .button:active {
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .footer-text {
@@ -329,6 +329,7 @@ a {
     display: flex;
     height: 12rem;
     position: relative;
+    transition: opacity 0.25s;
     width: 100%;
     z-index: 1;
 }
@@ -445,7 +446,7 @@ a {
 }
 
 .promo-container:active {
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .promo-one {
@@ -496,7 +497,12 @@ a {
     display: flex;
     height: 12rem;
     position: relative;
+    transition: opacity 0.25s;
     width: 100%;
+}
+
+.visa-card-container:active {
+    opacity: 0.9;
 }
 
 .visa-card-emv-chip {
@@ -547,7 +553,12 @@ a {
     display: flex;
     height: 12rem;
     position: relative;
+    transition: background-color 0.25s;
     width: 100%;
+}
+
+.id-card-container:active {
+    background-color: var(--primary-translucent);
 }
 
 .id-card-status-verified {
@@ -639,7 +650,7 @@ a {
 }
 
 .small-button:active {
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .inbox-container {
@@ -685,6 +696,11 @@ a {
     display: flex;
     gap: 1rem;
     padding: 1rem;
+    transition: opacity 0.25s;
+}
+
+.profile-container:active {
+    opacity: 0.9;
 }
 
 .profile-picture-container {
