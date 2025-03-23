@@ -90,6 +90,19 @@ switch (path) {
             [undefined, "fa-ellipsis", "More"]
         ];
         new Fields("action", actionFields);
+        const modalElement = document.getElementById("modal");
+        const modal = new Modal(modalElement);
+        const balanceCardActionFields = document.querySelectorAll(".balance-card-action-field");
+        const actionInnerFields = document.querySelectorAll(".action-inner-field");
+        const promoContainer = document.querySelector(".promo-container");
+        const comingSoon = [
+            ...balanceCardActionFields,
+            ...actionInnerFields,
+            promoContainer
+        ];
+        comingSoon.forEach(element => {
+            element.addEventListener("click", () => modal.showModal());
+        });
         break;
     }
 

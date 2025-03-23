@@ -440,7 +440,12 @@ a {
     height: 12rem;
     overflow: hidden;
     position: relative;
+    transition: opacity 0.25s;
     width: 100%;
+}
+
+.promo-container:active {
+    opacity: 0.8;
 }
 
 .promo-one {
