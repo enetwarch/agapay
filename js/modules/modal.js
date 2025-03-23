@@ -19,19 +19,8 @@ Modal.prototype.showModal = function() {
     this.modal.showModal();
 }
 
-Modal.prototype.changeModal = function(header, information) {
-    const container = document.createElement("div");
-    container.classList.add("content-container");
-    const headerText = document.createElement("h1");
-    headerText.classList.add("header-text");
-    headerText.innerText = header;
-    const informationText = document.createElement("p");
-    informationText.classList.add("information-text");
-    informationText.innerText = information;
-    container.append(headerText, informationText);
-    this.modalContainer.innerHTML = "";
-    this.modalContainer.appendChild(container);
-
+Modal.prototype.closeModal = function() {
+    this.modal.close();
 }
 
 function ResendCode(resendCode) {
@@ -43,7 +32,6 @@ function ResendCode(resendCode) {
     this.onCooldown = false;
     this.cooldownSeconds = 10;
     this.resendCode.addEventListener("click", () => this.sendCode());
-    
 }
 
 ResendCode.prototype.sendCode = function() {

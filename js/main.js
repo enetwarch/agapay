@@ -37,18 +37,15 @@ switch (path) {
 
     case "sign-up": {
         const modalElement = document.getElementById("modal");
+        const successModalElement = document.getElementById("successModal");
         const formElement = document.getElementById("form");
         const modalFormElement = document.getElementById("modalForm");
         const modal = new Modal(modalElement);
+        const successModal = new Modal(successModalElement);
         const form = new Form(formElement, () => modal.showModal());
         const modalForm = new Form(modalFormElement, () => {
-            const header = "Success";
-            const sentences = [
-                "Account created successfully.",
-                "You will be redirected to the log in page shortly."
-            ];
-            const information = sentences.join(" ");
-            modal.changeModal(header, information);
+            modal.closeModal();
+            successModal.showModal();
             setTimeout(() => window.location.href = "log-in", 2000);
         });
         break;
@@ -67,19 +64,15 @@ switch (path) {
 
     case "forgot-password": {
         const modalElement = document.getElementById("modal");
+        const successModalElement = document.getElementById("successModal");
         const formElement = document.getElementById("form");
         const modalFormElement = document.getElementById("modalForm");
         const modal = new Modal(modalElement);
+        const successModal = new Modal(successModalElement);
         const form = new Form(formElement, () => modal.showModal());
         const modalForm = new Form(modalFormElement, () => {
-            const header = "Success";
-            const sentences = [
-                "Password recovery successful.",
-                "Check your notifications for more details.",
-                "You will be redirected to the log in page shortly."
-            ];
-            const information = sentences.join(" ");
-            modal.changeModal(header, information);
+            modal.closeModal();
+            successModal.showModal();
             setTimeout(() => window.location.href = "log-in", 2000);
         });
         break;
