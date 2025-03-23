@@ -126,6 +126,7 @@ switch (path) {
             "Your loan payment of ₱5,000 has been successfully processed."
         ];
         const entries = new Entries("inbox", inboxContainer, inboxEntries);
+        entries.createEntries();
         break;
     }
 
