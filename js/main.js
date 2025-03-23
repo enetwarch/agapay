@@ -3,9 +3,10 @@ import Modal from "./modules/modal.js";
 import Fields from "./modules/fields.js";
 import Entries from "./modules/entries.js";
 
+document.addEventListener("contextmenu", event => event.preventDefault());
+
 const mobile = window.matchMedia("(max-width: 640px)");
 mobile.addEventListener("change", event => handleWarning(event));
-document.addEventListener("contextmenu", event => event.preventDefault());
 window.addEventListener("load", () => handleWarning(mobile));
 
 function handleWarning(event) {
