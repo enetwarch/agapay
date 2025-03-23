@@ -79,6 +79,7 @@ switch (path) {
     }
 
     case "home": {
+        const actionContainer = document.getElementById("actionContainer");
         const actionFields = [
             [undefined, "fa-file-invoice-dollar", "Pay"],
             [undefined, "fa-mobile", "Load"],
@@ -89,7 +90,8 @@ switch (path) {
             [undefined, "fa-bitcoin-sign", "Crypto"],
             [undefined, "fa-ellipsis", "More"]
         ];
-        new Fields("action", actionFields);
+        const fields = new Fields("action", actionContainer, actionFields, path);
+        fields.createNestedFields();
         const modalElement = document.getElementById("modal");
         const modal = new Modal(modalElement);
         const balanceCardActionFields = document.querySelectorAll(".balance-card-action-field");
@@ -128,13 +130,15 @@ switch (path) {
     }
 
     case "profile": {
+        const menuContainer = document.getElementById("menuContainer");
         const menuFields = [
             [undefined, "fa-circle-check", "Account Verification"],
             [undefined, "fa-gear", "Setting"],
             [undefined, "fa-circle-question", "Help"],
             [undefined, "fa-right-from-bracket", "Log Out"]
         ];
-        const fields = new Fields("menu", menuFields);
+        const fields = new Fields("menu", menuContainer, menuFields, path);
+        fields.createNormalFields();
         break;
     }
 
@@ -146,6 +150,9 @@ switch (path) {
     case "scan":
     case "inbox":
     case "profile": {
+        const navContainer = document.createElement("div");
+        navContainer.classList.add("nav-container");
+        document.body.prepend(navContainer);
         const navFields = [
             ["home", "fa-house", "Home"],
             ["cards", "fa-credit-card", "Cards"],
@@ -153,7 +160,8 @@ switch (path) {
             ["inbox", "fa-envelope", "Inbox"],
             ["profile", "fa-user", "Profile"]
         ];
-        new Fields("nav", navFields);
+        const fields = new Fields("nav", navContainer, navFields, path);
+        fields.createNormalFields();
         break;
     }
 }
