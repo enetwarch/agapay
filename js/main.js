@@ -92,19 +92,6 @@ switch (path) {
         ];
         const fields = new Fields("action", actionContainer, actionFields, path);
         fields.createNestedFields();
-        const modalElement = document.getElementById("modal");
-        const modal = new Modal(modalElement);
-        const balanceCardActionFields = document.querySelectorAll(".balance-card-action-field");
-        const actionInnerFields = document.querySelectorAll(".action-inner-field");
-        const promoContainers = document.querySelectorAll(".promo-container");
-        const comingSoon = [
-            ...balanceCardActionFields,
-            ...actionInnerFields,
-            ...promoContainers
-        ];
-        comingSoon.forEach(element => {
-            element.addEventListener("click", () => modal.showModal());
-        });
         break;
     }
 
