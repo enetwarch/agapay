@@ -1,19 +1,11 @@
-export default function Entries(type, entries) {
-    if (!new.target && this.constructor === Entries) {
+export default function Entries(type, container, entries) {
+    if (!new.target) {
         throw Error(`Use the "new" keyword on the Fields constructor.`);
     }
     this.type = type;
+    this.container = container;
     this.entries = entries;
-    this.container = document.createElement("div");
-    this.container.classList.add(`${this.type}-container`);
-    switch (this.type) {
-        case "inbox": {
-            this.entries.forEach(entry => this.createEntry(entry));
-            const buttonContainerElement = document.getElementById("buttonContainer");
-            buttonContainerElement.after(this.container);
-            break;
-        }
-    }
+    this.entries.forEach(entry => this.createEntry(entry));
 }
 
 Entries.prototype.createEntry = function(entry) {

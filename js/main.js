@@ -94,11 +94,11 @@ switch (path) {
         const modal = new Modal(modalElement);
         const balanceCardActionFields = document.querySelectorAll(".balance-card-action-field");
         const actionInnerFields = document.querySelectorAll(".action-inner-field");
-        const promoContainer = document.querySelector(".promo-container");
+        const promoContainers = document.querySelectorAll(".promo-container");
         const comingSoon = [
             ...balanceCardActionFields,
             ...actionInnerFields,
-            promoContainer
+            ...promoContainers
         ];
         comingSoon.forEach(element => {
             element.addEventListener("click", () => modal.showModal());
@@ -107,6 +107,7 @@ switch (path) {
     }
 
     case "inbox": {
+        const inboxContainer = document.getElementById("inboxContainer");
         const inboxEntries = [
             "Purchased items worth ₱2,500 from SM Mall.",
             "Sent ₱1,200 to Jane Dela Cruz.",
@@ -122,7 +123,7 @@ switch (path) {
             "Spotify Premium failed to auto pay due to insufficient funds.",
             "Your loan payment of ₱5,000 has been successfully processed."
         ];
-        new Entries("inbox", inboxEntries);
+        const entries = new Entries("inbox", inboxContainer, inboxEntries);
         break;
     }
 
@@ -133,7 +134,7 @@ switch (path) {
             [undefined, "fa-circle-question", "Help"],
             [undefined, "fa-right-from-bracket", "Log Out"]
         ];
-        new Fields("menu", menuFields);
+        const fields = new Fields("menu", menuFields);
         break;
     }
 
