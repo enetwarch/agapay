@@ -124,7 +124,7 @@ switch (path) {
             [undefined, "fa-circle-check", "Account Verification"],
             [undefined, "fa-gear", "Setting"],
             [undefined, "fa-circle-question", "Help"],
-            [undefined, "fa-right-from-bracket", "Log Out"]
+            ["./", "fa-right-from-bracket", "Log Out"]
         ];
         const fields = new Fields("menu", menuContainer, menuFields, path);
         fields.createNormalFields();
