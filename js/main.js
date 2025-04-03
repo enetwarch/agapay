@@ -25,7 +25,8 @@ switch (page) {
         const modal = new Modal(modalElement);
 
         const formElement = document.getElementById("form");
-        const form = new Form(formElement, () => {
+        const form = new Form(formElement);
+        form.onSubmit(() => {
             const phoneNumber = document.getElementById("phoneNumber");
             const phoneNumberModal = document.getElementById("phoneNumberModal");
             phoneNumberModal.innerText = phoneNumber.value;
@@ -40,7 +41,8 @@ switch (page) {
         const successModal = new Modal(successModalElement);
 
         const modalFormElement = document.getElementById("modalForm");
-        const modalForm = new Form(modalFormElement, () => {
+        const modalForm = new Form(modalFormElement);
+        modalForm.onSubmit(() => {
             modal.close();
             successModal.show();
             setTimeout(() => window.location.href = "log-in", 2000);
@@ -54,7 +56,8 @@ switch (page) {
         const modal = new Modal(modalElement);
 
         const formElement = document.getElementById("form");
-        const form = new Form(formElement, () => {
+        const form = new Form(formElement);
+        form.onSubmit(() => {
             modal.show();
             setTimeout(() => window.location.href = "home", 2000);
         });
@@ -70,7 +73,8 @@ switch (page) {
         const successModal = new Modal(successModalElement);
 
         const formElement = document.getElementById("form");
-        const form = new Form(formElement, () => {
+        const form = new Form(formElement);
+        form.onSubmit(() => {
             const phoneNumber = document.getElementById("phoneNumber");
             const phoneNumberModal = document.getElementById("phoneNumberModal");
             phoneNumberModal.innerText = phoneNumber.value;
@@ -82,7 +86,8 @@ switch (page) {
         const resendCode = new Code(resendCodeElement);
 
         const modalFormElement = document.getElementById("modalForm");
-        const modalForm = new Form(modalFormElement, () => {
+        const modalForm = new Form(modalFormElement);
+        modalForm.onSubmit(() => {
             modal.close();
             successModal.show();
             setTimeout(() => window.location.href = "log-in", 2000);

@@ -1,175 +1,269 @@
-export default function Form(form, submit) {
+export default function Form(element, fieldQueries = "input", submitButtonQuery = `button[type="submit"]`, authenticationCodeQuery = ".form-field-code") {
     if (!new.target) {
         throw Error (`Use the "new" keyword on the Form constructor`);
     }
-    this.form = form;
-    this.submit = submit;
-    this.inputs = this.form.querySelectorAll("input");
-    this.inputs.forEach(input => this.constructInput(input));
-    this.codeNumbers = this.form.querySelectorAll(".form-field-code-input");
-    if (this.codeNumbers) new CodeNumbers(this.codeNumbers);
-    this.form.addEventListener("submit", event => this.validateForm(event));
+
+    if (!(element instanceof HTMLElement)) {
+        throw TypeError("element argument must be an HTML element.");
+    } else if (typeof fieldQueries !== "string") {
+        throw TypeError("fieldQueries argument must be a string.");
+    } else if (typeof submitButtonQuery !== "string") {
+        throw TypeError("submitButtonQuery argument must be a string.");
+    } else if (typeof authenticationCodeQuery !== "string") {
+        throw TypeError("authenticationCodeId argument must be a string.");
+    }
+
+    this.element = element;
+
+    this.fields = Array.from(this.element.querySelectorAll(fieldQueries));
+    if (this.fields.length === 0) {
+        throw Error(`element argument does not have fields with "${fieldQueries}" queries.`);
+    }
+
+    this.submitButton = this.element.querySelector(submitButtonQuery);
+    if (!this.submitButton) {
+        throw Error(`element argument does not have a submit button with "${submitButtonQuery}" query.`);
+    }
+
+    const authenticationCode = this.element.querySelector(authenticationCodeQuery);
+    if (authenticationCode) {
+        const authenticationCodeElements = Array.from(authenticationCode.querySelectorAll(":scope > *"));
+        new AuthenticationCode(authenticationCodeElements);
+    }
+
+    this.submitEvent = null;
+
+    this.fields.forEach(field => this.fieldFactory(field));
 }
 
-Form.prototype.constructInput = function(input) {
-    switch (input.id) {
-        case "phoneNumber": {
-            new PhoneNumber(input, this.form);
-            break;
-        }
-        case "password": {
-            new Password(input);
-            break;
-        }
-        case "confirmPassword": {
-            new ConfirmPassword(this.inputs, input, this.form);
-            break;
-        }
+Form.prototype.fieldFactory = function(field) {
+    if (!(field instanceof HTMLElement)) {
+        throw TypeError("field argument must be an HTML element.");
+    }
+
+    switch (field.id) {
+        case "phoneNumber": return new PhoneNumber(field);
+        case "password": return new Password(field);
+        case "confirmPassword": return new ConfirmPassword(field, this.getPasswordField());
     }
 }
 
-Form.prototype.validateForm = function(event) {
-    event.preventDefault();
-    if (this.form.checkValidity()) {
-        this.submit();
-    } else {
-        this.form.reportValidity();
-    }
+Form.prototype.getPasswordField = function() {
+    return this.fields.find(field => field.id === "password");
 }
 
-function PhoneNumber(input, form) {
+Form.prototype.onSubmit = function(submit) {
+    if (typeof submit !== "function") {
+        throw TypeError("submit argument must be a function.");
+    }
+
+    if (this.submitEvent) {
+        this.element.removeEventListener("submit", this.submitEvent);
+    }
+
+    this.submitEvent = event => {
+        event.preventDefault();
+
+        if (this.element.checkValidity()) {
+            const formData = new FormData(this.element);
+            submit(formData);
+        } else {
+            this.element.reportValidity();
+        }
+    }
+
+    this.element.addEventListener("submit", this.submitEvent);
+}
+
+function PhoneNumber(element) {
     if (!new.target) {
         throw Error(`Use the "new" keyword on the Number constructor.`);
     }
-    this.input = input;
-    this.minLength = 7;
-    this.maxLength = 15;
+
+    if (!(element instanceof HTMLElement)) {
+        throw TypeError("element argument must be an HTML element.");
+    } else if (element.type !== "number") {
+        throw TypeError("element argument must be a number type input.");
+    }
+
+    this.element = element;
+
     // Internationally, phone numbers have a minimum of 7 and a maximum of 15 characters.
     // Source: https://www.oreilly.com/library/view/regular-expressions-cookbook/9781449327453/ch04s03.html
-    this.input.addEventListener("input", () => this.manageInput());
-    form.addEventListener("submit", event => this.validateInput(event));
+    this.minLength = 7;
+    this.maxLength = 15;
+
+    this.element.addEventListener("input", this.validateInput.bind(this));
 }
 
-PhoneNumber.prototype.manageInput = function() {
-    this.input.setCustomValidity("");
-    if (this.input.value.length > this.maxLength) {
-        this.input.value = this.input.value.slice(0, this.maxLength);
+PhoneNumber.prototype.validateInput = function() {
+    if (this.element.value.length > this.maxLength) {
+        this.element.value = this.element.value.slice(0, this.maxLength);
     }
-}
 
-PhoneNumber.prototype.validateInput = function(event) {
-    event.preventDefault();
-    if (this.input.value.length < this.minLength) {
+    if (this.element.value.length < this.minLength) {
         const validity = `Minimum phone number character length is ${this.minLength}.`;
-        this.input.setCustomValidity(validity);
+        this.element.setCustomValidity(validity);
     } else {
-        this.input.setCustomValidity("");
+        this.element.setCustomValidity("");
     }
 }
 
-function Password(input) {
+function Password(element, viewClassList = ["form-field-password-view", "fa-solid", "fa-eye"]) {
     if (!new.target) {
         throw Error(`Use the "new" keyword on the Password constructor.`);
     }
-    this.input = input;
+
+    if (!(element instanceof HTMLElement)) {
+        throw TypeError("element argument must be an HTML element.");
+    } else if (element.type !== "password") {
+        throw TypeError("element argument must be a password type input.");
+    } else if (!Array.isArray(viewClassList)) {
+        throw TypeError("viewClassList argument must be an array.");
+    } else if (!viewClassList.every(className => typeof className === "string")) {
+        throw TypeError("viewClassList argument must contain string elements.");
+    }
+
+    this.element = element;
+
     const view = document.createElement("i");
-    view.classList.add("form-field-password-view", "fa-solid", "fa-eye");
+    view.classList.add(...viewClassList);
+
     this.view = view;
-    this.open = false;
-    this.input.addEventListener("input", () => this.attachView());
+    this.viewAttached = false;
+    this.viewOpen = false;
+
+    this.element.addEventListener("input", () => this.attachView());
     this.view.addEventListener("click", () => this.toggleView());
 }
 
 Password.prototype.attachView = function() {
-    if (this.input.value.length > 0) {
-        this.input.after(this.view);
+    if (this.element.value.length > 0) {
+        if (this.viewAttached) return;
+        
+        this.viewAttached = true;
+        this.element.after(this.view);
     } else {
+        this.viewAttached = false;
         this.view.remove();
-        if (this.open) this.toggleView();
+
+        if (this.viewOpen) {
+            this.toggleView();
+        }
     }
 }
 
-Password.prototype.toggleView = function() {
-    if (this.open) {
-        this.input.type = "password";
-        this.view.classList.remove("fa-eye-slash");
-        this.view.classList.add("fa-eye");
-        this.open = false;
+Password.prototype.toggleView = function(openClass = "fa-eye", closeClass = "fa-eye-slash") {
+    if (typeof openClass !== "string") {
+        throw TypeError("openClass argument must be a string.");
+    } else if (typeof closeClass !== "string") {
+        throw TypeError("closeClass argument must be a string.");
+    }
+
+    if (this.viewOpen) {
+        this.viewOpen = false;
+        this.element.type = "password";
+
+        this.view.classList.remove(closeClass);
+        this.view.classList.add(openClass);
     } else {
-        this.input.type = "text";
-        this.view.classList.remove("fa-eye");
-        this.view.classList.add("fa-eye-slash");
-        this.open = true;
+        this.viewOpen = true;
+        this.element.type = "text";
+
+        this.view.classList.remove(openClass);
+        this.view.classList.add(closeClass);
     }
 }
 
-function ConfirmPassword(inputs, input, form) {
+function ConfirmPassword(element, password) {
     if (!new.target) {
         throw Error(`Use the "new" keyword on the Number constructor.`);
     }
-    this.input = input;
-    this.password = Array.from(inputs).find(input => input.id === "password");
-    new Password(this.input);
-    this.input.addEventListener("input", () => this.manageInput());
-    form.addEventListener("submit", event => this.validateInput(event));
-}
 
-ConfirmPassword.prototype.manageInput = function() {
-    this.input.setCustomValidity("");
-    if (this.input.value.length > this.password.value.length) {
-        const length = this.password.value.length;
-        this.input.value = this.input.value.slice(0, length);
+    if (!(element instanceof HTMLElement)) {
+        throw TypeError("element argument must be an HTML element.");
+    } else if (element.type !== "password") {
+        throw TypeError("element argument must be a password type input.");
+    } else if (!(password instanceof HTMLElement)) {
+        throw TypeError("password argument must be an HTML element.");
+    } else if (password.type !== "password") {
+        throw TypeError("password argument must be a password type input.");
     }
+
+    this.element = element;
+    this.password = password;
+
+    new Password(this.element);
+    this.element.addEventListener("input", this.validateInput.bind(this));
 }
 
-ConfirmPassword.prototype.validateInput = function(event) {
-    event.preventDefault();
-    if (this.input.value !== this.password.value) {
-        this.input.setCustomValidity("Passwords do not match.");
+ConfirmPassword.prototype.validateInput = function() {
+    if (this.element.value !== this.password.value) {
+        this.element.setCustomValidity("Passwords do not match.");
     } else {
-        this.input.setCustomValidity("");
+        this.element.setCustomValidity("");
     }
 }
 
-function CodeNumbers(inputs) {
+function AuthenticationCode(elements) {
     if (!new.target) {
         throw Error(`Use the "new" keyword on the AuthenticationNumber constructor.`);
     }
-    this.inputs = inputs;
+
+    if (!Array.isArray(elements)) {
+        throw TypeError ("elements argument must be an array.");
+    } else if (!elements.every(element => element instanceof HTMLElement)) {
+        throw TypeError("elements argument must have HTML elements as elements.");
+    } else if (!elements.every(element => element.type === "number")) {
+        throw TypeError("elements argument must have HTML elements with number type inputs.");
+    }
+
+    this.elements = elements;
+    this.reversedElements = [...this.elements].reverse();
     this.maxLength = 1;
-    this.inputs.forEach(input => {
-        input.addEventListener("input", () => this.limitInput(input));
-        input.addEventListener("focus", () => this.changeFocus());
-        input.addEventListener("keydown", event => this.deleteNumber(event));
+
+    this.elements.forEach(element => {
+        element.addEventListener("input", () => this.limitInput(element));
+        element.addEventListener("focus", () => this.changeFocus());
+        element.addEventListener("keydown", event => this.deleteInput(event));
     });
 }
 
-CodeNumbers.prototype.limitInput = function(input) {
+AuthenticationCode.prototype.limitInput = function(element) {
+    if (!(element instanceof HTMLElement)) {
+        throw TypeError("element argument must be an HTML element.");
+    }
+
     const pattern = /^[0-9]$/;
-    if (!pattern.test(input.value)) {
-        const length = input.value.length;
-        input.value = input.value.slice(0, length - 1);
+    if (!pattern.test(element.value)) {
+        const length = element.value.length;
+        element.value = element.value.slice(0, length - 1);
     }
-    if (input.value.length === this.maxLength) this.changeFocus();
-}
 
-CodeNumbers.prototype.changeFocus = function() {
-    for (const input of this.inputs) {
-        if (input.value.length === this.maxLength) continue;
-        input.focus();
-        return;
+    if (element.value.length === this.maxLength) {
+        this.changeFocus();
     }
 }
 
-CodeNumbers.prototype.deleteNumber = function(event) {
-    if (event.code !== "Backspace") return; 
-    event.preventDefault();
-    const reversedInputsArray = Array.from(this.inputs).reverse();
-    for (const input of reversedInputsArray) {
-        if (input.value.length === this.maxLength) {
-            input.value = "";
+AuthenticationCode.prototype.changeFocus = function() {
+    for (const element of this.elements) {
+        if (element.value.length !== this.maxLength) {
+            element.focus();
             break;
         }
     }
+}
+
+AuthenticationCode.prototype.deleteInput = function(event) {
+    if (event.code !== "Backspace") return;
+    event.preventDefault();
+
+    for (const element of this.reversedElements) {
+        if (element.value.length === this.maxLength) {
+            element.value = "";
+            break;
+        }
+    }
+
     this.changeFocus();
 }
