@@ -1,5 +1,5 @@
 import elements from "./data/elements.json" with { "type": "json" };
-
+import Code from "./modules/code.js";
 import Warning from "./modules/warning.js";
 import Form from "./modules/form.js";
 import Modal from "./modules/modal.js";
@@ -22,44 +22,72 @@ switch (page) {
 
     case "sign-up": {
         const modalElement = document.getElementById("modal");
-        const successModalElement = document.getElementById("successModal");
-        const formElement = document.getElementById("form");
-        const modalFormElement = document.getElementById("modalForm");
         const modal = new Modal(modalElement);
+
+        const formElement = document.getElementById("form");
+        const form = new Form(formElement, () => {
+            const phoneNumber = document.getElementById("phoneNumber");
+            const phoneNumberModal = document.getElementById("phoneNumberModal");
+            phoneNumberModal.innerText = phoneNumber.value;
+
+            modal.show();
+        });
+
+        const resendCodeElement = document.getElementById("resendCode");
+        const resendCode = new Code(resendCodeElement);
+
+        const successModalElement = document.getElementById("successModal");
         const successModal = new Modal(successModalElement);
-        const form = new Form(formElement, () => modal.showModal());
+
+        const modalFormElement = document.getElementById("modalForm");
         const modalForm = new Form(modalFormElement, () => {
-            modal.closeModal();
-            successModal.showModal();
+            modal.close();
+            successModal.show();
             setTimeout(() => window.location.href = "log-in", 2000);
         });
+
         break;
     }
 
     case "log-in": {
         const modalElement = document.getElementById("modal");
-        const formElement = document.getElementById("form");
         const modal = new Modal(modalElement);
+
+        const formElement = document.getElementById("form");
         const form = new Form(formElement, () => {
-            modal.showModal();
+            modal.show();
             setTimeout(() => window.location.href = "home", 2000);
         });
+
         break;
     }
 
     case "forgot-password": {
         const modalElement = document.getElementById("modal");
-        const successModalElement = document.getElementById("successModal");
-        const formElement = document.getElementById("form");
-        const modalFormElement = document.getElementById("modalForm");
         const modal = new Modal(modalElement);
+
+        const successModalElement = document.getElementById("successModal");
         const successModal = new Modal(successModalElement);
-        const form = new Form(formElement, () => modal.showModal());
+
+        const formElement = document.getElementById("form");
+        const form = new Form(formElement, () => {
+            const phoneNumber = document.getElementById("phoneNumber");
+            const phoneNumberModal = document.getElementById("phoneNumberModal");
+            phoneNumberModal.innerText = phoneNumber.value;
+
+            modal.show();
+        });
+
+        const resendCodeElement = document.getElementById("resendCode");
+        const resendCode = new Code(resendCodeElement);
+
+        const modalFormElement = document.getElementById("modalForm");
         const modalForm = new Form(modalFormElement, () => {
-            modal.closeModal();
-            successModal.showModal();
+            modal.close();
+            successModal.show();
             setTimeout(() => window.location.href = "log-in", 2000);
         });
+
         break;
     }
 

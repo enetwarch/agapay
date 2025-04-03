@@ -1,59 +1,85 @@
-export default function Modal(modal) {
+export default function Modal(element, containerQuery = ".modal-container", closeButtonQuery = ".back") {
     if (!new.target) {
         throw Error(`Use the "new" keyword on the Modal constructor.`);
     }
-    this.modal = modal;
-    this.modalContainer = modal.querySelector(".modal-container");
-    this.modalClose = modal.querySelector("#modalClose");
-    if (this.modalClose) this.modalClose.addEventListener("click", () => this.modal.close());
-    this.phoneNumberModal = modal.querySelector("#phoneNumberModal");
-    this.resendCode = modal.querySelector("#resendCode");
-    if (this.resendCode) new ResendCode(this.resendCode);
-}
 
-Modal.prototype.showModal = function() {
-    if (this.phoneNumberModal) {
-        const phoneNumber = document.getElementById("phoneNumber");
-        this.phoneNumberModal.innerText = phoneNumber.value;
+    if (!(element instanceof HTMLElement)) {
+        throw TypeError("element argument must be an HTML element.");
+    } else if (typeof containerQuery !== "string") {
+        throw TypeError("containerQuery argument must be a string.");
+    } else if (typeof closeButtonQuery !== "string") {
+        throw TypeError("closeButtonQuery argument must be a string.");
     }
-    this.modal.showModal();
-}
 
-Modal.prototype.closeModal = function() {
-    this.modal.close();
-}
+    this.element = element;
 
-function ResendCode(resendCode) {
-    if (!new.target) {
-        throw Error(`Use the "new" keyword on the ResendCode constructor.`);
+    this.container = this.element.querySelector(containerQuery);
+    if (!this.container) {
+        throw TypeError(`element argument does not have a container with "${containerQuery}" query.`);
     }
-    this.resendCode = resendCode;
-    this.cooldownInterval;
-    this.onCooldown = false;
-    this.cooldownSeconds = 10;
-    this.resendCode.addEventListener("click", () => this.sendCode());
+
+    this.closeButton = this.element.querySelector(closeButtonQuery);
+    if (this.closeButton) {
+        this.closeButton.addEventListener("click", this.onCloseButtonClick.bind(this));
+    }
+
+    this.element.addEventListener("click", this.onOverlayClick.bind(this));
 }
 
-ResendCode.prototype.sendCode = function() {
-    if (this.onCooldown) return;
-    this.onCooldown = true;
-    this.resendCode.innerText = "Code sent successfully!";
-    setTimeout(() => {
-        this.startCooldown();
-    }, 2000);
+Modal.prototype.isShown = function() {
+    return this.shown;
 }
 
-ResendCode.prototype.startCooldown = function() {
-    this.cooldownInterval = setInterval(() => {
-        if (this.cooldownSeconds < 0) {
-            clearInterval(this.cooldownInterval);
-            this.onCooldown = false;
-            this.cooldownSeconds = 10;
-            this.resendCode.innerText = "Resend Code";
-            return;
-        }
-        const cooldownTimer = `Resend cooldown ${this.cooldownSeconds}s`;
-        this.resendCode.innerText = cooldownTimer;
-        this.cooldownSeconds--;
-    }, 1000);
+Modal.prototype.setShown = function(value) {
+    if (typeof value !== "boolean") {
+        throw TypeError("value argument must be a boolean.");
+    }
+
+    this.shown = value;
+}
+
+Modal.prototype.show = function() {
+    if (this.isShown()) return;
+
+    this.setShown(true);
+    this.element.dispatchEvent(new Event("show"));
+    this.element.showModal();
+}
+
+Modal.prototype.close = function() {
+    if (!this.isShown()) return;
+
+    this.setShown(false);
+    this.element.close();
+    this.element.dispatchEvent(new Event("close"));
+}
+
+Modal.prototype.addEventListener = function(type, callback) {
+    this.validateEventListenerArguments(type, callback);
+    this.element.addEventListener(type, callback);
+}
+
+Modal.prototype.removeEventListener = function(type, callback) {
+    this.validateEventListenerArguments(type, callback);
+    this.element.removeEventListener(type, callback);
+}
+
+Modal.prototype.validateEventListenerArguments = function(type, callback) {
+    if (typeof type !== "string") {
+        throw TypeError("type argument must be a string.");
+    } else if (!["show", "close"].includes(type)) {
+        throw TypeError(`type argument must only be "show" or "close".`);
+    } else if (typeof callback !== "function") {
+        throw TypeError("callback argument must be a function.");
+    }
+}
+
+Modal.prototype.onOverlayClick = function(event) {
+    if (event.target === this.element) {
+        this.close();
+    }
+}
+
+Modal.prototype.onCloseButtonClick = function() {
+    this.close();
 }
