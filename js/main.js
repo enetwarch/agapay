@@ -8,10 +8,10 @@ document.addEventListener("contextmenu", event => event.preventDefault());
 
 window.addEventListener("load", () => {
     const media = window.matchMedia("(max-width: 640px)");
-    const icon = "fa-mobile-screen";
+    const iconClass = "fa-mobile-screen";
     const message = "Please view on mobile";
 
-    const warning = new Warning(media, icon, message);
+    const warning = new Warning(media, iconClass, message);
 });
 
 let path = window.location.pathname;
@@ -99,7 +99,6 @@ switch (path) {
             "Your loan payment of ₱5,000 has been successfully processed."
         ];
         const entries = new Entries("inbox", inboxContainer, inboxEntries);
-        entries.createEntries();
         break;
     }
 
