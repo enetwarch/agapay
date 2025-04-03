@@ -1,3 +1,5 @@
+import elements from "./data/elements.json" with { "type": "json" };
+
 import Warning from "./modules/warning.js";
 import Form from "./modules/form.js";
 import Modal from "./modules/modal.js";
@@ -14,12 +16,9 @@ window.addEventListener("load", () => {
     const warning = new Warning(media, iconClass, message);
 });
 
-let path = window.location.pathname;
-path = path.split("/").slice(-1)[0];
-path = path.replace(".html", "");
-if (path === "") path = "agapay";
+const page = document.body.dataset.page;
 
-switch (path) {
+switch (page) {
 
     case "sign-up": {
         const modalElement = document.getElementById("modal");
@@ -66,75 +65,32 @@ switch (path) {
 
     case "home": {
         const actionContainer = document.getElementById("actionContainer");
-        const actionFields = [
-            [undefined, "fa-file-invoice-dollar", "Pay"],
-            [undefined, "fa-mobile", "Load"],
-            [undefined, "fa-ticket", "Voucher"],
-            [undefined, "fa-comments-dollar", "Send"],
-            [undefined, "fa-store", "Market"],
-            [undefined, "fa-gamepad", "Top Up"],
-            [undefined, "fa-bitcoin-sign", "Crypto"],
-            [undefined, "fa-ellipsis", "More"]
-        ];
-        const fields = new Fields("action", actionContainer, actionFields, path);
-        fields.createNestedFields();
+        const fields = new Fields("action", actionContainer, elements.fields.actions);
         break;
     }
 
     case "inbox": {
         const inboxContainer = document.getElementById("inboxContainer");
-        const inboxEntries = [
-            "Purchased items worth ₱2,500 from SM Mall.",
-            "Sent ₱1,200 to Jane Dela Cruz.",
-            "Purchase ₱100 mobile load for Globe Telecom.",
-            "Your transfer of ₱3,000 to Jollibee Store is pending...",
-            "Successfully paid ₱850 for your water bill.",
-            "Your ₱549 Netflix subscription has been renewed.",
-            "You've earned ₱100 cashback from your purchase at Lazada.",
-            "You paid ₱320 at Starbucks using QR code.",
-            "Your Meralco electricity bill of ₱2,780 is due in 3 days.",
-            "Congratulations! Your e-wallet account is now fully verified.",
-            "Thank you for donating ₱500 to the Philippine Red Cross.",
-            "Spotify Premium failed to auto pay due to insufficient funds.",
-            "Your loan payment of ₱5,000 has been successfully processed."
-        ];
-        const entries = new Entries("inbox", inboxContainer, inboxEntries);
+        const entries = new Entries("inbox", inboxContainer, elements.entries.inbox);
         break;
     }
 
     case "profile": {
         const menuContainer = document.getElementById("menuContainer");
-        const menuFields = [
-            [undefined, "fa-circle-check", "Account Verification"],
-            [undefined, "fa-gear", "Setting"],
-            [undefined, "fa-circle-question", "Help"],
-            ["./", "fa-right-from-bracket", "Log Out"]
-        ];
-        const fields = new Fields("menu", menuContainer, menuFields, path);
-        fields.createNormalFields();
+        const fields = new Fields("menu", menuContainer, elements.fields.menu);
         break;
     }
 
 }
 
-switch (path) {
+switch (page) {
     case "home":
     case "cards":
     case "scan":
     case "inbox":
     case "profile": {
-        const navContainer = document.createElement("div");
-        navContainer.classList.add("nav-container");
-        document.body.prepend(navContainer);
-        const navFields = [
-            ["home", "fa-house", "Home"],
-            ["cards", "fa-credit-card", "Cards"],
-            ["scan", "fa-qrcode", "Scan"],
-            ["inbox", "fa-envelope", "Inbox"],
-            ["profile", "fa-user", "Profile"]
-        ];
-        const fields = new Fields("nav", navContainer, navFields, path);
-        fields.createNormalFields();
+        const navContainer = document.getElementById("navContainer");
+        const fields = new Fields("nav", navContainer, elements.fields.nav);
         break;
     }
 }
