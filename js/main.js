@@ -1,3 +1,4 @@
+import Warning from "./modules/warning.js";
 import Form from "./modules/form.js";
 import Modal from "./modules/modal.js";
 import Fields from "./modules/fields.js";
@@ -5,29 +6,13 @@ import Entries from "./modules/entries.js";
 
 document.addEventListener("contextmenu", event => event.preventDefault());
 
-const mobile = window.matchMedia("(max-width: 640px)");
-mobile.addEventListener("change", event => handleWarning(event));
-window.addEventListener("load", () => handleWarning(mobile));
+window.addEventListener("load", () => {
+    const media = window.matchMedia("(max-width: 640px)");
+    const icon = "fa-mobile-screen";
+    const message = "Please view on mobile";
 
-function handleWarning(event) {
-    if (event.matches) {
-        const warning = document.querySelector(".warning");
-        if (warning) warning.remove();
-    } else {
-        const warning = document.createElement("div");
-        warning.classList.add("warning");
-        const warningContainer = document.createElement("div");
-        warningContainer.classList.add("warning-container");
-        const warningIcon = document.createElement("i");
-        warningIcon.classList.add("warning-icon", "fa-solid", "fa-mobile-screen");
-        const warningText = document.createElement("h1");
-        warningText.classList.add("warning-text");
-        warningText.innerText = "Please view on mobile";
-        warningContainer.append(warningIcon, warningText);
-        warning.appendChild(warningContainer);
-        document.body.appendChild(warning);
-    }
-}
+    const warning = new Warning(media, icon, message);
+});
 
 let path = window.location.pathname;
 path = path.split("/").slice(-1)[0];
