@@ -1,9 +1,8 @@
 "use client";
 
-import { Landmark } from "lucide-react";
-import { useEffect } from "react";
-
+import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 const config = Object.freeze({
   sessionKey: "accessed",
@@ -25,7 +24,7 @@ export default function Index(): React.JSX.Element {
 
   return (
     <main className="flex flex-col justify-center items-center w-full h-full p-4">
-      <Landmark size={128} strokeWidth={3} className="text-primary" />
+      <Image src="/favicon.svg" alt="logo" height={128} width={128} />
     </main>
   );
 }

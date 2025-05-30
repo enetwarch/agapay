@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "Agapay",
   icons: {
     icon: "/favicon.svg",
-    apple: "/favicon.ico",
+    apple: "/favicon.png",
   },
 };
 
