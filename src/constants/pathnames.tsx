@@ -4,6 +4,7 @@ export type TabPathname = (typeof tabPathnames)[number];
 export const tabPathnames = [
   "/home", // @/app/(tabs)/(pages)/home/page.tsx
   "/cards", // @/app/(tabs)/(pages)/cards/page.tsx
+  "/support", // @/app/(tabs)/(pages)/support/page.tsx
   "/inbox", // @/app/(tabs)/(pages)/inbox/page.tsx
   "/profile", // @/app/(tabs)/(pages)/profile/page.tsx
 ] as const;

@@ -30,7 +30,7 @@ export function Tab({ href, icon, text, className, isCurrentPage = false, ...pro
   return (
     <li
       className={cn(
-        "w-full h-full flex justify-center items-center",
+        "w-full flex justify-center items-center",
         isCurrentPage ? "text-primary" : "text-foreground",
         className,
       )}
