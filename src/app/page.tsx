@@ -20,11 +20,11 @@ export default function Index(): React.JSX.Element {
     const session: boolean = sessionItem ? (JSON.parse(sessionItem) as boolean) : false;
     sessionStorage.setItem(config.sessionKey, "true");
 
-    session ? router.push("/") : setTimeout(() => router.push("/"), config.delay);
+    session ? router.push("/home") : setTimeout(() => router.push("/home"), config.delay);
   }, [router]);
 
   return (
-    <main className="flex flex-col justify-center items-center">
+    <main className="flex flex-col justify-center items-center w-full h-full p-4">
       <Landmark size={128} strokeWidth={3} className="text-primary" />
     </main>
   );

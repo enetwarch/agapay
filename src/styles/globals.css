@@ -1,20 +1,26 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
 :root {
-  --background: #e5e5e5;
-  --foreground: #0a0a0a;
-  --primary: #7f1d1d;
+  --background: #ffffff;
+  --surface: #d8d8d9;
+  --foreground: #000000;
+  --primary: #9f4342;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --font-poppins: var(--font-poppins);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-poppins);
+@layer base {
+  * {
+    @apply focus-visible:outline-foreground;
+  }
+  body {
+    @apply bg-background text-foreground font-poppins;
+  }
 }
