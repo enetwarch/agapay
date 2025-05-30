@@ -2,24 +2,18 @@
 
 import { useEffect, useState } from "react";
 
-type MediaViewProps = {
-  mediaQuery: string;
-  children: React.ReactNode;
-};
-
-export default function MediaView({ mediaQuery, children }: MediaViewProps): React.ReactNode | null {
+export function useMediaQuery(query: string): boolean {
   const [matchesMedia, setMatchesMedia] = useState<boolean>(false);
 
   useEffect(() => {
-    const media: MediaQueryList = window.matchMedia(mediaQuery);
+    const media: MediaQueryList = window.matchMedia(query);
     const listener = (event: MediaQueryListEvent) => setMatchesMedia(event.matches);
 
     media.addEventListener("change", listener);
     setMatchesMedia(media.matches);
 
     return () => media.removeEventListener("change", listener);
-  }, [mediaQuery]);
+  }, [query]);
 
-  if (matchesMedia) return null;
-  return children;
+  return matchesMedia;
 }

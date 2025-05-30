@@ -4,7 +4,6 @@ import TabBar from "@/app/(tabs)/components/tab-bar";
 type TabsLayoutProps = {
   children: React.ReactNode;
 };
-
 export default function TabsLayout({ children }: TabsLayoutProps): React.JSX.Element {
   return (
     <div className="grow w-full flex flex-col">
