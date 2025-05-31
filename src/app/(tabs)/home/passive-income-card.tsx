@@ -1,24 +1,31 @@
-import { Card } from "@/components/ui/card";
+import {
+  Card,
+  CardAction,
+  CardActionIcon,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 import { faCircleInfo, faCircleUp } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 type PassiveIncomeCardProps = React.ComponentProps<typeof Card>;
 export default function PassiveIncomeCard(props: PassiveIncomeCardProps): React.JSX.Element {
   return (
-    <Card variant="surface" size="wfull" {...props}>
-      <div className="flex flex-col absolute top-4 left-4">
-        <h1 className="font-bold text-3xl">$0.1 per second</h1>
-        <p className="text-lg">$69 to upgrade</p>
-      </div>
-      <div className="flex justify-center items-center p-2 absolute bottom-4 right-4 bg-foreground rounded-md">
-        <div className="flex flex-col text-background justify-center items-center p-2 rounded-md active:bg-background/30 transition-colors duration-200">
-          <FontAwesomeIcon icon={faCircleInfo} className="text-xl" />
-        </div>
-        <div className="flex flex-col text-background justify-center items-center p-2 rounded-md active:bg-background/30 transition-colors duration-200">
-          <FontAwesomeIcon icon={faCircleUp} className="text-xl" />
-        </div>
-      </div>
+    <Card variant="surface" {...props}>
+      <CardHeader>
+        <CardTitle>$0.1 per second</CardTitle>
+        <CardDescription>$69 to upgrade</CardDescription>
+      </CardHeader>
+      <CardFooter>
+        <CardAction>
+          <CardActionIcon icon={faCircleInfo} />
+        </CardAction>
+        <CardAction>
+          <CardActionIcon icon={faCircleUp} />
+        </CardAction>
+      </CardFooter>
     </Card>
   );
 }
