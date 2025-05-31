@@ -39,8 +39,7 @@ export function Tab({ href, icon, text, className, isCurrentPage = false, ...pro
       <Link
         href={href}
         className={cn(
-          "flex flex-col justify-center items-center p-2 rounded-md aspect-square active:bg-primary/30",
-          "transition-colors",
+          "flex flex-col justify-center items-center p-2 rounded-md aspect-square active:bg-primary/30 transition-colors duration-200",
         )}
       >
         <FontAwesomeIcon icon={icon} className="text-xl" />

@@ -2,23 +2,23 @@
 @import "tw-animate-css";
 
 :root {
-  --background: #ffffff;
-  --surface: #d8d8d9;
-  --foreground: #000000;
-  --primary: #9f4342;
+  --color-background: #ffffff;
+  --color-surface: #d8d8d9;
+  --color-foreground: #000000;
+  --color-primary: #9f4342;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-surface: var(--surface);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-foreground: var(--color-foreground);
+  --color-primary: var(--color-primary);
   --font-poppins: var(--font-poppins);
 }
 
 @layer base {
   * {
-    @apply focus-visible:outline-foreground;
+    @apply border-none focus-visible:outline-foreground;
   }
   body {
     @apply bg-background text-foreground font-poppins;
