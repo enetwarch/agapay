@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 
-import MobileOnlyView from "@/app/components/mobile-only-view";
+import MobileOnly from "@/app/mobile-only";
 
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
@@ -30,7 +30,7 @@ export default function RootLayout({ children }: RootLayoutProps): React.JSX.Ele
   return (
     <html lang="en">
       <body className={`${poppins.variable} antialiased flex flex-col items-center justify-center min-h-screen`}>
-        <MobileOnlyView role="alert" className="fixed z-[9999]" />
+        <MobileOnly role="alert" className="fixed z-[9999]" />
         <div className="sm:hidden grow w-full flex flex-col items-center justify-center">{children}</div>
       </body>
     </html>

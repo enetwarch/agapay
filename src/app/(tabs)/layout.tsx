@@ -1,5 +1,5 @@
-import Header from "@/app/(tabs)/components/header";
-import TabBar from "@/app/(tabs)/components/tab-bar";
+import Header from "@/app/(tabs)/header";
+import TabBar from "@/app/(tabs)/tab-bar";
 
 type TabsLayoutProps = {
   children: React.ReactNode;

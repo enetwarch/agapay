@@ -1,6 +1,6 @@
 "use client";
 
-import { HeaderBackLink, Header as HeaderComponent, HeaderText } from "@/components/header";
+import { Header as HeaderComponent, HeaderText } from "@/components/header";
 
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
