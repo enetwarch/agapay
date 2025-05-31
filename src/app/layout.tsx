@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 
+import GlobalEffects from "@/app/global-effects";
 import MobileOnly from "@/app/mobile-only";
 
 import type { Metadata } from "next";
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: RootLayoutProps): React.JSX.Ele
       <body className={`${poppins.variable} antialiased flex flex-col items-center justify-center min-h-screen`}>
         <MobileOnly role="alert" className="fixed z-[9999]" />
         <div className="sm:hidden grow w-full flex flex-col items-center justify-center">{children}</div>
+        <GlobalEffects />
       </body>
     </html>
   );
