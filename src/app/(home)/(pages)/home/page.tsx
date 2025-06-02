@@ -3,7 +3,6 @@ import BalanceCard from "./components/balance-card";
 import PassiveIncomeCard from "./components/passive-income-card";
 
 import { Header, HeaderText } from "@/components/ui/header";
-import { Section } from "@/components/ui/section";
 
 import type { Metadata } from "next";
 
@@ -17,13 +16,13 @@ export default function Home(): React.JSX.Element {
       <Header>
         <HeaderText>Home</HeaderText>
       </Header>
-      <Section>
+      <section className="flex flex-col justify-center items-center w-full gap-4">
         <BalanceCard />
-      </Section>
-      <Section>
+      </section>
+      <section className="flex flex-col justify-center items-center w-full gap-4">
         <ActiveIncomeCard />
         <PassiveIncomeCard />
-      </Section>
+      </section>
     </>
   );
 }

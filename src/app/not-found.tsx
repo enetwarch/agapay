@@ -1,12 +1,11 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-
 import type { Pathname } from "@/constants/pathnames";
 
 import { faBan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function NotFound(): React.JSX.Element {
   const router = useRouter();
