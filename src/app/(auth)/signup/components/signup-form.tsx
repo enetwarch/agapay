@@ -1,5 +1,6 @@
 "use client";
 
+import { PasswordInput } from "@/components/password-input";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -33,6 +34,12 @@ type SignupFormProps = React.ComponentProps<"form">;
 export default function SignupForm({ className, ...props }: SignupFormProps): React.JSX.Element {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      username: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    },
   });
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
@@ -82,7 +89,7 @@ export default function SignupForm({ className, ...props }: SignupFormProps): Re
               <FormItem>
                 <FormLabel>Password</FormLabel>
                 <FormControl>
-                  <Input type="password" placeholder="****************" {...field} />
+                  <PasswordInput placeholder="****************" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -95,7 +102,7 @@ export default function SignupForm({ className, ...props }: SignupFormProps): Re
               <FormItem>
                 <FormLabel>Confirm Password</FormLabel>
                 <FormControl>
-                  <Input type="password" placeholder="****************" {...field} />
+                  <PasswordInput placeholder="****************" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -103,7 +110,9 @@ export default function SignupForm({ className, ...props }: SignupFormProps): Re
           />
         </div>
         <div className="w-full flex flex-col justify-center items-center gap-4">
-          <Button type="submit">Sign Up</Button>
+          <Button type="submit" className="w-full">
+            Sign Up
+          </Button>
         </div>
       </form>
     </Form>

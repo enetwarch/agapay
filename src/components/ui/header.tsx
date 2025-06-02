@@ -26,21 +26,6 @@ export function HeaderText({ className, ...props }: HeaderTextProps): React.JSX.
   );
 }
 
-type HeaderLinkProps = React.ComponentProps<typeof Link> & {
-  href: Pathname;
-};
-export function HeaderLink({ className, ...props }: HeaderLinkProps): React.JSX.Element {
-  return (
-    <Link
-      className={cn(
-        "flex items-center justify-center aspect-square p-4 rounded-full transition-colors active:bg-foreground/30",
-        className,
-      )}
-      {...props}
-    />
-  );
-}
-
 type HeaderIconProps = React.ComponentProps<typeof FontAwesomeIcon>;
 export function HeaderIcon({ className, ...props }: HeaderIconProps): React.JSX.Element {
   return <FontAwesomeIcon className={cn("text-xl", className)} {...props} />;

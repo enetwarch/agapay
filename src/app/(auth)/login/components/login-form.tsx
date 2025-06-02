@@ -1,5 +1,6 @@
 "use client";
 
+import { PasswordInput } from "@/components/password-input";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -23,6 +24,10 @@ type LoginFormProps = React.ComponentProps<"form">;
 export default function LoginForm({ className, ...props }: LoginFormProps): React.JSX.Element {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      email: "",
+      password: "",
+    },
   });
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
@@ -59,7 +64,7 @@ export default function LoginForm({ className, ...props }: LoginFormProps): Reac
               <FormItem>
                 <FormLabel>Password</FormLabel>
                 <FormControl>
-                  <Input type="password" placeholder="****************" {...field} />
+                  <PasswordInput placeholder="****************" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -67,8 +72,10 @@ export default function LoginForm({ className, ...props }: LoginFormProps): Reac
           />
         </div>
         <div className="w-full flex flex-col justify-center items-center gap-4">
-          <Button type="submit">Log in</Button>
-          <Button type="button" variant="ghost" asChild>
+          <Button type="submit" className="w-full">
+            Log in
+          </Button>
+          <Button type="button" variant="ghost" className="w-full" asChild>
             <Link href="/forgot-password">Forgot Password?</Link>
           </Button>
         </div>

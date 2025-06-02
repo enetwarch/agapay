@@ -39,12 +39,7 @@ export function TabBarLink({ className, ...props }: TabBarLinkProps): React.JSX.
   );
 }
 
-type TabBarIconProps = React.ComponentProps<typeof FontAwesomeIcon>;
-export function TabBarIcon({ className, ...props }: TabBarIconProps): React.JSX.Element {
-  return <FontAwesomeIcon className={cn("text-xl", className)} {...props} />;
-}
-
-type TabBarLabelProps = React.ComponentProps<"p">;
-export function TabBarLabel({ className, ...props }: TabBarLabelProps): React.JSX.Element {
+type TabBarTabLabelProps = React.ComponentProps<"p">;
+export function TabBarTabLabel({ className, ...props }: TabBarTabLabelProps): React.JSX.Element {
   return <p className={cn("text-sm", className)} {...props} />;
 }

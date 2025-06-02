@@ -16,10 +16,10 @@ export default function Auth(): React.JSX.Element {
         <figcaption className="text-primary font-bold text-4xl">Agapay</figcaption>
       </figure>
       <section aria-label="Button Group" className="w-full flex flex-col justify-center items-center gap-4">
-        <Button asChild>
+        <Button className="w-full" asChild>
           <Link href="/login">Log in</Link>
         </Button>
-        <Button asChild>
+        <Button className="w-full" asChild>
           <Link href="/signup">Sign up</Link>
         </Button>
       </section>

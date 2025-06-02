@@ -10,15 +10,16 @@ const buttonVariants = cva(
       variant: {
         primary: "bg-primary text-background shadow-xs active:opacity-70 transition-opacity",
         secondary: "bg-surface text-foreground shadow-xs active:bg-primary/30 transition-colors",
-        ghost: "bg-transparent text-primary active:bg-surface/70 transition-colors",
+        ghost: "bg-transparent text-primary active:bg-foreground/10 transition-colors",
       },
       size: {
-        wfull: "w-full py-4 px-8 text-lg font-medium",
+        default: "py-4 px-8 text-lg font-medium",
+        icon: "aspect-square p-4 rounded-full",
       },
     },
     defaultVariants: {
       variant: "primary",
-      size: "wfull",
+      size: "default",
     },
   },
 );

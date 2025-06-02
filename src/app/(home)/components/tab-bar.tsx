@@ -1,12 +1,12 @@
 "use client";
 
+import { Icon } from "@/components/ui/icon";
 import {
   TabBar as TabBarComponent,
-  TabBarIcon,
-  TabBarLabel,
   TabBarLink,
   TabBarList,
   TabBarListItem,
+  TabBarTabLabel,
 } from "@/components/ui/tab-bar";
 import { type Pathname, isTabPathname } from "@/constants/pathnames";
 
@@ -42,8 +42,8 @@ export default function TabBar(props: TabBarProps): React.JSX.Element {
         {tabs.map(({ href, icon, label }) => (
           <TabBarListItem key={href} className={pathname === href ? "text-primary" : "text-foreground"}>
             <TabBarLink href={href}>
-              <TabBarIcon icon={icon} />
-              <TabBarLabel>{label}</TabBarLabel>
+              <Icon icon={icon} />
+              <TabBarTabLabel>{label}</TabBarTabLabel>
             </TabBarLink>
           </TabBarListItem>
         ))}
