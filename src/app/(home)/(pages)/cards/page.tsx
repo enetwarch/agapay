@@ -1,3 +1,5 @@
+import { Header, HeaderText } from "@/components/ui/header";
+
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -5,5 +7,12 @@ export const metadata: Metadata = {
 };
 
 export default function Cards(): React.JSX.Element {
-  return <main>This is the cards page.</main>;
+  return (
+    <>
+      <Header>
+        <HeaderText>Cards</HeaderText>
+      </Header>
+      <main>This is the cards page.</main>
+    </>
+  );
 }
