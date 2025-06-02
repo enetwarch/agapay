@@ -1,10 +1,10 @@
-import LoginForm from "./components/login-form";
+import SignupForm from "./components/signup-form";
 
 import type { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Log in",
+  title: "Sign up",
 };
 
 export default function Login(): React.JSX.Element {
@@ -14,7 +14,7 @@ export default function Login(): React.JSX.Element {
         <Image src="/favicon.svg" alt="Agapay Logo" height={128} width={128} />
         <figcaption className="text-primary font-bold text-4xl">Agapay</figcaption>
       </figure>
-      <LoginForm className="grow" />
+      <SignupForm className="grow" />
     </main>
   );
 }

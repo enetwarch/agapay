@@ -6,21 +6,31 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-const formSchema = z.object({
-  email: z.string().email({
-    message: "Invalid email address.",
-  }),
-  password: z.string().min(1, {
-    message: "Password is required.",
-  }),
-});
+const formSchema = z
+  .object({
+    username: z.string().min(1, {
+      message: "Username is required.",
+    }),
+    email: z.string().email({
+      message: "Invalid email address.",
+    }),
+    password: z.string().min(1, {
+      message: "Password is required.",
+    }),
+    confirmPassword: z.string().min(1, {
+      message: "Confirm password is required.",
+    }),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Passwords do not match.",
+    path: ["confirmPassword"],
+  });
 
-type LoginFormProps = React.ComponentProps<"form">;
-export default function LoginForm({ className, ...props }: LoginFormProps): React.JSX.Element {
+type SignupFormProps = React.ComponentProps<"form">;
+export default function SignupForm({ className, ...props }: SignupFormProps): React.JSX.Element {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
   });
@@ -39,6 +49,19 @@ export default function LoginForm({ className, ...props }: LoginFormProps): Reac
         {...props}
       >
         <div className="w-full flex flex-col justify-center items-center gap-4">
+          <FormField
+            control={form.control}
+            name="username"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Username</FormLabel>
+                <FormControl>
+                  <Input type="text" placeholder="JohnDoe" autoComplete="on" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
           <FormField
             control={form.control}
             name="email"
@@ -65,12 +88,22 @@ export default function LoginForm({ className, ...props }: LoginFormProps): Reac
               </FormItem>
             )}
           />
+          <FormField
+            control={form.control}
+            name="confirmPassword"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Confirm Password</FormLabel>
+                <FormControl>
+                  <Input type="password" placeholder="****************" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
         </div>
         <div className="w-full flex flex-col justify-center items-center gap-4">
-          <Button type="submit">Log in</Button>
-          <Button type="button" variant="ghost" asChild>
-            <Link href="/forgot-password">Forgot Password?</Link>
-          </Button>
+          <Button type="submit">Sign Up</Button>
         </div>
       </form>
     </Form>
