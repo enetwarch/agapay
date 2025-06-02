@@ -1,6 +1,6 @@
-import ActiveIncomeCard from "@/app/(tabs)/home/active-income-card";
-import BalanceCard from "@/app/(tabs)/home/balance-card";
-import PassiveIncomeCard from "@/app/(tabs)/home/passive-income-card";
+import ActiveIncomeCard from "./components/active-income-card";
+import BalanceCard from "./components/balance-card";
+import PassiveIncomeCard from "./components/passive-income-card";
 
 import { Section } from "@/components/ui/section";
 

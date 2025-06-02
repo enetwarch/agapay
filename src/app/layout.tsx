@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 
-import GlobalEffects from "@/app/global-effects";
-import MobileOnly from "@/app/mobile-only";
+import GlobalEffects from "./components/global-effects";
+import MobileOnly from "./components/mobile-only";
 
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";

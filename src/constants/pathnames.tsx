@@ -2,11 +2,11 @@
 
 export type TabPathname = (typeof tabPathnames)[number];
 export const tabPathnames = [
-  "/home", // @/app/(tabs)/home/page.tsx
-  "/cards", // @/app/(tabs)/cards/page.tsx
-  "/support", // @/app/(tabs)/support/page.tsx
-  "/inbox", // @/app/(tabs)/inbox/page.tsx
-  "/profile", // @/app/(tabs)/profile/page.tsx
+  "/home", // @/app/(tabs)/(pages)/home/page.tsx
+  "/cards", // @/app/(tabs)/(pages)/cards/page.tsx
+  "/support", // @/app/(tabs)/(pages)/support/page.tsx
+  "/inbox", // @/app/(tabs)/(pages)/inbox/page.tsx
+  "/profile", // @/app/(tabs)/(pages)/profile/page.tsx
 ] as const;
 
 export function isTabPathname(value: string): value is TabPathname {
@@ -16,7 +16,7 @@ export function isTabPathname(value: string): value is TabPathname {
 export type Pathname = (typeof pathnames)[number];
 export const pathnames = [
   "/", // @/app/page.tsx
-  ...tabPathnames, // @/app/(tabs)/
+  ...tabPathnames, // @/app/(tabs)/(pages)/
 ] as const;
 
 export function isPathname(value: string): value is Pathname {
