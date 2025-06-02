@@ -30,9 +30,9 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps): React.JSX.Element {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} antialiased flex flex-col items-center justify-center min-h-screen`}>
+      <body className={`${poppins.variable} antialiased flex flex-col items-center justify-center min-h-screen w-full`}>
         <MobileOnly role="alert" className="fixed z-[9999]" />
-        <div className="sm:hidden grow w-full flex flex-col items-center justify-center">{children}</div>
+        <div className="sm:hidden grow w-full h-full flex flex-col items-center justify-center">{children}</div>
         <GlobalEffects />
       </body>
     </html>
