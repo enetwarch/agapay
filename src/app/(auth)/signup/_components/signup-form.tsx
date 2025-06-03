@@ -5,6 +5,8 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { PasswordInput } from "@/components/ui/input";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
+import { useDialogContext } from "../_hooks/dialog-context";
+import { useEmailContext } from "../_hooks/email-context";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -15,9 +17,14 @@ const formSchema = z
     username: z.string().min(1, {
       message: "Username is required.",
     }),
-    email: z.string().email({
-      message: "Invalid email address.",
-    }),
+    email: z
+      .string()
+      .min(1, {
+        message: "Email address required",
+      })
+      .email({
+        message: "Invalid email address.",
+      }),
     password: z.string().min(1, {
       message: "Password is required.",
     }),
@@ -42,9 +49,12 @@ export default function SignupForm({ className, ...props }: SignupFormProps): Re
     },
   });
 
+  const { setOpen } = useDialogContext();
+  const { setEmail } = useEmailContext();
+
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    // TODO: Add a backend system to handle these values
-    console.log(values);
+    setOpen(true);
+    setEmail(values.email);
   };
 
   return (

@@ -30,7 +30,7 @@ const FormFieldContext = React.createContext<FormFieldContextValue>({} as FormFi
 export function FormField<
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
->({ ...props }: ControllerProps<TFieldValues, TName>) {
+>({ ...props }: ControllerProps<TFieldValues, TName>): React.JSX.Element {
   return (
     <FormFieldContext.Provider value={{ name: props.name }}>
       <Controller {...props} />
@@ -69,7 +69,7 @@ type FormItemContextValue = {
 const FormItemContext = React.createContext<FormItemContextValue>({} as FormItemContextValue);
 
 type FormItemProps = React.ComponentProps<"div">;
-export function FormItem({ className, ...props }: FormItemProps) {
+export function FormItem({ className, ...props }: FormItemProps): React.JSX.Element {
   const id = React.useId();
 
   return (
@@ -80,7 +80,7 @@ export function FormItem({ className, ...props }: FormItemProps) {
 }
 
 type FormLabelProps = React.ComponentProps<typeof LabelPrimitive.Root>;
-export function FormLabel({ className, ...props }: FormLabelProps) {
+export function FormLabel({ className, ...props }: FormLabelProps): React.JSX.Element {
   const { error, formItemId } = useFormField();
 
   return (
@@ -89,7 +89,7 @@ export function FormLabel({ className, ...props }: FormLabelProps) {
 }
 
 type FormControlProps = React.ComponentProps<typeof Slot>;
-export function FormControl({ ...props }: FormControlProps) {
+export function FormControl({ ...props }: FormControlProps): React.JSX.Element {
   const { error, formItemId, formDescriptionId, formMessageId } = useFormField();
 
   return (
@@ -104,7 +104,7 @@ export function FormControl({ ...props }: FormControlProps) {
 }
 
 type FormMessageProps = React.ComponentProps<"p">;
-export function FormMessage({ className, ...props }: FormMessageProps) {
+export function FormMessage({ className, ...props }: FormMessageProps): React.JSX.Element | null {
   const { error, formMessageId } = useFormField();
   const body = error ? String(error?.message ?? "") : props.children;
 
@@ -113,7 +113,14 @@ export function FormMessage({ className, ...props }: FormMessageProps) {
     <p
       data-slot="form-message"
       id={formMessageId}
-      className={cn("text-sm font-medium inline-flex w-full text-right justify-end", className)}
+      data-visible={!!error}
+      className={cn(
+        "overflow-hidden transition-all duration-300 ease-in-out",
+        "text-sm font-medium inline-flex w-full text-right text-primary justify-end -z-1",
+        "data-[visible=true]:animate-in data-[visible=true]:max-h-full data-[visible=true]:slide-in-from-top",
+        "data-[visible=false]:animate-out data-[visible=false]:max-h-0 data-[visible=false]:slide-out-to-top",
+        className,
+      )}
       {...props}
     >
       {body}

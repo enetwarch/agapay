@@ -1,4 +1,7 @@
+import EmailVerificationDialog from "./_components/email-verification-dialog";
 import SignupForm from "./_components/signup-form";
+import { DialogContextProvider } from "./_hooks/dialog-context";
+import { EmailContextProvider } from "./_hooks/email-context";
 
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -14,7 +17,12 @@ export default function Signup(): React.JSX.Element {
         <Image src="/favicon.svg" alt="Agapay Logo" height={128} width={128} />
         <figcaption className="text-primary font-bold text-4xl">Agapay</figcaption>
       </figure>
-      <SignupForm className="grow" />
+      <EmailContextProvider>
+        <DialogContextProvider>
+          <SignupForm className="grow" />
+          <EmailVerificationDialog />
+        </DialogContextProvider>
+      </EmailContextProvider>
     </main>
   );
 }

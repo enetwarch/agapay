@@ -15,7 +15,7 @@ export function Input({ className, ...props }: InputProps): React.JSX.Element {
       className={cn(
         "bg-surface flex p-4 text-lg rounded-md text-foreground",
         "placeholder:font-normal placeholder:text-foreground/50",
-        "outline-3 outline-transparent focus:outline-primary transition-colors duration-200",
+        "outline-2 outline-transparent focus:outline-foreground transition-colors duration-200",
         className,
       )}
       {...props}
@@ -51,18 +51,20 @@ export function PasswordInput({ className, onChange, ...props }: PasswordInputPr
         }}
         {...props}
       />
-      {hasEye && (
-        <Button
-          type="button"
-          variant="ghost"
-          size="icon"
-          onClick={() => setVisible((v) => !v)}
-          aria-label={visible ? "Hide password" : "Show password"}
-          className="absolute right-0 text-foreground"
-        >
-          <Icon icon={visible ? faEyeSlash : faEye} />
-        </Button>
-      )}
+      <Button
+        type="button"
+        variant="ghost"
+        size="icon"
+        disabled={!hasEye}
+        onClick={() => setVisible((v) => !v)}
+        aria-label={visible ? "Hide password" : "Show password"}
+        className={cn(
+          "absolute right-2 text-foreground",
+          "disabled:opacity-0 opacity-100 transition-opacity duration-200",
+        )}
+      >
+        <Icon icon={visible ? faEyeSlash : faEye} />
+      </Button>
     </div>
   );
 }

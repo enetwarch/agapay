@@ -18,7 +18,7 @@
 
 @layer base {
   * {
-    @apply border-none focus-visible:outline-foreground;
+    @apply border-none outline-2 outline-transparent focus-visible:outline-foreground transition-colors duration-200;
   }
   body {
     @apply bg-background text-foreground font-poppins;
