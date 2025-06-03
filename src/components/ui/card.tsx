@@ -3,7 +3,7 @@ import { type VariantProps, cva } from "class-variance-authority";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const cardVariants = cva(
+export const cardVariants = cva(
   "bg-primary text-card-foreground flex flex-col rounded-xl shadow-md shadow-black/30 relative duration-200 overflow-hidden",
   {
     variants: {

@@ -1,14 +1,13 @@
 import type { Pathname } from "@/constants/pathnames";
 import { cn } from "@/lib/utils";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
 type TabBarProps = React.ComponentProps<"nav">;
 export function TabBar({ className, ...props }: TabBarProps): React.JSX.Element {
   return (
     <nav
-      className={cn("w-full bg-surface flex items-center justify-center p-4 shadow-md shadow-black/30", className)}
+      className={cn("w-full bg-surface flex items-center justify-center p-2 shadow-md shadow-black/30", className)}
       {...props}
     />
   );

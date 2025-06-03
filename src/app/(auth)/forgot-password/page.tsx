@@ -1,4 +1,4 @@
-import ForgotPasswordForm from "./components/forgot-password-form";
+import ForgotPasswordForm from "./_components/forgot-password-form";
 
 import type { Metadata } from "next";
 import Image from "next/image";

@@ -1,4 +1,4 @@
-import SignupForm from "./components/signup-form";
+import SignupForm from "./_components/signup-form";
 
 import type { Metadata } from "next";
 import Image from "next/image";

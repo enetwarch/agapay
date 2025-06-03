@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 
-import GlobalEffects from "./components/global-effects";
-import MobileOnly from "./components/mobile-only";
+import GlobalEffects from "./_components/global-effects";
+import MobileOnly from "./_components/mobile-only";
 
 import { config } from "@fortawesome/fontawesome-svg-core";
 import type { Metadata } from "next";

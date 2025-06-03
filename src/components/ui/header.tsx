@@ -1,8 +1,6 @@
-import type { Pathname } from "@/constants/pathnames";
 import { cn } from "@/lib/utils";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
 
 type HeaderProps = React.ComponentProps<"header">;
 export function Header({ className, ...props }: HeaderProps): React.JSX.Element {

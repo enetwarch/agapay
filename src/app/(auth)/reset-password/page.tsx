@@ -1,4 +1,4 @@
-import ResetPasswordForm from "./components/reset-password-form";
+import ResetPasswordForm from "./_components/reset-password-form";
 
 import type { Metadata } from "next";
 import Image from "next/image";

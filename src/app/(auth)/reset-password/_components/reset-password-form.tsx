@@ -1,8 +1,8 @@
 "use client";
 
-import { PasswordInput } from "@/components/password-input";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { PasswordInput } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 
 import { zodResolver } from "@hookform/resolvers/zod";
