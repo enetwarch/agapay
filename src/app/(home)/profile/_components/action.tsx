@@ -30,7 +30,7 @@ export default function Action({ ...props }: ActionProps): React.JSX.Element {
 
   return (
     <article className={cn(actionVariants({ variant, size, className }))} {...props}>
-      <FontAwesomeIcon icon={icon} className="text-lg" />
+      <FontAwesomeIcon icon={icon} className="text-xl" />
       <div className="w-full flex flex-col">
         <p className="font-medium">{label}</p>
       </div>

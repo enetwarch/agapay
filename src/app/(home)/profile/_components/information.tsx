@@ -31,7 +31,7 @@ export default function Information({ ...props }: InformationProps): React.JSX.E
 
   return (
     <article className={cn(informationVariants({ variant, size, className }))} {...props}>
-      <FontAwesomeIcon icon={icon} className="text-lg" />
+      <FontAwesomeIcon icon={icon} className="text-xl" />
       <div className="w-full flex flex-col">
         <p className="font-medium">{title}</p>
         <p className="opacity-70 text-sm">{description}</p>

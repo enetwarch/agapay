@@ -19,7 +19,7 @@ export default function Settings({ ...props }: SettingsProps): React.JSX.Element
       )}
       {...props}
     >
-      <FontAwesomeIcon icon={icon} className="text-lg" />
+      <FontAwesomeIcon icon={icon} className="text-xl" />
       <p className="w-full font-medium">{label}</p>
       <Switch />
     </article>
