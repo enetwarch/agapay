@@ -25,9 +25,7 @@ type ActionProps = Omit<React.ComponentProps<"article">, "children"> &
     icon: IconProp;
     label: string;
   };
-export default function Action({ ...props }: ActionProps): React.JSX.Element {
-  const { variant, size, className, icon, label } = props;
-
+export default function Action({ variant, size, className, icon, label, ...props }: ActionProps): React.JSX.Element {
   return (
     <article className={cn(actionVariants({ variant, size, className }))} {...props}>
       <FontAwesomeIcon icon={icon} className="text-xl" />

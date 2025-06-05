@@ -26,9 +26,15 @@ type InformationProps = Omit<React.ComponentProps<"article">, "children"> &
     title: string;
     description: string;
   };
-export default function Information({ ...props }: InformationProps): React.JSX.Element {
-  const { variant, size, className, icon, title, description } = props;
-
+export default function Information({
+  variant,
+  size,
+  className,
+  icon,
+  title,
+  description,
+  ...props
+}: InformationProps): React.JSX.Element {
   return (
     <article className={cn(informationVariants({ variant, size, className }))} {...props}>
       <FontAwesomeIcon icon={icon} className="text-xl" />

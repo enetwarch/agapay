@@ -37,19 +37,19 @@ export default function Inbox(): React.JSX.Element {
           <Entry
             title="Milestone Reached"
             body="Congratulations on reaching +50% Prestige Boost! This will upgrade the looks of your prestige card to Silver."
-            read
+            isRead
           />
           <Entry
             title="Support Appreciation"
             body="Thanks for buying me a coffee! You will be granted *10,000 prestige points"
-            read
+            isRead
           />
           <Entry
             title="Prestige Unlocked"
             body="You can now Prestige and restart with powerful bonuses. Check out the prestige tap and press the card to proceed."
-            read
+            isRead
           />
-          <Entry title="Achievement" body="You've tapped 1,000,000 times. Your finger deserves a raise." read />
+          <Entry title="Achievement" body="You've tapped 1,000,000 times. Your finger deserves a raise." isRead />
         </section>
       </main>
       <TabBar currentPage="/inbox" />

@@ -8,9 +8,7 @@ type SettingsProps = Omit<React.ComponentProps<"article">, "children"> & {
   icon: IconProp;
   label: string;
 };
-export default function Settings({ ...props }: SettingsProps): React.JSX.Element {
-  const { icon, label, className } = props;
-
+export default function Settings({ icon, label, className, ...props }: SettingsProps): React.JSX.Element {
   return (
     <article
       className={cn(
