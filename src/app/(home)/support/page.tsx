@@ -16,7 +16,7 @@ export default function Support(): React.JSX.Element {
       <main className="h-full w-full flex-1 flex flex-col items-center px-4 gap-8 pb-24">
         <Brand />
         <div className="max-h-full flex flex-col justify-center items-center overflow-y-scroll gap-8">
-          <section className="w-full flex flex-col justify-center items-center gap-4">
+          <section className="w-full flex flex-col justify-center items-center px-4 gap-4">
             <p className="text-center">
               This simple clicker game is made by a solo dev as a hobby project. Consider contributing or supporting me
               if you want to see more projects like this.
