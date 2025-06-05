@@ -16,7 +16,7 @@ export function isAuthPathname(value: string): value is AuthPathname {
 export type HomePathname = (typeof homePathnames)[number];
 export const homePathnames = [
   "/home", // @/app/(home)/(pages)/home/page.tsx
-  "/cards", // @/app/(home)/(pages)/cards/page.tsx
+  "/prestige", // @/app/(home)/(pages)/prestige/page.tsx
   "/support", // @/app/(home)/(pages)/support/page.tsx
   "/inbox", // @/app/(home)/(pages)/inbox/page.tsx
   "/profile", // @/app/(home)/(pages)/profile/page.tsx
