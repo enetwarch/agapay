@@ -1,4 +1,4 @@
-import Header from "../_components/header";
+import Header from "@/components/header";
 import TabBar from "../_components/tab-bar";
 import ActiveIncomeCard from "./_components/active-income-card";
 import BalanceCard from "./_components/balance-card";

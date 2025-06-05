@@ -1,4 +1,4 @@
-import Header from "../_components/header";
+import Header from "@/components/header";
 import TabBar from "../_components/tab-bar";
 
 import type { Metadata } from "next";
