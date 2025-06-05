@@ -20,7 +20,7 @@ const actionVariants = cva("flex justify-center items-center first:rounded-t-md 
   },
 });
 
-type ActionProps = React.ComponentProps<"article"> &
+type ActionProps = Omit<React.ComponentProps<"article">, "children"> &
   VariantProps<typeof actionVariants> & {
     icon: IconProp;
     label: string;

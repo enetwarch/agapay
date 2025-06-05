@@ -24,9 +24,12 @@
 
 @layer base {
   * {
-    @apply border-none outline-2 outline-transparent focus-visible:outline-foreground transition-colors duration-200;
+    @apply border-none;
+    @apply outline-2 outline-transparent focus-visible:outline-foreground;
+    @apply transition-colors duration-200;
   }
   body {
-    @apply bg-background text-foreground font-poppins;
+    @apply bg-background text-foreground;
+    @apply font-poppins;
   }
 }

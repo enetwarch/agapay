@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-type EntryProps = React.ComponentProps<"article"> & {
+type EntryProps = Omit<React.ComponentProps<"article">, "children"> & {
   title: string;
   body: string;
   read?: boolean;
@@ -13,7 +13,6 @@ export default function Entry({ ...props }: EntryProps): React.JSX.Element {
 
   return (
     <article
-      {...(read ? { "data-read": true } : {})}
       className={cn(
         "relative flex flex-col justify-center items-center p-4 bg-surface rounded-md",
         "active:bg-primary/30 transition-color duration-200",

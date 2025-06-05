@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import type { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-type SettingsProps = React.ComponentProps<"article"> & {
+type SettingsProps = Omit<React.ComponentProps<"article">, "children"> & {
   icon: IconProp;
   label: string;
 };

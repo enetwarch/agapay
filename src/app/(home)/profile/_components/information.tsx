@@ -20,7 +20,7 @@ const informationVariants = cva("flex justify-center items-center first:rounded-
   },
 });
 
-type InformationProps = React.ComponentProps<"article"> &
+type InformationProps = Omit<React.ComponentProps<"article">, "children"> &
   VariantProps<typeof informationVariants> & {
     icon: IconProp;
     title: string;
