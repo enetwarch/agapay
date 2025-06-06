@@ -4,14 +4,14 @@ import { type VariantProps, cva } from "class-variance-authority";
 import type { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const informationVariants = cva("flex justify-center items-center first:rounded-t-md last:rounded-b-md duration-200", {
+const informationVariants = cva("flex items-center justify-center duration-200 first:rounded-t-md last:rounded-b-md", {
   variants: {
     variant: {
       primary: "bg-primary text-primary-foreground transition-opacity active:opacity-70",
       secondary: "bg-surface text-foreground shadow-xs transition-colors active:bg-primary/30",
     },
     size: {
-      default: "w-full py-4 px-6 gap-4",
+      default: "w-full gap-4 px-6 py-4",
     },
   },
   defaultVariants: {
@@ -38,9 +38,9 @@ export default function Information({
   return (
     <article className={cn(informationVariants({ variant, size, className }))} {...props}>
       <FontAwesomeIcon icon={icon} className="text-xl" />
-      <div className="w-full flex flex-col">
+      <div className="flex w-full flex-col">
         <p className="font-medium">{title}</p>
-        <p className="opacity-70 text-sm">{description}</p>
+        <p className="text-sm opacity-70">{description}</p>
       </div>
     </article>
   );

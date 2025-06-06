@@ -15,20 +15,17 @@ type TabBarProps = Omit<React.ComponentProps<"nav">, "children"> & {
 };
 export default function TabBar({ tabs, className, ...props }: TabBarProps): React.JSX.Element {
   return (
-    <nav className={cn("w-full bg-surface flex items-center justify-center p-4 rounded-t-xl", className)} {...props}>
-      <ul className="w-full h-full flex items-center justify-around">
+    <nav className={cn("flex w-full items-center justify-center rounded-t-xl bg-surface p-4", className)} {...props}>
+      <ul className="flex h-full w-full items-center justify-around">
         {tabs.map(({ href, icon, label, isCurrentPage = false }) => (
-          <li key={href} className="w-full flex justify-center items-center h-full rounded-md">
+          <li key={href} className="flex h-full w-full items-center justify-center rounded-md">
             <Link
               href={href}
               aria-current={isCurrentPage ? "page" : undefined}
-              className={cn(
-                "flex flex-col justify-center items-center p-2 rounded-md active:bg-primary/30 transition-colors duration-200",
-                "aria-[current=page]:text-background aria-[current=page]:bg-primary",
-              )}
+              className="flex flex-col items-center justify-center rounded-md p-2 transition-colors duration-200 active:bg-primary/30 aria-[current=page]:bg-primary aria-[current=page]:text-background"
             >
               <FontAwesomeIcon icon={icon} className="text-lg" />
-              <p className="text-xs font-medium">{label}</p>
+              <p className="font-medium text-xs">{label}</p>
             </Link>
           </li>
         ))}

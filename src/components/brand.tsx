@@ -8,9 +8,9 @@ type BrandProps = React.ComponentProps<"section"> & {
 };
 export default function Brand({ hasText = true, className, ...props }: BrandProps): React.JSX.Element {
   return (
-    <section className={cn("w-full flex flex-col justify-center items-center gap-4 p-4", className)} {...props}>
-      <FontAwesomeIcon icon={faBuildingColumns} className="text-primary min-h-48 w-auto" />
-      <h2 className="text-primary font-bold">Agapay</h2>
+    <section className={cn("flex w-full flex-col items-center justify-center gap-4 p-4", className)} {...props}>
+      <FontAwesomeIcon icon={faBuildingColumns} className="text-9xl text-primary" />
+      <h2 className="font-bold text-primary">Agapay</h2>
     </section>
   );
 }

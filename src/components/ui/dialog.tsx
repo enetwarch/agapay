@@ -34,8 +34,7 @@ export function DialogOverlay({ className, ...props }: DialogOverlayProps) {
     <DialogPrimitive.Overlay
       data-slot="dialog-overlay"
       className={cn(
-        "fixed inset-0 z-50 bg-black/50",
-        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 ",
+        "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/50 data-[state=closed]:animate-out data-[state=open]:animate-in",
         className,
       )}
       {...props}
@@ -53,8 +52,7 @@ export function DialogContent({ className, children, showCloseButton = true, ...
       <DialogPrimitive.Content
         data-slot="dialog-content"
         className={cn(
-          "bg-background fixed top-[50%] left-[50%] z-50 flex flex-col w-full translate-x-[-50%] translate-y-[-50%] max-w-[calc(100%-2rem)] gap-4 rounded-md p-4 shadow-lg",
-          "data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 duration-200",
+          "data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 fixed top-[50%] left-[50%] z-50 flex w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] flex-col gap-4 rounded-md bg-background p-4 shadow-lg duration-200 data-[state=closed]:animate-out data-[state=open]:animate-in",
           className,
         )}
         {...props}
@@ -64,7 +62,7 @@ export function DialogContent({ className, children, showCloseButton = true, ...
           <Button variant="ghost" size="icon" asChild>
             <DialogPrimitive.Close
               data-slot="dialog-close"
-              className="absolute top-4 right-4 rounded-full aspect-square w-4 h-4 flex justify-center items-center"
+              className="absolute top-4 right-4 flex aspect-square h-4 w-4 items-center justify-center rounded-full"
             >
               <FontAwesomeIcon icon={faXmark} />
               <span className="sr-only">Close</span>
@@ -103,7 +101,7 @@ export function DialogTitle({ className, ...props }: DialogTitleProps) {
   return (
     <DialogPrimitive.Title
       data-slot="dialog-title"
-      className={cn("text-lg leading-none font-semibold", className)}
+      className={cn("font-semibold text-lg leading-none", className)}
       {...props}
     />
   );
@@ -114,7 +112,7 @@ export function DialogDescription({ className, ...props }: DialogDescriptionProp
   return (
     <DialogPrimitive.Description
       data-slot="dialog-description"
-      className={cn("w-full bg-primary/10 text-primary p-2 rounded-md text-sm", className)}
+      className={cn("w-full rounded-md bg-primary/10 p-2 text-primary text-sm", className)}
       {...props}
     />
   );

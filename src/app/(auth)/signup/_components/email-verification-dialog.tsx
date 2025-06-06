@@ -47,12 +47,12 @@ export default function EmailVerificationDialog({ ...props }: EmailVerificationD
           <DialogTitle>Email Verification</DialogTitle>
         </DialogHeader>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="w-full flex flex-col items-center gap-4" noValidate>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="flex w-full flex-col items-center gap-4" noValidate>
             <FormField
               control={form.control}
               name="code"
               render={({ field }) => (
-                <FormItem className="w-auto flex justify-center items-center">
+                <FormItem className="flex w-auto items-center justify-center">
                   <FormControl>
                     <InputOTP maxLength={6} {...field}>
                       <InputOTPGroup>

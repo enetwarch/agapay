@@ -36,7 +36,7 @@ export function InputOTPSlot({ index, className, ...props }: InputOTPSlotProps):
       data-slot="input-otp-slot"
       data-active={isActive}
       className={cn(
-        "outline-2 duration-200 bg-surface relative flex w-10 items-center justify-center text-sm transition-all rounded-md aspect-square outline-transparent data-[active=true]:outline-foreground",
+        "relative flex aspect-square w-10 items-center justify-center rounded-md bg-surface text-sm outline-2 outline-transparent transition-all duration-200 data-[active=true]:outline-foreground",
         className,
       )}
       {...props}
@@ -44,7 +44,7 @@ export function InputOTPSlot({ index, className, ...props }: InputOTPSlotProps):
       {char}
       {hasFakeCaret && (
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-          <div className="animate-caret-blink bg-foreground h-4 w-px duration-1000" />
+          <div className="h-4 w-px animate-caret-blink bg-foreground duration-1000" />
         </div>
       )}
     </div>

@@ -10,12 +10,12 @@ export const metadata: Metadata = {
 
 export default function Auth(): React.JSX.Element {
   return (
-    <main className="w-full h-full grow flex flex-col justify-between items-center p-8 gap-8">
-      <figure className="flex w-full flex-col justify-center items-center py-8 gap-4">
+    <main className="flex h-full w-full grow flex-col items-center justify-between gap-8 p-8">
+      <figure className="flex w-full flex-col items-center justify-center gap-4 py-8">
         <Image src="/favicon.svg" alt="Agapay Logo" height={128} width={128} />
-        <figcaption className="text-primary font-bold text-4xl">Agapay</figcaption>
+        <figcaption className="font-bold text-4xl text-primary">Agapay</figcaption>
       </figure>
-      <section aria-label="Button Group" className="w-full flex flex-col justify-center items-center gap-4">
+      <section aria-label="Button Group" className="flex w-full flex-col items-center justify-center gap-4">
         <Button className="w-full" asChild>
           <Link href="/login">Log in</Link>
         </Button>

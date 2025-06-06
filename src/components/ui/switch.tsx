@@ -9,9 +9,7 @@ export function Switch({ className, ...props }: React.ComponentProps<typeof Swit
     <SwitchPrimitive.Root
       data-slot="switch"
       className={cn(
-        "data-[state=checked]:bg-primary data-[state=unchecked]:bg-foreground",
-        "rounded-full shadow-xs transition-all  disabled:cursor-not-allowed disabled:opacity-50",
-        "inline-flex items-center shrink-0 h-6 w-12 px-1",
+        "inline-flex h-6 w-12 shrink-0 items-center rounded-full px-1 shadow-xs transition-all disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-foreground",
         className,
       )}
       {...props}
@@ -19,8 +17,7 @@ export function Switch({ className, ...props }: React.ComponentProps<typeof Swit
       <SwitchPrimitive.Thumb
         data-slot="switch-thumb"
         className={cn(
-          "block bg-surface pointer-events-none size-4 rounded-full",
-          "transition-transform data-[state=checked]:translate-x-6 data-[state=unchecked]:translate-x-0",
+          "pointer-events-none block size-4 rounded-full bg-surface transition-transform data-[state=checked]:translate-x-6 data-[state=unchecked]:translate-x-0",
         )}
       />
     </SwitchPrimitive.Root>

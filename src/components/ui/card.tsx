@@ -4,15 +4,15 @@ import { type VariantProps, cva } from "class-variance-authority";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const cardVariants = cva(
-  "bg-primary text-card-foreground flex flex-col rounded-xl shadow-md shadow-black/30 relative duration-200 overflow-hidden",
+  "relative flex flex-col overflow-hidden rounded-xl bg-primary text-card-foreground shadow-black/30 shadow-md duration-200",
   {
     variants: {
       variant: {
-        primary: "bg-primary text-background active:opacity-70 transition-opacity",
-        surface: "bg-surface text-foreground active:bg-primary/30 transition-colors",
+        primary: "bg-primary text-background transition-opacity active:opacity-70",
+        surface: "bg-surface text-foreground transition-colors active:bg-primary/30",
       },
       size: {
-        wfull: "w-full h-50 p-4 gap-4",
+        wfull: "h-50 w-full gap-4 p-4",
       },
     },
     defaultVariants: {
@@ -29,7 +29,7 @@ export function Card({ variant, size, className, ...props }: CardProps): React.J
 
 type CardHeaderProps = React.ComponentProps<"div">;
 export function CardHeader({ className, ...props }: CardHeaderProps): React.JSX.Element {
-  return <div data-slot="card-header" className={cn("flex flex-col absolute top-4 left-4", className)} {...props} />;
+  return <div data-slot="card-header" className={cn("absolute top-4 left-4 flex flex-col", className)} {...props} />;
 }
 
 type CardTitleProps = React.ComponentProps<"div">;
@@ -48,7 +48,7 @@ export function CardFooter({ className, ...props }: CardFooterProps): React.JSX.
     <div
       data-slot="card-footer"
       className={cn(
-        "flex justify-center items-center p-2 gap-2 absolute bottom-4 right-4 bg-foreground rounded-md",
+        "absolute right-4 bottom-4 flex items-center justify-center gap-2 rounded-md bg-foreground p-2",
         className,
       )}
       {...props}
@@ -62,7 +62,7 @@ export function CardAction({ className, ...props }: CardActionProps): React.JSX.
     <div
       data-slot="card-action"
       className={cn(
-        "flex flex-col text-background justify-center items-center p-2 rounded-md active:bg-background/30 transition-colors duration-200",
+        "flex flex-col items-center justify-center rounded-md p-2 text-background transition-colors duration-200 active:bg-background/30",
         className,
       )}
       {...props}

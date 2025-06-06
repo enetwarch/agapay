@@ -15,11 +15,11 @@ export default function Home(): React.JSX.Element {
   return (
     <>
       <Header label="Home" />
-      <main className="h-full w-full grow flex-1 flex flex-col items-center p-4 gap-8 pb-34">
-        <section className="flex flex-col justify-center items-center w-full gap-4">
+      <main className="flex h-full w-full flex-1 grow flex-col items-center gap-8 p-4 pb-34">
+        <section className="flex w-full flex-col items-center justify-center gap-4">
           <MoneyCard />
         </section>
-        <section className="flex flex-col justify-center items-center w-full gap-4">
+        <section className="flex w-full flex-col items-center justify-center gap-4">
           <Upgrade title="Active Income" description="$420 per tap" cost="$69k" />
           <Upgrade title="Active Tick" description="1 tap every 2 seconds of hold" cost="$12k" />
           <Upgrade title="Passive Income" description="$420 per tick" cost="$99k" />

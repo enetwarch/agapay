@@ -1,10 +1,10 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Icon } from "@/components/ui/icon";
 import { cn } from "@/lib/utils";
 
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 
 type InputProps = React.ComponentProps<"input">;
@@ -13,9 +13,7 @@ export function Input({ className, ...props }: InputProps): React.JSX.Element {
     <input
       data-slot="input"
       className={cn(
-        "bg-surface flex p-4 text-lg rounded-md text-foreground",
-        "placeholder:font-normal placeholder:text-foreground/50",
-        "outline-2 outline-transparent focus:outline-foreground transition-colors duration-200",
+        "flex rounded-md bg-surface p-4 text-foreground text-lg outline-2 outline-transparent transition-colors duration-200 placeholder:font-normal placeholder:text-foreground/50 focus:outline-foreground",
         className,
       )}
       {...props}
@@ -32,11 +30,10 @@ export function PasswordInput({ className, onChange, ...props }: PasswordInputPr
   const [visible, setVisible] = useState<boolean>(false);
 
   return (
-    <div className="relative inline-flex justify-center items-center">
+    <div className="relative inline-flex items-center justify-center">
       <Input
         value={value}
         type={visible ? "text" : "password"}
-        className={cn("w-full pr-14", className)}
         onChange={(event) => {
           setValue(event.target.value);
 
@@ -49,6 +46,7 @@ export function PasswordInput({ className, onChange, ...props }: PasswordInputPr
 
           onChange?.(event);
         }}
+        className={cn("w-full pr-14", className)}
         {...props}
       />
       <Button
@@ -58,12 +56,9 @@ export function PasswordInput({ className, onChange, ...props }: PasswordInputPr
         disabled={!hasEye}
         onClick={() => setVisible((v) => !v)}
         aria-label={visible ? "Hide password" : "Show password"}
-        className={cn(
-          "absolute right-2 text-foreground",
-          "disabled:opacity-0 opacity-100 transition-opacity duration-200",
-        )}
+        className="absolute right-2 text-foreground opacity-100 transition-opacity duration-200 disabled:opacity-0"
       >
-        <Icon icon={visible ? faEyeSlash : faEye} />
+        <FontAwesomeIcon icon={visible ? faEyeSlash : faEye} className="text-lg" />
       </Button>
     </div>
   );

@@ -12,8 +12,8 @@ export default function Inbox(): React.JSX.Element {
   return (
     <>
       <Header label="Inbox" />
-      <main className="h-full flex-1 w-full flex flex-col items-center p-4 pb-34">
-        <section className="h-full w-full flex flex-col justify-center items-center gap-4">
+      <main className="flex h-full w-full flex-1 flex-col items-center p-4 pb-34">
+        <section className="flex h-full w-full flex-col items-center justify-center gap-4">
           <Entry
             title="Milestone Reached"
             body="Congratulations on reaching +200% Income Boost! This will upgrade the looks of your money card to Platinum. This is currently the highest rank of cosmetics for your card."

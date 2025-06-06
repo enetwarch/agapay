@@ -9,7 +9,7 @@ export function Label({ className, ...props }: LabelProps) {
   return (
     <LabelPrimitive.Root
       data-slot="label"
-      className={cn("inline-flex font-medium items-center text-sm select-none", className)}
+      className={cn("inline-flex select-none items-center font-medium text-sm", className)}
       {...props}
     />
   );

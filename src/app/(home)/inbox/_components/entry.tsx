@@ -12,17 +12,17 @@ export default function Entry({ title, body, isRead = false, className, ...props
   return (
     <article
       className={cn(
-        "relative flex flex-col justify-center items-center p-4 bg-surface rounded-md",
-        "active:bg-primary/30 transition-color duration-200",
+        "relative flex flex-col items-center justify-center rounded-md bg-surface p-4",
+        "transition-color duration-200 active:bg-primary/30",
         className,
       )}
       aria-label={isRead ? "Read message" : "Unread message"}
       {...props}
     >
       {!isRead && (
-        <FontAwesomeIcon icon={faCircleExclamation} className="absolute text-primary text-lg -top-2 -right-2" />
+        <FontAwesomeIcon icon={faCircleExclamation} className="-top-2 -right-2 absolute text-lg text-primary" />
       )}
-      <h3 data-read={isRead} className="text-md font-normal w-full data-[read=true]:opacity-50">
+      <h3 data-read={isRead} className="w-full font-normal text-md data-[read=true]:opacity-50">
         {title}
       </h3>
       <p data-read={isRead} className="w-full text-sm opacity-70 data-[read=true]:opacity-30">

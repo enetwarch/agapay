@@ -20,9 +20,9 @@ export default function NotFound(): React.JSX.Element {
   }, [router]);
 
   return (
-    <main className="flex flex-col justify-center items-center w-full h-full p-4 gap-4">
+    <main className="flex h-full w-full flex-col items-center justify-center gap-4 p-4">
       <FontAwesomeIcon icon={faBan} className="text-9xl" />
-      <p className="text-3xl text-center font-bold">404 Page Not Found</p>
+      <p className="text-center font-bold text-3xl">404 Page Not Found</p>
     </main>
   );
 }

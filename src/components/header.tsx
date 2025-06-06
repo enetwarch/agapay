@@ -12,15 +12,15 @@ type HeaderProps = Omit<React.ComponentProps<"header">, "children"> & {
 };
 export default function Header({ className, label, backHref, ...props }: HeaderProps): React.JSX.Element {
   return (
-    <header className={cn("w-full flex justify-center items-center relative p-6", className)} {...props}>
+    <header className={cn("relative flex w-full items-center justify-center p-4", className)} {...props}>
       {backHref && (
-        <Button variant="ghost" size="icon" className="absolute left-8 text-foreground" asChild>
+        <Button variant="ghost" size="icon" className="absolute left-8" asChild>
           <Link href={backHref}>
-            <FontAwesomeIcon icon={faArrowLeft} className="text-xl" />
+            <FontAwesomeIcon icon={faArrowLeft} className="text-foreground text-xl" />
           </Link>
         </Button>
       )}
-      <h1 className="text-xl font-bold text-foreground">{label}</h1>
+      <h1 className="font-bold text-foreground text-xl">{label}</h1>
     </header>
   );
 }

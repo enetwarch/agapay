@@ -12,7 +12,7 @@ export default function Settings({ icon, label, className, ...props }: SettingsP
   return (
     <article
       className={cn(
-        "py-4 px-6 gap-4 w-full justify-center items-center flex first:rounded-t-md last:rounded-b-md bg-surface text-foreground",
+        "flex w-full items-center justify-center gap-4 bg-surface px-6 py-4 text-foreground first:rounded-t-md last:rounded-b-md",
         className,
       )}
       {...props}

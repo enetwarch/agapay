@@ -10,12 +10,20 @@ type UpgradeProps = Omit<React.ComponentProps<"article">, "children"> & {
   cost: string;
   hasUpgradeIcon?: boolean;
 };
-export default function Upgrade({ ...props }: UpgradeProps): React.JSX.Element {
-  const { className, title, description, cost, hasUpgradeIcon = true } = props;
-
+export default function Upgrade({
+  className,
+  title,
+  description,
+  cost,
+  hasUpgradeIcon = true,
+  ...props
+}: UpgradeProps): React.JSX.Element {
   return (
-    <article className={cn("w-full flex justify-center items-center rounded-md bg-surface p-4 gap-2", className)}>
-      <div className="w-full flex flex-col justify-center items-center">
+    <article
+      className={cn("flex w-full items-center justify-center gap-2 rounded-md bg-surface p-4", className)}
+      {...props}
+    >
+      <div className="flex w-full flex-col items-center justify-center">
         <h3 className="w-full">{title}</h3>
         <p className="w-full text-sm opacity-70">{description}</p>
       </div>

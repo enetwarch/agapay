@@ -6,14 +6,14 @@ import { type VariantProps, cva } from "class-variance-authority";
 const buttonVariants = cva("inline-flex items-center justify-center whitespace-nowrap rounded-md duration-200", {
   variants: {
     variant: {
-      primary: "bg-primary text-background shadow-xs active:opacity-70 transition-opacity",
-      secondary: "bg-surface text-foreground shadow-xs active:bg-primary/30 transition-colors",
-      ghost: "bg-transparent text-primary active:bg-foreground/10 transition-colors",
+      primary: "bg-primary text-background shadow-xs transition-opacity active:opacity-70",
+      secondary: "bg-surface text-foreground shadow-xs transition-colors active:bg-primary/30",
+      ghost: "bg-transparent text-primary transition-colors active:bg-foreground/10",
     },
     size: {
-      default: "py-4 px-8 text-lg font-medium",
-      small: "py-2 px-4 text-md font-medium",
-      icon: "aspect-square p-2 rounded-full",
+      default: "px-8 py-4 font-medium text-lg",
+      small: "px-4 py-2 font-medium text-md",
+      icon: "aspect-square rounded-full p-2",
     },
   },
   defaultVariants: {

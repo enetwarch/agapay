@@ -13,11 +13,11 @@ export default function Prestige(): React.JSX.Element {
   return (
     <>
       <Header label="Prestige" />
-      <main className="h-full w-full grow flex-1 flex flex-col items-center p-4 gap-8 pb-34">
-        <section className="flex flex-col justify-center items-center w-full gap-4">
+      <main className="flex h-full w-full flex-1 grow flex-col items-center gap-8 p-4 pb-34">
+        <section className="flex w-full flex-col items-center justify-center gap-4">
           <BadgeCard />
         </section>
-        <section className="flex flex-col justify-center items-center w-full gap-4">
+        <section className="flex w-full flex-col items-center justify-center gap-4">
           <Upgrade title="Income Boost" description="+15% boost to total income earnings" cost="*69" />
           <Upgrade title="Prestige Boost" description="+15% boost to total prestige earnings" cost="*24" />
           <Upgrade title="Starting Balance" description="$69,420 after every prestige" cost="*83" />

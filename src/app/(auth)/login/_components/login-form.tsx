@@ -39,11 +39,11 @@ export default function LoginForm({ className, ...props }: LoginFormProps): Reac
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className={cn("w-full flex flex-col justify-between items-center gap-16", className)}
+        className={cn("flex w-full flex-col items-center justify-between gap-16", className)}
         noValidate
         {...props}
       >
-        <div className="w-full flex flex-col justify-center items-center gap-4">
+        <div className="flex w-full flex-col items-center justify-center gap-4">
           <FormField
             control={form.control}
             name="email"
@@ -71,7 +71,7 @@ export default function LoginForm({ className, ...props }: LoginFormProps): Reac
             )}
           />
         </div>
-        <div className="w-full flex flex-col justify-center items-center gap-4">
+        <div className="flex w-full flex-col items-center justify-center gap-4">
           <Button type="submit" className="w-full">
             Log in
           </Button>

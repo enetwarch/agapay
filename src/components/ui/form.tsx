@@ -74,7 +74,7 @@ export function FormItem({ className, ...props }: FormItemProps): React.JSX.Elem
 
   return (
     <FormItemContext.Provider value={{ id }}>
-      <div data-slot="form-item" className={cn("w-full flex flex-col", className)} {...props} />
+      <div data-slot="form-item" className={cn("flex w-full flex-col", className)} {...props} />
     </FormItemContext.Provider>
   );
 }
@@ -115,10 +115,7 @@ export function FormMessage({ className, ...props }: FormMessageProps): React.JS
       id={formMessageId}
       data-visible={!!error}
       className={cn(
-        "overflow-hidden transition-all duration-300 ease-in-out",
-        "text-sm font-medium inline-flex w-full text-right text-primary justify-end -z-1",
-        "data-[visible=true]:animate-in data-[visible=true]:max-h-full data-[visible=true]:slide-in-from-top",
-        "data-[visible=false]:animate-out data-[visible=false]:max-h-0 data-[visible=false]:slide-out-to-top",
+        "-z-1 data-[visible=true]:slide-in-from-top data-[visible=false]:slide-out-to-top inline-flex w-full justify-end overflow-hidden text-right font-medium text-primary text-sm transition-all duration-300 ease-in-out data-[visible=false]:max-h-0 data-[visible=true]:max-h-full data-[visible=false]:animate-out data-[visible=true]:animate-in",
         className,
       )}
       {...props}
