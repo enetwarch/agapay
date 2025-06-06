@@ -9,27 +9,27 @@ import * as DialogPrimitive from "@radix-ui/react-dialog";
 import type * as React from "react";
 
 type DialogProps = React.ComponentProps<typeof DialogPrimitive.Root>;
-export function Dialog({ ...props }: DialogProps) {
+export function Dialog({ ...props }: DialogProps): React.JSX.Element {
   return <DialogPrimitive.Root data-slot="dialog" {...props} />;
 }
 
 type DialogTriggerProps = React.ComponentProps<typeof DialogPrimitive.Trigger>;
-export function DialogTrigger({ ...props }: DialogTriggerProps) {
+export function DialogTrigger({ ...props }: DialogTriggerProps): React.JSX.Element {
   return <DialogPrimitive.Trigger data-slot="dialog-trigger" {...props} />;
 }
 
 type DialogPortalProps = React.ComponentProps<typeof DialogPrimitive.Portal>;
-export function DialogPortal({ ...props }: DialogPortalProps) {
+export function DialogPortal({ ...props }: DialogPortalProps): React.JSX.Element {
   return <DialogPrimitive.Portal data-slot="dialog-portal" {...props} />;
 }
 
 type DialogCloseProps = React.ComponentProps<typeof DialogPrimitive.Close>;
-export function DialogClose({ ...props }: DialogCloseProps) {
+export function DialogClose({ ...props }: DialogCloseProps): React.JSX.Element {
   return <DialogPrimitive.Close data-slot="dialog-close" {...props} />;
 }
 
 type DialogOverlayProps = React.ComponentProps<typeof DialogPrimitive.Overlay>;
-export function DialogOverlay({ className, ...props }: DialogOverlayProps) {
+export function DialogOverlay({ className, ...props }: DialogOverlayProps): React.JSX.Element {
   return (
     <DialogPrimitive.Overlay
       data-slot="dialog-overlay"
@@ -45,7 +45,12 @@ export function DialogOverlay({ className, ...props }: DialogOverlayProps) {
 type DialogContentProps = React.ComponentProps<typeof DialogPrimitive.Content> & {
   showCloseButton?: boolean;
 };
-export function DialogContent({ className, children, showCloseButton = true, ...props }: DialogContentProps) {
+export function DialogContent({
+  className,
+  children,
+  showCloseButton = true,
+  ...props
+}: DialogContentProps): React.JSX.Element {
   return (
     <DialogPortal data-slot="dialog-portal">
       <DialogOverlay />
@@ -75,7 +80,7 @@ export function DialogContent({ className, children, showCloseButton = true, ...
 }
 
 type DialogHeaderProps = React.ComponentProps<"div">;
-export function DialogHeader({ className, ...props }: DialogHeaderProps) {
+export function DialogHeader({ className, ...props }: DialogHeaderProps): React.JSX.Element {
   return (
     <div
       data-slot="dialog-header"
@@ -86,7 +91,7 @@ export function DialogHeader({ className, ...props }: DialogHeaderProps) {
 }
 
 type DialogFooterProps = React.ComponentProps<"div">;
-export function DialogFooter({ className, ...props }: DialogFooterProps) {
+export function DialogFooter({ className, ...props }: DialogFooterProps): React.JSX.Element {
   return (
     <div
       data-slot="dialog-footer"
@@ -97,7 +102,7 @@ export function DialogFooter({ className, ...props }: DialogFooterProps) {
 }
 
 type DialogTitleProps = React.ComponentProps<typeof DialogPrimitive.Title>;
-export function DialogTitle({ className, ...props }: DialogTitleProps) {
+export function DialogTitle({ className, ...props }: DialogTitleProps): React.JSX.Element {
   return (
     <DialogPrimitive.Title
       data-slot="dialog-title"
@@ -108,7 +113,7 @@ export function DialogTitle({ className, ...props }: DialogTitleProps) {
 }
 
 type DialogDescriptionProps = React.ComponentProps<typeof DialogPrimitive.Description>;
-export function DialogDescription({ className, ...props }: DialogDescriptionProps) {
+export function DialogDescription({ className, ...props }: DialogDescriptionProps): React.JSX.Element {
   return (
     <DialogPrimitive.Description
       data-slot="dialog-description"

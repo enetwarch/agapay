@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { faBuildingColumns } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-type BrandProps = React.ComponentProps<"section"> & {
+type BrandProps = Omit<React.ComponentProps<"section">, "children"> & {
   hasText?: boolean;
 };
 export default function Brand({ hasText = true, className, ...props }: BrandProps): React.JSX.Element {

@@ -4,7 +4,8 @@ import { cn } from "@/lib/utils";
 
 import * as SwitchPrimitive from "@radix-ui/react-switch";
 
-export function Switch({ className, ...props }: React.ComponentProps<typeof SwitchPrimitive.Root>) {
+type SwitchProps = React.ComponentProps<typeof SwitchPrimitive.Root>;
+export function Switch({ className, ...props }: SwitchProps): React.JSX.Element {
   return (
     <SwitchPrimitive.Root
       data-slot="switch"

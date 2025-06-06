@@ -1,12 +1,18 @@
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
-type MoneyCardProps = Omit<React.ComponentProps<typeof Card>, "children">;
-export default function MoneyCard({ ...props }: MoneyCardProps): React.JSX.Element {
+type MoneyCardProps = Omit<React.ComponentProps<"article">, "children">;
+export default function MoneyCard({ className, ...props }: MoneyCardProps): React.JSX.Element {
   return (
-    <Card variant="primary" {...props}>
-      <CardHeader>
-        <CardTitle className="text-3xl">$69420</CardTitle>
-      </CardHeader>
-    </Card>
+    <article
+      className={cn(
+        "relative flex flex-col overflow-hidden rounded-xl bg-primary text-background text-card-foreground shadow-black/30 shadow-md transition-opacity duration-200 active:opacity-70",
+        className,
+      )}
+      {...props}
+    >
+      <div className="absolute top-4 left-4 flex flex-col">
+        <h3 className="font-bold text-3xl">$69420</h3>
+      </div>
+    </article>
   );
 }

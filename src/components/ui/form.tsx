@@ -27,10 +27,14 @@ type FormFieldContextValue<
 
 const FormFieldContext = React.createContext<FormFieldContextValue>({} as FormFieldContextValue);
 
+type FormFieldProps<
+  TFieldValues extends FieldValues = FieldValues,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+> = ControllerProps<TFieldValues, TName>;
 export function FormField<
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
->({ ...props }: ControllerProps<TFieldValues, TName>): React.JSX.Element {
+>({ ...props }: FormFieldProps<TFieldValues, TName>): React.JSX.Element {
   return (
     <FormFieldContext.Provider value={{ name: props.name }}>
       <Controller {...props} />
