@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 
 export default function Prestige(): React.JSX.Element {
   return (
-    <>
+    <div className="flex h-full w-full grow flex-col items-center justify-center">
       <Header label="Prestige" />
-      <main className="flex h-full w-full flex-1 grow flex-col items-center gap-8 p-4 pb-34">
+      <main className="flex h-full w-full flex-1 grow flex-col items-center gap-8 px-8 pb-28">
         <section className="flex w-full flex-col items-center justify-center gap-4">
           <BadgeCard />
         </section>
@@ -30,6 +30,6 @@ export default function Prestige(): React.JSX.Element {
         </section>
       </main>
       <TabBar currentPage="/prestige" />
-    </>
+    </div>
   );
 }

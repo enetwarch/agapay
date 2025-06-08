@@ -6,8 +6,8 @@ import { type VariantProps, cva } from "class-variance-authority";
 const buttonVariants = cva("inline-flex items-center justify-center whitespace-nowrap rounded-md duration-200", {
   variants: {
     variant: {
-      primary: "bg-primary text-background shadow-xs transition-opacity active:opacity-70",
-      secondary: "bg-surface text-foreground shadow-xs transition-colors active:bg-primary/30",
+      primary: "bg-primary text-background shadow-lg transition-opacity active:opacity-70",
+      secondary: "bg-surface text-foreground shadow-lg transition-colors active:bg-primary/30",
       ghost: "bg-transparent text-primary transition-colors active:bg-foreground/10",
     },
     size: {

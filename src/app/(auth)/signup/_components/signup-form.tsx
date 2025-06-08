@@ -5,10 +5,8 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { PasswordInput } from "@/components/ui/input";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
-import EmailVerification from "./email-verification";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -39,9 +37,6 @@ const formSchema = z
 
 type SignupFormProps = React.ComponentProps<"form">;
 export default function SignupForm({ className, ...props }: SignupFormProps): React.JSX.Element {
-  const [open, setOpen] = useState<boolean>(false);
-  const [email, setEmail] = useState<string>("");
-
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -53,8 +48,8 @@ export default function SignupForm({ className, ...props }: SignupFormProps): Re
   });
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    setOpen(true);
-    setEmail(values.email);
+    // TODO: Add a backend system to handle these values
+    console.log(values);
   };
 
   return (
@@ -123,7 +118,6 @@ export default function SignupForm({ className, ...props }: SignupFormProps): Re
           <Button type="submit" className="w-full">
             Sign Up
           </Button>
-          <EmailVerification open={open} setOpen={setOpen} email={email} />
         </div>
       </form>
     </Form>

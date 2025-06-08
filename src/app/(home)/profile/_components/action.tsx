@@ -7,8 +7,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const actionVariants = cva("flex items-center justify-center duration-200 first:rounded-t-md last:rounded-b-md", {
   variants: {
     variant: {
+      primary: "bg-primary text-primary-foreground shadow-xs transition-opacity active:opacity-70",
       secondary: "bg-surface text-foreground shadow-xs transition-colors active:bg-primary/30",
-      destructive: "bg-destructive text-destructive-foreground shadow-xs transition-opacity active:opacity-70",
     },
     size: {
       default: "w-full gap-4 px-6 py-4",

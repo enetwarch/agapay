@@ -12,8 +12,7 @@ export default function Entry({ title, body, isRead = false, className, ...props
   return (
     <article
       className={cn(
-        "relative flex flex-col items-center justify-center rounded-md bg-surface p-4",
-        "transition-color duration-200 active:bg-primary/30",
+        "relative flex flex-col items-center justify-center rounded-md bg-surface p-4 transition-color duration-200 active:bg-primary/30 shadow-lg",
         className,
       )}
       aria-label={isRead ? "Read message" : "Unread message"}

@@ -42,7 +42,7 @@ export function FormField<
   );
 }
 
-/** @throws {Error} if the hook is used outside of <FormField> */
+/** @throws {Error} useFormField should be used within <FormField> */
 export const useFormField = () => {
   const fieldContext = React.useContext(FormFieldContext);
   const itemContext = React.useContext(FormItemContext);
@@ -69,7 +69,6 @@ export const useFormField = () => {
 type FormItemContextValue = {
   id: string;
 };
-
 const FormItemContext = React.createContext<FormItemContextValue>({} as FormItemContextValue);
 
 type FormItemProps = React.ComponentProps<"div">;

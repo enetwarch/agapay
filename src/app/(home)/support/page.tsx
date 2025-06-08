@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 
 export default function Support(): React.JSX.Element {
   return (
-    <>
+    <div className="flex h-full w-full grow flex-col items-center justify-center">
       <Header label="Support" />
-      <main className="flex h-full w-full flex-1 flex-col items-center gap-8 px-4 pb-24">
+      <main className="flex h-full w-full flex-1 grow flex-col items-center gap-8 p-8 pb-28">
         <Brand />
         <div className="flex max-h-full flex-col items-center justify-center gap-8 overflow-y-scroll">
           <section className="flex w-full flex-col items-center justify-center gap-4 px-4">
@@ -38,6 +38,6 @@ export default function Support(): React.JSX.Element {
         </div>
       </main>
       <TabBar currentPage="/support" />
-    </>
+    </div>
   );
 }
