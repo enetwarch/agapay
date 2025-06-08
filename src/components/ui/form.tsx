@@ -108,20 +108,16 @@ export function FormControl({ ...props }: FormControlProps): React.JSX.Element {
 }
 
 type FormMessageProps = React.ComponentProps<"p">;
-export function FormMessage({ className, ...props }: FormMessageProps): React.JSX.Element | null {
+export function FormMessage({ className, ...props }: FormMessageProps): React.JSX.Element {
   const { error, formMessageId } = useFormField();
   const body = error ? String(error?.message ?? "") : props.children;
 
-  if (!body) return null;
   return (
     <p
       data-slot="form-message"
       id={formMessageId}
       data-visible={!!error}
-      className={cn(
-        "-z-1 data-[visible=true]:slide-in-from-top data-[visible=false]:slide-out-to-top inline-flex w-full justify-end overflow-hidden text-right font-medium text-primary text-sm transition-all duration-300 ease-in-out data-[visible=false]:max-h-0 data-[visible=true]:max-h-full data-[visible=false]:animate-out data-[visible=true]:animate-in",
-        className,
-      )}
+      className={cn("inline-flex w-full justify-end text-right font-medium text-primary text-sm", className)}
       {...props}
     >
       {body}

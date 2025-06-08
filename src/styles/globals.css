@@ -7,8 +7,6 @@
   --color-foreground: #000000;
   --color-primary: #9f4342;
   --color-primary-foreground: #ffffff;
-  --color-destructive: #c62828;
-  --color-destructive-foreground: #ffffff;
 }
 
 @theme inline {
@@ -17,8 +15,6 @@
   --color-foreground: var(--color-foreground);
   --color-primary: var(--color-primary);
   --color-primary-foreground: var(--color-primary-foreground);
-  --color-destructive: var(--color-destructive);
-  --color-destructive-foreground: var(--color-destructive-foreground);
   --font-poppins: var(--font-poppins);
 }
 

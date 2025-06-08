@@ -13,6 +13,7 @@ const buttonVariants = cva("inline-flex items-center justify-center whitespace-n
     size: {
       default: "px-8 py-4 font-medium text-lg",
       small: "px-4 py-2 font-medium text-md",
+      link: "px-2 py-1 font-medium text-md",
       icon: "aspect-square rounded-full p-2",
     },
   },

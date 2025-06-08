@@ -5,8 +5,6 @@ export const authPathnames = [
   "/auth", // @/app/(auth)/auth/page.tsx
   "/login", // @/app/(auth)/login/page.tsx
   "/signup", // @/app/(auth)/signup/page.tsx
-  "/forgot-password", // @/app/(auth)/forgot-password/page.tsx
-  "/reset-password", // @/app/(auth)/reset-password/page.tsx
 ] as const;
 
 export function isAuthPathname(value: string): value is AuthPathname {

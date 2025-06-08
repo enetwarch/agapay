@@ -7,14 +7,18 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 const formSchema = z.object({
-  email: z.string().email({
-    message: "Invalid email address.",
-  }),
+  email: z
+    .string()
+    .min(1, {
+      message: "Email is required.",
+    })
+    .email({
+      message: "Invalid email address.",
+    }),
   password: z.string().min(1, {
     message: "Password is required.",
   }),
@@ -39,7 +43,7 @@ export default function LoginForm({ className, ...props }: LoginFormProps): Reac
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className={cn("flex w-full flex-col items-center justify-between gap-16", className)}
+        className={cn("flex w-full flex-col items-center justify-between gap-8", className)}
         noValidate
         {...props}
       >
@@ -74,9 +78,6 @@ export default function LoginForm({ className, ...props }: LoginFormProps): Reac
         <div className="flex w-full flex-col items-center justify-center gap-4">
           <Button type="submit" className="w-full">
             Log in
-          </Button>
-          <Button type="button" variant="ghost" className="w-full" asChild>
-            <Link href="/forgot-password">Forgot Password?</Link>
           </Button>
         </div>
       </form>

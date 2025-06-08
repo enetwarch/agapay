@@ -24,7 +24,7 @@
       "recommended": true,
       "nursery": {
         "useSortedClasses": {
-          "level": "warn",
+          "level": "off",
           "options": {
             "attributes": ["className", "class", "classList"],
             "functions": ["cn", "cva", "tw", "clsx"]

@@ -14,7 +14,7 @@ export default function Header({ className, label, backHref, ...props }: HeaderP
   return (
     <header className={cn("relative flex w-full items-center justify-center p-4", className)} {...props}>
       {backHref && (
-        <Button variant="ghost" size="icon" className="absolute left-8" asChild>
+        <Button variant="ghost" size="icon" className="absolute left-4" asChild>
           <Link href={backHref}>
             <FontAwesomeIcon icon={faArrowLeft} className="text-foreground text-xl" />
           </Link>

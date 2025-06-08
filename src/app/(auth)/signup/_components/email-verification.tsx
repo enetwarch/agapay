@@ -9,12 +9,11 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp";
-import { useDialogContext } from "../_hooks/dialog-context";
-import { useEmailContext } from "../_hooks/email-context";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import type React from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -24,17 +23,23 @@ const formSchema = z.object({
   }),
 });
 
-type EmailVerificationDialogProps = React.ComponentProps<typeof DialogContent>;
-export default function EmailVerificationDialog({ ...props }: EmailVerificationDialogProps): React.JSX.Element {
+type EmailVerificationDialogProps = React.ComponentProps<typeof DialogContent> & {
+  open: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  email: string;
+};
+export default function EmailVerification({
+  open,
+  setOpen,
+  email,
+  ...props
+}: EmailVerificationDialogProps): React.JSX.Element {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       code: "",
     },
   });
-
-  const { open, setOpen } = useDialogContext();
-  const { email } = useEmailContext();
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     console.log(values);
