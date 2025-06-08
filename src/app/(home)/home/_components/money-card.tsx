@@ -11,7 +11,7 @@ export default function MoneyCard({ className, ...props }: MoneyCardProps): Reac
       {...props}
     >
       <div className="absolute top-4 left-4 flex flex-col">
-        <h3 className="font-bold text-3xl text-background">$69420</h3>
+        <h3 className="font-bold text-3xl text-primary-foreground">$69420</h3>
       </div>
     </article>
   );

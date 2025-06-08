@@ -20,7 +20,7 @@ export default function Header({ className, label, backHref, ...props }: HeaderP
           </Link>
         </Button>
       )}
-      <h1 className="font-bold text-foreground text-xl">{label}</h1>
+      <h1 className="font-bold text-primary text-xl">{label}</h1>
     </header>
   );
 }

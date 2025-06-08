@@ -16,14 +16,14 @@ type TabBarProps = Omit<React.ComponentProps<"nav">, "children"> & {
 export default function TabBar({ tabs, className, ...props }: TabBarProps): React.JSX.Element {
   return (
     <nav className={cn("flex w-full items-center justify-center rounded-t-xl bg-surface p-4", className)} {...props}>
-      <ul className="flex h-full w-full items-center justify-around">
+      <ul className="flex h-full w-full items-center justify-around gap-1">
         {tabs.map(
           ({ href, icon, label, isCurrentPage = false }): React.JSX.Element => (
             <li key={href} className="flex h-full w-full items-center justify-center rounded-md">
               <Link
                 href={href}
                 aria-current={isCurrentPage ? "page" : undefined}
-                className="flex flex-col items-center justify-center rounded-md p-2 transition-colors duration-200 active:bg-primary/30 aria-[current=page]:bg-primary aria-[current=page]:text-background"
+                className="flex flex-col items-center flex-1 grow justify-center rounded-md p-2 transition-colors duration-200 active:bg-primary/30 aria-[current=page]:bg-primary aria-[current=page]:text-primary-foreground"
               >
                 <FontAwesomeIcon icon={icon} className="text-lg" />
                 <p className="font-medium text-xs">{label}</p>

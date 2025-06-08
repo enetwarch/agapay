@@ -28,7 +28,7 @@ export default function Upgrade({
         <p className="w-full text-sm opacity-70">{description}</p>
       </div>
       <Button size="small" className="w-full max-w-24 gap-1">
-        {hasUpgradeIcon && <FontAwesomeIcon icon={faCircleUp} />}
+        {hasUpgradeIcon && <FontAwesomeIcon icon={faCircleUp} aria-hidden={true} />}
         <p className="overflow-ellipsis overflow-hidden whitespace-nowrap">{cost}</p>
       </Button>
     </article>
