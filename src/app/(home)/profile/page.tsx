@@ -5,14 +5,14 @@ import Information from "./_components/information";
 import Settings from "./_components/settings";
 
 import {
-  faArrowRightArrowLeft,
   faArrowRightFromBracket,
   faArrowRightToBracket,
   faBarsProgress,
   faCertificate,
+  faCloudMoon,
   faKey,
   faMoneyBill,
-  faMoon,
+  faMoneyBillWave,
   faTrash,
   faUser,
   faVolumeHigh,
@@ -47,9 +47,9 @@ export default function Profile(): React.JSX.Element {
           <Information variant="secondary" icon={faCertificate} title="Total badge earned" description="*69,000,000" />
         </section>
         <section className="flex w-full flex-col items-center justify-center shadow-lg">
-          <Settings icon={faMoon} label="Dark Mode" />
+          <Settings icon={faCloudMoon} label="Dark Mode" />
           <Settings icon={faVolumeHigh} label="Sound Effects" />
-          <Settings icon={faArrowRightArrowLeft} label="Animations" />
+          <Settings icon={faMoneyBillWave} label="Animations" />
         </section>
         <section className="flex w-full flex-col items-center justify-center shadow-lg">
           <Action variant="secondary" icon={faKey} label="Change Password" />

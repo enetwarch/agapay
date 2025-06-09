@@ -7,8 +7,6 @@ export default function GlobalEffects(): React.JSX.Element {
     const handleContextMenu = (event: MouseEvent) => event.preventDefault();
     document.addEventListener("contextmenu", handleContextMenu);
 
-    document.documentElement.classList.add("dark");
-
     return () => document.removeEventListener("contextmenu", handleContextMenu);
   }, []);
 
