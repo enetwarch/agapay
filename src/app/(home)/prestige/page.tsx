@@ -1,4 +1,5 @@
 import Header from "@/components/header";
+import { Div, Main, Section } from "@/components/primitives/block";
 import TabBar from "../_components/tab-bar";
 import Upgrade from "../_components/upgrade";
 import BadgeCard from "./_components/badge-card";
@@ -6,14 +7,14 @@ import BadgeCard from "./_components/badge-card";
 export { prestige as metadata } from "@/constants/metadata";
 export default function Prestige(): React.JSX.Element {
   return (
-    <div className="flex h-full w-full grow flex-col items-center justify-center">
+    <Div size="screen">
       <Header label="Prestige" />
-      <main className="flex h-full w-full flex-1 grow flex-col items-center gap-8 px-8 pb-28">
-        <section className="flex w-full flex-col items-center justify-center gap-4">
+      <Main size="hastabbar">
+        <Section>
           <h2 className="sr-only">Badge Card</h2>
           <BadgeCard />
-        </section>
-        <section className="flex w-full flex-col items-center justify-center gap-4">
+        </Section>
+        <Section>
           <h2 className="sr-only">Upgrades</h2>
           <Upgrade title="Income Boost" description="+15% boost to total income earnings" cost="*69" />
           <Upgrade title="Prestige Boost" description="+15% boost to total prestige earnings" cost="*24" />
@@ -24,9 +25,9 @@ export default function Prestige(): React.JSX.Element {
             cost="Max"
             hasUpgradeIcon={false}
           />
-        </section>
-      </main>
+        </Section>
+      </Main>
       <TabBar currentPage="/prestige" />
-    </div>
+    </Div>
   );
 }

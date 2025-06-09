@@ -1,14 +1,15 @@
 import Header from "@/components/header";
+import { Div, Main, Section } from "@/components/primitives/block";
 import TabBar from "../_components/tab-bar";
 import Entry from "./_components/entry";
 
 export { inbox as metadata } from "@/constants/metadata";
 export default function Inbox(): React.JSX.Element {
   return (
-    <div className="flex h-full w-full grow flex-col items-center justify-center">
+    <Div size="screen">
       <Header label="Inbox" />
-      <main className="flex h-full w-full flex-1 grow flex-col items-center gap-8 px-8 pb-28">
-        <section className="flex h-full w-full flex-col items-center justify-center gap-4">
+      <Main size="hastabbar">
+        <Section>
           <h2 className="sr-only">Inbox Entries</h2>
           <Entry
             title="Milestone Reached"
@@ -46,9 +47,9 @@ export default function Inbox(): React.JSX.Element {
             isRead
           />
           <Entry title="Achievement" body="You've tapped 1,000,000 times. Your finger deserves a raise." isRead />
-        </section>
-      </main>
+        </Section>
+      </Main>
       <TabBar currentPage="/inbox" />
-    </div>
+    </Div>
   );
 }

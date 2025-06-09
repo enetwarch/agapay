@@ -1,5 +1,6 @@
 "use client";
 
+import { Div, Form as FormBlock } from "@/components/primitives/block";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { PasswordInput } from "@/components/ui/input";
@@ -54,13 +55,8 @@ export default function SignupForm({ className, ...props }: SignupFormProps): Re
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className={cn("flex w-full flex-col items-center justify-between gap-16", className)}
-        noValidate
-        {...props}
-      >
-        <div className="flex w-full flex-col items-center justify-center gap-4">
+      <FormBlock onSubmit={form.handleSubmit(onSubmit)} className={cn("", className)} noValidate {...props}>
+        <Div>
           <FormField
             control={form.control}
             name="username"
@@ -113,13 +109,13 @@ export default function SignupForm({ className, ...props }: SignupFormProps): Re
               </FormItem>
             )}
           />
-        </div>
-        <div className="flex w-full flex-col items-center justify-center gap-4">
+        </Div>
+        <Div>
           <Button type="submit" className="w-full">
             Sign Up
           </Button>
-        </div>
-      </form>
+        </Div>
+      </FormBlock>
     </Form>
   );
 }

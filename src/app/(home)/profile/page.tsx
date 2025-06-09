@@ -1,4 +1,5 @@
 import Header from "@/components/header";
+import { Div, Main, Section } from "@/components/primitives/block";
 import TabBar from "../_components/tab-bar";
 import Action from "./_components/action";
 import Information from "./_components/information";
@@ -21,18 +22,18 @@ import {
 export { profile as metadata } from "@/constants/metadata";
 export default function Profile(): React.JSX.Element {
   return (
-    <div className="flex h-full w-full grow flex-col items-center justify-center">
+    <Div size="screen">
       <Header label="Profile" />
-      <main className="flex h-full w-full flex-1 grow flex-col items-center gap-4 px-8 pb-28">
-        <section className="flex w-full flex-col items-center justify-center shadow-lg">
+      <Main size="hastabbar">
+        <Section size="nospace" className="shadow-lg">
           <h2 className="sr-only">User</h2>
-          <div className="flex w-full flex-col items-center justify-center">
+          <Div size="nospace">
             <Information variant="primary" icon={faUser} title="JohnDoe" description="johndoe@gmail.com" />
-          </div>
-        </section>
-        <section className="flex w-full flex-col items-center justify-center shadow-lg">
+          </Div>
+        </Section>
+        <Section size="nospace" className="shadow-lg">
           <h2 className="sr-only">Information</h2>
-          <div className="flex w-full flex-col items-center justify-center">
+          <Div size="nospace">
             <Information
               variant="secondary"
               icon={faArrowRightToBracket}
@@ -45,33 +46,33 @@ export default function Profile(): React.JSX.Element {
               title="Total money earned"
               description="$69,420,000,000,000"
             />
-          </div>
+          </Div>
           <Information variant="secondary" icon={faCertificate} title="Total badge earned" description="*69,000,000" />
-        </section>
-        <section className="flex w-full flex-col items-center justify-center shadow-lg">
+        </Section>
+        <Section size="nospace" className="shadow-lg">
           <h2 className="sr-only">Settings</h2>
-          <div className="flex w-full flex-col items-center justify-center">
+          <Div size="nospace">
             <Settings icon={faCloudMoon} label="Dark Mode" />
             <Settings icon={faVolumeHigh} label="Sound Effects" />
             <Settings icon={faMoneyBillWave} label="Animations" />
-          </div>
-        </section>
-        <section className="flex w-full flex-col items-center justify-center shadow-lg">
+          </Div>
+        </Section>
+        <Section size="nospace" className="shadow-lg">
           <h2 className="sr-only">Account Actions</h2>
-          <div className="flex w-full flex-col items-center justify-center">
+          <Div size="nospace">
             <Action variant="secondary" icon={faKey} label="Change Password" />
             <Action variant="secondary" icon={faArrowRightFromBracket} label="Log Out" />
-          </div>
-        </section>
-        <section className="flex w-full flex-col items-center justify-center shadow-lg">
+          </Div>
+        </Section>
+        <Section size="nospace" className="shadow-lg">
           <h2 className="sr-only">Danger Zone</h2>
-          <div className="flex w-full flex-col items-center justify-center">
+          <Div size="nospace">
             <Action variant="primary" icon={faBarsProgress} label="Reset Progress" />
             <Action variant="primary" icon={faTrash} label="Delete Account" />
-          </div>
-        </section>
-      </main>
+          </Div>
+        </Section>
+      </Main>
       <TabBar currentPage="/profile" />
-    </div>
+    </Div>
   );
 }

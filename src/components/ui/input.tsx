@@ -16,7 +16,7 @@ export function Input({ className, onChange, ...props }: InputProps): React.JSX.
       data-slot="input"
       value={value}
       className={cn(
-        "flex rounded-md bg-surface p-4 text-foreground text-lg outline-2 outline-transparent transition-colors duration-200 placeholder:font-normal placeholder:text-foreground/50 focus:outline-foreground",
+        "flex rounded-md bg-surface p-4 text-foreground text-lg shadow-lg outline-2 outline-transparent transition-colors duration-200 placeholder:font-normal placeholder:text-foreground/50 focus:outline-foreground",
         className,
       )}
       onChange={(event) => {

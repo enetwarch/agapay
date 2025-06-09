@@ -1,24 +1,25 @@
 import Brand from "@/components/brand";
 import Header from "@/components/header";
+import { Div, Main, Section } from "@/components/primitives/block";
 import { Button } from "@/components/ui/button";
 import TabBar from "../_components/tab-bar";
 
 export { support as metadata } from "@/constants/metadata";
 export default function Support(): React.JSX.Element {
   return (
-    <div className="flex h-full w-full grow flex-col items-center justify-center">
+    <Div size="screen">
       <Header label="Support" />
-      <main className="flex h-full w-full flex-1 grow flex-col items-center gap-8 p-8 pb-28">
+      <Main size="hastabbar" className="pt-8">
         <Brand />
-        <section className="flex w-full flex-col items-center justify-center gap-4 px-4">
+        <Section className="px-4">
           <h2 className="sr-only">Notice</h2>
           <p className="text-center">
             This simple clicker game is made by a solo dev as a hobby project. Consider contributing or supporting me if
             you want to see more projects like this.
           </p>
           <strong className="font-bold">Enetwarch</strong>
-        </section>
-        <section className="flex w-full flex-col items-center justify-center gap-4">
+        </Section>
+        <Section>
           <h2 className="sr-only">Support Buttons</h2>
           <Button className="w-full" asChild>
             <a href="https://github.com/enetwarch/agapay" target="_blank" rel="noreferrer">
@@ -30,9 +31,9 @@ export default function Support(): React.JSX.Element {
               Buy Me a Coffee
             </a>
           </Button>
-        </section>
-      </main>
+        </Section>
+      </Main>
       <TabBar currentPage="/support" />
-    </div>
+    </Div>
   );
 }
