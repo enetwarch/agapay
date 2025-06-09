@@ -2,7 +2,7 @@ import Brand from "@/components/brand";
 import Header from "@/components/header";
 import { Div, Main, Section } from "@/components/primitives/block";
 import { Button } from "@/components/ui/button";
-import TabBar from "@/feature/(tabs)/tab-bar";
+import TabBar from "@/features/(tabs)/tab-bar";
 
 export { support as metadata } from "@/constants/metadata";
 export default function Support(): React.JSX.Element {

@@ -1,9 +1,9 @@
 import Header from "@/components/header";
 import { Div, Main, Section } from "@/components/primitives/block";
-import ActionButton from "@/feature/(tabs)/action-button";
-import Information from "@/feature/(tabs)/information-card";
-import SettingsButton from "@/feature/(tabs)/settings-button";
-import TabBar from "@/feature/(tabs)/tab-bar";
+import ActionButton from "@/features/(tabs)/action-button";
+import Information from "@/features/(tabs)/information-card";
+import SettingsButton from "@/features/(tabs)/settings-button";
+import TabBar from "@/features/(tabs)/tab-bar";
 
 import {
   faArrowRightFromBracket,

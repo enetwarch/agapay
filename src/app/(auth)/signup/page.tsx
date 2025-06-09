@@ -1,7 +1,7 @@
 import Brand from "@/components/brand";
 import Header from "@/components/header";
 import { Div, Main, Section } from "@/components/primitives/block";
-import SignupForm from "@/feature/(auth)/signup-form";
+import SignupForm from "@/features/(auth)/signup-form";
 
 export { signup as metadata } from "@/constants/metadata";
 export default function Signup(): React.JSX.Element {

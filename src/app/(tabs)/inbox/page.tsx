@@ -1,7 +1,7 @@
 import Header from "@/components/header";
 import { Div, Main, Section } from "@/components/primitives/block";
-import EntryCard from "@/feature/(tabs)/entry-card";
-import TabBar from "@/feature/(tabs)/tab-bar";
+import EntryCard from "@/features/(tabs)/entry-card";
+import TabBar from "@/features/(tabs)/tab-bar";
 
 export { inbox as metadata } from "@/constants/metadata";
 export default function Inbox(): React.JSX.Element {

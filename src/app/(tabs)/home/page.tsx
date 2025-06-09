@@ -1,8 +1,8 @@
 import Header from "@/components/header";
 import { Div, Main, Section } from "@/components/primitives/block";
-import MoneyCard from "@/feature/(tabs)/money-card";
-import TabBar from "@/feature/(tabs)/tab-bar";
-import UpgradeCard from "@/feature/(tabs)/upgrade-card";
+import MoneyCard from "@/features/(tabs)/money-card";
+import TabBar from "@/features/(tabs)/tab-bar";
+import UpgradeCard from "@/features/(tabs)/upgrade-card";
 
 export { home as metadata } from "@/constants/metadata";
 export default function Home(): React.JSX.Element {
