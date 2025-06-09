@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { type ChangeEvent, useState } from "react";
+import { useState } from "react";
 
 type InputProps = React.ComponentProps<"input">;
 export function Input({ className, onChange, ...props }: InputProps): React.JSX.Element {
