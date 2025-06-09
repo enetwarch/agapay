@@ -5,20 +5,20 @@ import { cn } from "@/lib/utils";
 import { faCircleUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-type UpgradeProps = Omit<React.ComponentProps<typeof Card>, "children"> & {
+type UpgradeCardProps = Omit<React.ComponentProps<typeof Card>, "children"> & {
   title: string;
   description: string;
   cost: string;
   hasUpgradeIcon?: boolean;
 };
-export default function Upgrade({
+export default function UpgradeCard({
   className,
   title,
   description,
   cost,
   hasUpgradeIcon = true,
   ...props
-}: UpgradeProps): React.JSX.Element {
+}: UpgradeCardProps): React.JSX.Element {
   return (
     <Card className={cn("flex-row", className)} {...props}>
       <CardHeader>

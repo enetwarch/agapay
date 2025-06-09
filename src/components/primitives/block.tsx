@@ -6,7 +6,7 @@ export const mainVariants = cva("flex flex-col items-center justify-center", {
   variants: {
     size: {
       default: "h-full w-full grow gap-8 p-8",
-      hastabbar: "h-full w-full grow gap-8 px-8 pb-28",
+      tabs: "h-full w-full grow gap-8 px-8 pb-28",
     },
   },
   defaultVariants: {

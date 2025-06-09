@@ -4,12 +4,18 @@ import { cn } from "@/lib/utils";
 import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-type EntryProps = Omit<React.ComponentProps<typeof Card>, "children"> & {
+type EntryCardProps = Omit<React.ComponentProps<typeof Card>, "children"> & {
   title: string;
   body: string;
   isRead?: boolean;
 };
-export default function Entry({ title, body, isRead = false, className, ...props }: EntryProps): React.JSX.Element {
+export default function EntryCard({
+  title,
+  body,
+  isRead = false,
+  className,
+  ...props
+}: EntryCardProps): React.JSX.Element {
   return (
     <Card
       className={cn("relative transition-color duration-200 active:bg-primary/30", className)}

@@ -2,14 +2,14 @@ import Brand from "@/components/brand";
 import Header from "@/components/header";
 import { Div, Main, Section } from "@/components/primitives/block";
 import { Button } from "@/components/ui/button";
-import TabBar from "../_components/tab-bar";
+import TabBar from "@/feature/(tabs)/tab-bar";
 
 export { support as metadata } from "@/constants/metadata";
 export default function Support(): React.JSX.Element {
   return (
     <Div size="screen">
       <Header label="Support" />
-      <Main size="hastabbar" className="pt-8">
+      <Main size="tabs" className="pt-8">
         <Brand />
         <Section className="px-4">
           <h2 className="sr-only">Notice</h2>

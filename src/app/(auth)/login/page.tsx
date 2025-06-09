@@ -1,7 +1,7 @@
 import Brand from "@/components/brand";
 import Header from "@/components/header";
 import { Div, Main, Section } from "@/components/primitives/block";
-import LoginForm from "./_components/login-form";
+import LoginForm from "@/feature/(auth)/login-form";
 
 export { login as metadata } from "@/constants/metadata";
 export default function Login(): React.JSX.Element {

@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 
+import { Globals } from "@/hooks/globals";
 import { cn } from "@/lib/utils";
-import GlobalEffects from "./_components/global-effects";
 
 import { config } from "@fortawesome/fontawesome-svg-core";
 import { faMobile } from "@fortawesome/free-solid-svg-icons";
@@ -37,11 +37,11 @@ export default function RootLayout({ children }: RootLayoutProps): React.JSX.Ele
         className={cn("flex min-h-screen w-full flex-col items-center justify-center antialiased", poppins.variable)}
       >
         <aside className="fixed z-[9999] hidden min-h-screen min-w-screen flex-col items-center justify-center gap-4 bg-background p-4 sm:flex">
-          <FontAwesomeIcon icon={faMobile} className="text-9xl" />
+          <FontAwesomeIcon icon={faMobile} className="text-9xl" aria-hidden={true} />
           <p className="text-center font-bold text-3xl">Please view on mobile</p>
         </aside>
         {children}
-        <GlobalEffects />
+        <Globals />
       </body>
     </html>
   );

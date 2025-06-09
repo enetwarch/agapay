@@ -4,18 +4,18 @@ import { cn } from "@/lib/utils";
 import type { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-type InformationProps = Omit<Omit<React.ComponentProps<typeof Card>, "children">, "size"> & {
+type InformationCardProps = Omit<Omit<React.ComponentProps<typeof Card>, "children">, "size"> & {
   icon: IconProp;
   title: string;
   description: string;
 };
-export default function Information({
+export default function InformationCard({
   className,
   icon,
   title,
   description,
   ...props
-}: InformationProps): React.JSX.Element {
+}: InformationCardProps): React.JSX.Element {
   return (
     <Card size="menu" className={cn("flex-row", className)} {...props}>
       <FontAwesomeIcon icon={icon} className="text-xl" aria-hidden={true} />

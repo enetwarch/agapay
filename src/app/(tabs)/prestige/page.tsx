@@ -1,15 +1,15 @@
 import Header from "@/components/header";
 import { Div, Main, Section } from "@/components/primitives/block";
-import TabBar from "../_components/tab-bar";
-import Upgrade from "../_components/upgrade";
-import BadgeCard from "./_components/badge-card";
+import BadgeCard from "@/feature/(tabs)/badge-card";
+import TabBar from "@/feature/(tabs)/tab-bar";
+import Upgrade from "@/feature/(tabs)/upgrade-card";
 
 export { prestige as metadata } from "@/constants/metadata";
 export default function Prestige(): React.JSX.Element {
   return (
     <Div size="screen">
       <Header label="Prestige" />
-      <Main size="hastabbar">
+      <Main size="tabs">
         <Section>
           <h2 className="sr-only">Badge Card</h2>
           <BadgeCard />

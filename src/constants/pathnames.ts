@@ -11,24 +11,24 @@ export function isAuthPathname(value: string): value is AuthPathname {
   return authPathnames.includes(value as AuthPathname);
 }
 
-export type HomePathname = (typeof homePathnames)[number];
-export const homePathnames = [
-  "/home", // @/app/(home)/home/page.tsx
-  "/prestige", // @/app/(home)/prestige/page.tsx
-  "/support", // @/app/(home)/support/page.tsx
-  "/inbox", // @/app/(home)/inbox/page.tsx
-  "/profile", // @/app/(home)/profile/page.tsx
+export type TabPathname = (typeof tabPathnames)[number];
+export const tabPathnames = [
+  "/home", // @/app/(tabs)/home/page.tsx
+  "/prestige", // @/app/(tabs)/prestige/page.tsx
+  "/support", // @/app/(tabs)/support/page.tsx
+  "/inbox", // @/app/(tabs)/inbox/page.tsx
+  "/profile", // @/app/(tabs)/profile/page.tsx
 ] as const;
 
-export function isHomePathname(value: string): value is HomePathname {
-  return homePathnames.includes(value as HomePathname);
+export function isTabPathname(value: string): value is TabPathname {
+  return tabPathnames.includes(value as TabPathname);
 }
 
 export type Pathname = (typeof pathnames)[number];
 export const pathnames = [
   "/", // @/app/page.tsx
   ...authPathnames, // @/app/(auth)/
-  ...homePathnames, // @/app/(home)/
+  ...tabPathnames, // @/app/(tabs)/
 ] as const;
 
 export function isPathname(value: string): value is Pathname {

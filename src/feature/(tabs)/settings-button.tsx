@@ -8,17 +8,17 @@ import type { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 
-type SettingsProps = Omit<Omit<React.ComponentProps<typeof Button>, "children">, "size"> & {
+type SettingsButtonProps = Omit<Omit<React.ComponentProps<typeof Button>, "children">, "size"> & {
   icon: IconProp;
   label: string;
 };
-export default function Settings({
+export default function SettingsButton({
   icon,
   label,
   variant = "secondary",
   className,
   ...props
-}: SettingsProps): React.JSX.Element {
+}: SettingsButtonProps): React.JSX.Element {
   const [checked, setChecked] = useState<boolean>(false);
 
   return (

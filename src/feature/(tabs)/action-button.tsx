@@ -4,17 +4,17 @@ import { cn } from "@/lib/utils";
 import type { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-type ActionProps = Omit<Omit<React.ComponentProps<typeof Button>, "children">, "size"> & {
+type ActionButtonProps = Omit<Omit<React.ComponentProps<typeof Button>, "children">, "size"> & {
   icon: IconProp;
   label: string;
 };
-export default function Action({
+export default function ActionButton({
   variant = "secondary",
   className,
   icon,
   label,
   ...props
-}: ActionProps): React.JSX.Element {
+}: ActionButtonProps): React.JSX.Element {
   return (
     <Button variant={variant} size="menu" className={cn("", className)} {...props}>
       <FontAwesomeIcon icon={icon} className="text-xl" aria-hidden={true} />

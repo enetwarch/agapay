@@ -1,9 +1,9 @@
 import Header from "@/components/header";
 import { Div, Main, Section } from "@/components/primitives/block";
-import TabBar from "../_components/tab-bar";
-import Action from "./_components/action";
-import Information from "./_components/information";
-import Settings from "./_components/settings";
+import ActionButton from "@/feature/(tabs)/action-button";
+import Information from "@/feature/(tabs)/information-card";
+import SettingsButton from "@/feature/(tabs)/settings-button";
+import TabBar from "@/feature/(tabs)/tab-bar";
 
 import {
   faArrowRightFromBracket,
@@ -24,7 +24,7 @@ export default function Profile(): React.JSX.Element {
   return (
     <Div size="screen">
       <Header label="Profile" />
-      <Main size="hastabbar">
+      <Main size="tabs">
         <Section size="nospace" className="shadow-lg">
           <h2 className="sr-only">User</h2>
           <Div size="nospace">
@@ -52,23 +52,23 @@ export default function Profile(): React.JSX.Element {
         <Section size="nospace" className="shadow-lg">
           <h2 className="sr-only">Settings</h2>
           <Div size="nospace">
-            <Settings icon={faCloudMoon} label="Dark Mode" />
-            <Settings icon={faVolumeHigh} label="Sound Effects" />
-            <Settings icon={faMoneyBillWave} label="Animations" />
+            <SettingsButton icon={faCloudMoon} label="Dark Mode" />
+            <SettingsButton icon={faVolumeHigh} label="Sound Effects" />
+            <SettingsButton icon={faMoneyBillWave} label="Animations" />
           </Div>
         </Section>
         <Section size="nospace" className="shadow-lg">
           <h2 className="sr-only">Account Actions</h2>
           <Div size="nospace">
-            <Action variant="secondary" icon={faKey} label="Change Password" />
-            <Action variant="secondary" icon={faArrowRightFromBracket} label="Log Out" />
+            <ActionButton variant="secondary" icon={faKey} label="Change Password" />
+            <ActionButton variant="secondary" icon={faArrowRightFromBracket} label="Log Out" />
           </Div>
         </Section>
         <Section size="nospace" className="shadow-lg">
           <h2 className="sr-only">Danger Zone</h2>
           <Div size="nospace">
-            <Action variant="primary" icon={faBarsProgress} label="Reset Progress" />
-            <Action variant="primary" icon={faTrash} label="Delete Account" />
+            <ActionButton variant="primary" icon={faBarsProgress} label="Reset Progress" />
+            <ActionButton variant="primary" icon={faTrash} label="Delete Account" />
           </Div>
         </Section>
       </Main>

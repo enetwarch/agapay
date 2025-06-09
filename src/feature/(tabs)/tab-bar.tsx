@@ -1,11 +1,11 @@
 import TabBarComponent from "@/components/tab-bar";
-import type { HomePathname } from "@/constants/pathnames";
+import type { TabPathname } from "@/constants/pathnames";
 import { cn } from "@/lib/utils";
 
 import { faCertificate, faEnvelope, faHeart, faHouse, faUser } from "@fortawesome/free-solid-svg-icons";
 
 type TabBarProps = Omit<React.ComponentProps<typeof TabBarComponent>, "tabs"> & {
-  currentPage: HomePathname;
+  currentPage: TabPathname;
 };
 export default function TabBar({ currentPage, className, ...props }: TabBarProps): React.JSX.Element {
   return (
