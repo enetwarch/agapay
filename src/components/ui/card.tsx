@@ -9,8 +9,8 @@ export const cardVariants = cva("flex flex-col items-center justify-center shado
       primary: "bg-primary text-primary-foreground",
     },
     size: {
-      default: "w-full gap-4 p-4 rounded-md",
-      menu: "w-full px-6 py-4 gap-4 rounded-none first:rounded-t-md last:rounded-b-md shadow-none",
+      default: "w-full gap-4 rounded-md p-4",
+      menu: "w-full gap-4 rounded-none px-6 py-4 shadow-none first:rounded-t-md last:rounded-b-md",
     },
   },
   defaultVariants: {
@@ -48,7 +48,7 @@ export function CardDescription({ className, ...props }: CardDescriptionProps): 
 type CardContentProps = React.ComponentProps<"div">;
 export function CardContent({ className, ...props }: CardContentProps): React.JSX.Element {
   return (
-    <div data-slot="card-content" className={cn("flex flex-col justify-center items-center", className)} {...props} />
+    <div data-slot="card-content" className={cn("flex flex-col items-center justify-center", className)} {...props} />
   );
 }
 

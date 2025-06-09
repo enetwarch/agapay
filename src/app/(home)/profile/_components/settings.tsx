@@ -32,7 +32,7 @@ export default function Settings({
     >
       <div>
         <FontAwesomeIcon icon={icon} className="text-xl" aria-hidden={true} />
-        <p className="w-full font-medium text-left">{label}</p>
+        <p className="w-full text-left font-medium">{label}</p>
         <Switch checked={checked} onCheckedChange={setChecked} onClick={(e) => e.stopPropagation()} />
       </div>
     </Button>

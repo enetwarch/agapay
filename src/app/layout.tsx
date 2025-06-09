@@ -13,6 +13,8 @@ config.autoAddCss = false;
 
 export const metadata: Metadata = {
   title: "Agapay",
+  description:
+    "Tap your way to riches! Earn money, unlock upgrades, and boost your income in this addictive clicker game.",
   icons: {
     icon: "/favicon.svg",
     apple: "/favicon.png",

@@ -2,18 +2,14 @@ import Header from "@/components/header";
 import TabBar from "../_components/tab-bar";
 import Entry from "./_components/entry";
 
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Inbox",
-};
-
+export { inbox as metadata } from "@/constants/metadata";
 export default function Inbox(): React.JSX.Element {
   return (
     <div className="flex h-full w-full grow flex-col items-center justify-center">
       <Header label="Inbox" />
       <main className="flex h-full w-full flex-1 grow flex-col items-center gap-8 px-8 pb-28">
         <section className="flex h-full w-full flex-col items-center justify-center gap-4">
+          <h2 className="sr-only">Inbox Entries</h2>
           <Entry
             title="Milestone Reached"
             body="Congratulations on reaching +200% Income Boost! This will upgrade the looks of your money card to Platinum. This is currently the highest rank of cosmetics for your card."

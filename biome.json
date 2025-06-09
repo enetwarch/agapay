@@ -27,7 +27,7 @@
       },
       "nursery": {
         "useSortedClasses": {
-          "level": "off",
+          "level": "info",
           "options": {
             "attributes": ["className", "class", "classList"],
             "functions": ["cn", "cva", "tw", "clsx"]

@@ -23,7 +23,7 @@ export default function TabBar({ tabs, className, ...props }: TabBarProps): Reac
               <Link
                 href={href}
                 aria-current={isCurrentPage ? "page" : undefined}
-                className="flex flex-col items-center flex-1 grow justify-center rounded-md p-2 transition-colors duration-200 active:bg-primary/30 aria-[current=page]:bg-primary aria-[current=page]:text-primary-foreground"
+                className="flex flex-1 grow flex-col items-center justify-center rounded-md p-2 transition-colors duration-200 active:bg-primary/30 aria-[current=page]:bg-primary aria-[current=page]:text-primary-foreground"
               >
                 <FontAwesomeIcon icon={icon} className="text-lg" />
                 <p className="font-medium text-xs">{label}</p>

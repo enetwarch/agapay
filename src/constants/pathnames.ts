@@ -13,11 +13,11 @@ export function isAuthPathname(value: string): value is AuthPathname {
 
 export type HomePathname = (typeof homePathnames)[number];
 export const homePathnames = [
-  "/home", // @/app/(home)/(pages)/home/page.tsx
-  "/prestige", // @/app/(home)/(pages)/prestige/page.tsx
-  "/support", // @/app/(home)/(pages)/support/page.tsx
-  "/inbox", // @/app/(home)/(pages)/inbox/page.tsx
-  "/profile", // @/app/(home)/(pages)/profile/page.tsx
+  "/home", // @/app/(home)/home/page.tsx
+  "/prestige", // @/app/(home)/prestige/page.tsx
+  "/support", // @/app/(home)/support/page.tsx
+  "/inbox", // @/app/(home)/inbox/page.tsx
+  "/profile", // @/app/(home)/profile/page.tsx
 ] as const;
 
 export function isHomePathname(value: string): value is HomePathname {
@@ -28,7 +28,7 @@ export type Pathname = (typeof pathnames)[number];
 export const pathnames = [
   "/", // @/app/page.tsx
   ...authPathnames, // @/app/(auth)/
-  ...homePathnames, // @/app/(home)/(pages)/
+  ...homePathnames, // @/app/(home)/
 ] as const;
 
 export function isPathname(value: string): value is Pathname {

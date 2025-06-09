@@ -28,7 +28,7 @@ export default function Upgrade({
       <CardFooter>
         <Button size="small" className="w-24 gap-1">
           {hasUpgradeIcon && <FontAwesomeIcon icon={faCircleUp} aria-hidden={true} />}
-          <p className="overflow-ellipsis overflow-hidden whitespace-nowrap">{cost}</p>
+          <p className="overflow-hidden overflow-ellipsis whitespace-nowrap">{cost}</p>
         </Button>
       </CardFooter>
     </Card>

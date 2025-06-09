@@ -18,7 +18,7 @@ export default function Action({
   return (
     <Button variant={variant} size="menu" className={cn("", className)} {...props}>
       <FontAwesomeIcon icon={icon} className="text-xl" aria-hidden={true} />
-      <p className="w-full font-medium text-left">{label}</p>
+      <p className="w-full text-left font-medium">{label}</p>
     </Button>
   );
 }
