@@ -7,7 +7,7 @@ export { login as metadata } from "@/constants/metadata";
 export default function Login(): React.JSX.Element {
   return (
     <Div size="screen">
-      <Header label="Log In" backHref="/auth" />
+      <Header label="Log In" backHref="/" />
       <Main className="justify-between">
         <Brand />
         <Section className="grow justify-between">

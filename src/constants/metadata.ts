@@ -8,11 +8,6 @@ export const index: Metadata = Object.freeze({
     "Welcome to Agapay, an e-wallet inspired idle clicker game. Start building your wealth and prestige today!",
 });
 
-export const auth: Metadata = Object.freeze({
-  title: "Agapay | Authentication",
-  description: "",
-});
-
 export const login: Metadata = Object.freeze({
   title: "Agapay | Log In",
   description: "Already a member? Log in to continue your progress and earnings in Agapay",
@@ -53,7 +48,6 @@ export const profile: Metadata = Object.freeze({
 /** @internal this is exported, but it should only be used to make sure all pages have metadata through the Record type. */
 const _metadata: Record<Pathname, Metadata> = Object.freeze({
   "/": index,
-  "/auth": auth,
   "/login": login,
   "/signup": signup,
   "/home": home,

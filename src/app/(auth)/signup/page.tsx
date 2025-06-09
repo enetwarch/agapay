@@ -7,7 +7,7 @@ export { signup as metadata } from "@/constants/metadata";
 export default function Signup(): React.JSX.Element {
   return (
     <Div size="screen">
-      <Header label="Sign Up" backHref="/auth" />
+      <Header label="Sign Up" backHref="/" />
       <Main className="justify-between">
         <Brand />
         <Section className="grow justify-between">

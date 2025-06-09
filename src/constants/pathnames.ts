@@ -1,8 +1,16 @@
 // Add more pathnames if necessary to maintain typesafety.
 
+export type RootPathname = (typeof rootPathnames)[number];
+export const rootPathnames = [
+  "/", // @/app/page.tsx
+] as const;
+
+export function isRootPathname(value: string): value is RootPathname {
+  return rootPathnames.includes(value as RootPathname);
+}
+
 export type AuthPathname = (typeof authPathnames)[number];
 export const authPathnames = [
-  "/auth", // @/app/(auth)/auth/page.tsx
   "/login", // @/app/(auth)/login/page.tsx
   "/signup", // @/app/(auth)/signup/page.tsx
 ] as const;
@@ -26,7 +34,7 @@ export function isTabPathname(value: string): value is TabPathname {
 
 export type Pathname = (typeof pathnames)[number];
 export const pathnames = [
-  "/", // @/app/page.tsx
+  ...rootPathnames,
   ...authPathnames, // @/app/(auth)/
   ...tabPathnames, // @/app/(tabs)/
 ] as const;
