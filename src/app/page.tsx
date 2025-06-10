@@ -1,6 +1,6 @@
 import Brand from "@/components/brand";
 import Header from "@/components/header";
-import { Div, Main, Section } from "@/components/primitives/block";
+import { Main, Section } from "@/components/primitives/block";
 import { Button } from "@/components/ui/button";
 import type { AuthPathname } from "@/constants/pathnames";
 
@@ -12,7 +12,7 @@ export default function Index(): React.JSX.Element {
   const signupPathname: AuthPathname = "/signup";
 
   return (
-    <Div size="screen">
+    <>
       <Header label="Agapay" />
       <Main className="justify-between">
         <Brand hasName={false} />
@@ -26,6 +26,6 @@ export default function Index(): React.JSX.Element {
           </Button>
         </Section>
       </Main>
-    </Div>
+    </>
   );
 }

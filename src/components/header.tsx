@@ -12,7 +12,10 @@ type HeaderProps = Omit<React.ComponentProps<"header">, "children"> & {
 };
 export default function Header({ className, label, backHref, ...props }: HeaderProps): React.JSX.Element {
   return (
-    <header className={cn("relative flex w-full items-center justify-center p-4", className)} {...props}>
+    <header
+      className={cn("relative flex w-full items-center justify-center bg-surface p-4 shadow-lg", className)}
+      {...props}
+    >
       {backHref && (
         <Button variant="ghost" size="icon" className="absolute left-4" asChild>
           <Link href={backHref}>
@@ -20,7 +23,7 @@ export default function Header({ className, label, backHref, ...props }: HeaderP
           </Link>
         </Button>
       )}
-      <h1 className="font-bold text-primary text-xl">{label}</h1>
+      <h1 className="font-bold text-foreground text-xl">{label}</h1>
     </header>
   );
 }

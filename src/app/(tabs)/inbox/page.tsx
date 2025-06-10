@@ -1,14 +1,14 @@
 import Header from "@/components/header";
-import { Div, Main, Section } from "@/components/primitives/block";
+import { Main, Section } from "@/components/primitives/block";
 import EntryCard from "@/features/(tabs)/entry-card";
 import TabBar from "@/features/(tabs)/tab-bar";
 
 export { inbox as metadata } from "@/constants/metadata";
 export default function Inbox(): React.JSX.Element {
   return (
-    <Div size="screen">
+    <>
       <Header label="Inbox" />
-      <Main size="tabs">
+      <Main>
         <Section>
           <h2 className="sr-only">Inbox Entries</h2>
           <EntryCard
@@ -50,6 +50,6 @@ export default function Inbox(): React.JSX.Element {
         </Section>
       </Main>
       <TabBar currentPage="/inbox" />
-    </Div>
+    </>
   );
 }

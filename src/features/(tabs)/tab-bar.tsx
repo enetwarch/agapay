@@ -10,7 +10,7 @@ type TabBarProps = Omit<React.ComponentProps<typeof TabBarComponent>, "tabs"> & 
 export default function TabBar({ currentPage, className, ...props }: TabBarProps): React.JSX.Element {
   return (
     <TabBarComponent
-      className={cn("fixed bottom-0", className)}
+      className={cn("relative bottom-0", className)}
       tabs={[
         { href: "/home", icon: faHouse, label: "Home", isCurrentPage: currentPage === "/home" },
         { href: "/prestige", icon: faCertificate, label: "Prestige", isCurrentPage: currentPage === "/prestige" },

@@ -15,7 +15,7 @@ type TabBarProps = Omit<React.ComponentProps<"nav">, "children"> & {
 };
 export default function TabBar({ tabs, className, ...props }: TabBarProps): React.JSX.Element {
   return (
-    <nav className={cn("flex w-full items-center justify-center rounded-t-xl bg-surface p-4", className)} {...props}>
+    <nav className={cn("flex w-full items-center justify-center bg-surface p-4 shadow-lg", className)} {...props}>
       <ul className="flex h-full w-full items-center justify-around gap-1">
         {tabs.map(
           ({ href, icon, label, isCurrentPage = false }): React.JSX.Element => (

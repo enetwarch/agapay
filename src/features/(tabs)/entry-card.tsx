@@ -27,10 +27,10 @@ export default function EntryCard({
           <FontAwesomeIcon
             icon={faCircleExclamation}
             aria-hidden={true}
-            className="-top-2 -right-2 absolute text-lg text-primary"
+            className="absolute top-2 right-2 text-lg text-primary"
           />
         )}
-        <CardTitle data-read={isRead} className="data-[read=true]:opacity-50">
+        <CardTitle data-read={isRead} className="pr-4 data-[read=true]:opacity-50">
           {title}
         </CardTitle>
         <CardDescription data-read={isRead} className="data-[read=true]:opacity-30">

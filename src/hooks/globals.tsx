@@ -5,10 +5,10 @@ import { useEffect } from "react";
 /** @global used as a JSX element to apply document level event listeners. */
 export function Globals(): null {
   useEffect(() => {
-    const handleContextMenu = (event: MouseEvent) => event.preventDefault();
-    document.addEventListener("contextmenu", handleContextMenu);
+    const controller = new AbortController();
+    document.addEventListener("contextmenu", (e) => e.preventDefault(), controller);
 
-    return () => document.removeEventListener("contextmenu", handleContextMenu);
+    return () => controller.abort();
   }, []);
 
   return null;

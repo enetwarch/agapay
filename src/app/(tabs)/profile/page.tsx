@@ -22,9 +22,9 @@ import {
 export { profile as metadata } from "@/constants/metadata";
 export default function Profile(): React.JSX.Element {
   return (
-    <Div size="screen">
+    <>
       <Header label="Profile" />
-      <Main size="tabs">
+      <Main>
         <Section size="nospace" className="shadow-lg">
           <h2 className="sr-only">User</h2>
           <Div size="nospace">
@@ -46,8 +46,13 @@ export default function Profile(): React.JSX.Element {
               title="Total money earned"
               description="$69,420,000,000,000"
             />
+            <Information
+              variant="secondary"
+              icon={faCertificate}
+              title="Total badge earned"
+              description="*69,000,000"
+            />
           </Div>
-          <Information variant="secondary" icon={faCertificate} title="Total badge earned" description="*69,000,000" />
         </Section>
         <Section size="nospace" className="shadow-lg">
           <h2 className="sr-only">Settings</h2>
@@ -73,6 +78,6 @@ export default function Profile(): React.JSX.Element {
         </Section>
       </Main>
       <TabBar currentPage="/profile" />
-    </Div>
+    </>
   );
 }

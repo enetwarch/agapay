@@ -1,5 +1,5 @@
 import Header from "@/components/header";
-import { Div, Main, Section } from "@/components/primitives/block";
+import { Main, Section } from "@/components/primitives/block";
 import BadgeCard from "@/features/(tabs)/badge-card";
 import TabBar from "@/features/(tabs)/tab-bar";
 import Upgrade from "@/features/(tabs)/upgrade-card";
@@ -7,9 +7,9 @@ import Upgrade from "@/features/(tabs)/upgrade-card";
 export { prestige as metadata } from "@/constants/metadata";
 export default function Prestige(): React.JSX.Element {
   return (
-    <Div size="screen">
+    <>
       <Header label="Prestige" />
-      <Main size="tabs">
+      <Main>
         <Section>
           <h2 className="sr-only">Badge Card</h2>
           <BadgeCard />
@@ -28,6 +28,6 @@ export default function Prestige(): React.JSX.Element {
         </Section>
       </Main>
       <TabBar currentPage="/prestige" />
-    </Div>
+    </>
   );
 }

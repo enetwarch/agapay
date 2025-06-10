@@ -1,5 +1,5 @@
 import Header from "@/components/header";
-import { Div, Main, Section } from "@/components/primitives/block";
+import { Main, Section } from "@/components/primitives/block";
 import MoneyCard from "@/features/(tabs)/money-card";
 import TabBar from "@/features/(tabs)/tab-bar";
 import UpgradeCard from "@/features/(tabs)/upgrade-card";
@@ -7,9 +7,9 @@ import UpgradeCard from "@/features/(tabs)/upgrade-card";
 export { home as metadata } from "@/constants/metadata";
 export default function Home(): React.JSX.Element {
   return (
-    <Div size="screen">
+    <>
       <Header label="Home" />
-      <Main size="tabs">
+      <Main>
         <Section>
           <h2 className="sr-only">Money Card</h2>
           <MoneyCard />
@@ -23,6 +23,6 @@ export default function Home(): React.JSX.Element {
         </Section>
       </Main>
       <TabBar currentPage="/home" />
-    </Div>
+    </>
   );
 }

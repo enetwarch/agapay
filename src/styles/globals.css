@@ -4,6 +4,8 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
+  --max-device-height: 917px;
+  --max-device-width: 412px;
   --color-background: #f5f5f5;
   --color-surface: #d4d4d4;
   --color-foreground: #0a0a0a;
@@ -22,6 +24,7 @@
 @theme inline {
   --color-background: var(--color-background);
   --color-surface: var(--color-surface);
+  --color-subsurface: var(--color-subsurface);
   --color-foreground: var(--color-foreground);
   --color-primary: var(--color-primary);
   --color-primary-foreground: var(--color-primary-foreground);
@@ -30,12 +33,14 @@
 
 @layer base {
   * {
-    @apply border-none;
+    @apply select-none;
     @apply outline-2 outline-transparent focus-visible:outline-foreground;
-    @apply transition-colors duration-200;
   }
+
   body {
+    @apply min-h-screen min-w-full;
+    @apply flex flex-col justify-center items-center;
     @apply bg-background text-foreground;
-    @apply font-poppins;
+    @apply font-poppins antialiased;
   }
 }
