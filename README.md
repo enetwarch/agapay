@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Agapay
 
-## Getting Started
+Agapay is an e-wallet inspired idle clicker game — a fusion of a digital wallet app and a casual tapping game. It’s a practice project to help me dive into backend and fullstack development for the first time, so features are intentionally minimal.
 
-First, run the development server:
+## Pages
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+* [Agapay | Tap to Prosper](src/app/page.tsx): Welcome to Agapay, an e-wallet inspired idle clicker game. Start building your wealth and prestige today!
+* [Agapay | Log In](src/app/(auth)/login/page.tsx): Already a member? Log in to continue your progress and earnings in Agapay.
+* [Agapay | Sign Up](src/app/(auth)/signup/page.tsx): Join Agapay today! Create your account and begin your tapping journey to success.
+* [Agapay | Home](src/app/(tabs)/home/page.tsx): Tap your way to riches! Earn money, unlock upgrades, and boost your income in this addictive clicker game.
+* [Agapay | Prestige](src/app/(tabs)/prestige/page.tsx): Reset your progress for massive and permanent long-term gains. Prestige to multiply your income and climb faster.
+* [Agapay | Support](src/app/(tabs)/support/page.tsx): Consider supporting this indie web project!
+* [Agapay | Inbox](src/app/(tabs)/inbox/page.tsx): Check your messages, rewards, and announcements from Agapay.
+* [Agapay | Profile](src/app/(tabs)/profile/page.tsx): View and manage your account, track your stats, and personalize your Agapay experience.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* 💸 Tap, idle, and upgrade to earn game currency with infinitely scalable levels.
+* 🚀 Prestige system for resetting and multiplying progress permanently.
+* 👤 Profile and authentication system to showcase user progress.
+* 💾 Persistent data through the use of a backend database.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech Stack
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS/)
+[![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML/)
+[![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/)
+[![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![PNPM](https://img.shields.io/badge/pnpm-%234a4a4a.svg?style=for-the-badge&logo=pnpm&logoColor=f69220)](https://pnpm.io/)
+[![Radix UI](https://img.shields.io/badge/radix%20ui-161618.svg?style=for-the-badge&logo=radix-ui&logoColor=white)](https://www.radix-ui.com/)
+[![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)](https://reactjs.org/)
+[![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)

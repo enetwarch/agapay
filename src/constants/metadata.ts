@@ -10,7 +10,7 @@ export const index: Metadata = Object.freeze({
 
 export const login: Metadata = Object.freeze({
   title: "Agapay | Log In",
-  description: "Already a member? Log in to continue your progress and earnings in Agapay",
+  description: "Already a member? Log in to continue your progress and earnings in Agapay.",
 });
 
 export const signup: Metadata = Object.freeze({
