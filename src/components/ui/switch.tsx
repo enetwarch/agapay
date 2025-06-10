@@ -10,7 +10,7 @@ export function Switch({ className, ...props }: SwitchProps): React.JSX.Element 
     <SwitchPrimitive.Root
       data-slot="switch"
       className={cn(
-        "inline-flex h-6 w-12 shrink-0 items-center rounded-full px-1 shadow-xs transition-all disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-foreground",
+        "inline-flex h-6 w-12 shrink-0 items-center rounded-full px-1 shadow-xs transition-all hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-foreground",
         className,
       )}
       {...props}

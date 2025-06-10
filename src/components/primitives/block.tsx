@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 import { type VariantProps, cva } from "class-variance-authority";
 
-export const mainVariants = cva("flex flex-col items-center justify-start overflow-y-scroll", {
+export const mainVariants = cva("flex flex-col items-center justify-start overflow-y-auto", {
   variants: {
     variant: {
       default: "bg-background text-foreground",

@@ -33,7 +33,7 @@ export default function RootLayout({ children }: RootLayoutProps): React.JSX.Ele
   return (
     <html lang="en">
       <body className={cn(poppins.variable)}>
-        <Div size="layout" className="overflow-hidden rounded-3xl border-16 border-surface border-solid">
+        <Div size="layout" className="overflow-hidden rounded-3xl border-16 border-surface border-solid shadow-2xl">
           {children}
         </Div>
         <Globals />

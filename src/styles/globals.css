@@ -24,7 +24,6 @@
 @theme inline {
   --color-background: var(--color-background);
   --color-surface: var(--color-surface);
-  --color-subsurface: var(--color-subsurface);
   --color-foreground: var(--color-foreground);
   --color-primary: var(--color-primary);
   --color-primary-foreground: var(--color-primary-foreground);
@@ -33,7 +32,7 @@
 
 @layer base {
   * {
-    @apply select-none;
+    @apply border-none select-none;
     @apply outline-2 outline-transparent focus-visible:outline-foreground;
   }
 
