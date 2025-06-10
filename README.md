@@ -1,24 +1,24 @@
 # Agapay
 
-Agapay is an e-wallet inspired idle clicker game — a fusion of a digital wallet app and a casual tapping game. It’s a practice project to help me dive into backend and fullstack development for the first time, so features are intentionally minimal.
+Agapay is an e-wallet inspired idle clicker game, a fusion of a digital wallet app and a casual tapping game. It’s a practice project to help me dive into backend and fullstack development for the first time, so features are intentionally minimal. A database will be used for storing user progress which is linked to their account.
 
 ## Pages
 
-* [Agapay | Tap to Prosper](src/app/page.tsx): Welcome to Agapay, an e-wallet inspired idle clicker game. Start building your wealth and prestige today!
-* [Agapay | Log In](src/app/(auth)/login/page.tsx): Already a member? Log in to continue your progress and earnings in Agapay.
-* [Agapay | Sign Up](src/app/(auth)/signup/page.tsx): Join Agapay today! Create your account and begin your tapping journey to success.
-* [Agapay | Home](src/app/(tabs)/home/page.tsx): Tap your way to riches! Earn money, unlock upgrades, and boost your income in this addictive clicker game.
-* [Agapay | Prestige](src/app/(tabs)/prestige/page.tsx): Reset your progress for massive and permanent long-term gains. Prestige to multiply your income and climb faster.
-* [Agapay | Support](src/app/(tabs)/support/page.tsx): Consider supporting this indie web project!
-* [Agapay | Inbox](src/app/(tabs)/inbox/page.tsx): Check your messages, rewards, and announcements from Agapay.
-* [Agapay | Profile](src/app/(tabs)/profile/page.tsx): View and manage your account, track your stats, and personalize your Agapay experience.
+These are the pages of the Agapay web app along with the features each of them contain. Unauthorized users can only access unprotected pages which has [/](src/app/page.tsx) as its default redirect page. Authorized users can only access protected pages and will be redirected to [/home](src/app/(tabs)/home/page.tsx) by default. In order for an authorized user to access unprotected pages, they must first log out from [/profile](src/app/(tabs)/profile/page.tsx) in order to rescind their authorized status.
 
-## Features
+### Unprotected
 
-* 💸 Tap, idle, and upgrade to earn game currency with infinitely scalable levels.
-* 🚀 Prestige system for resetting and multiplying progress permanently.
-* 👤 Profile and authentication system to showcase user progress.
-* 💾 Persistent data through the use of a backend database.
+* [/](src/app/page.tsx): First page an unauthenticated user will see which has the log in and sign up button.
+* [/login](src/app/(auth)/login/page.tsx): Has the log in form and authenticates a user that already has an account.
+* [/signup](src/app/(auth)/signup/page.tsx): Has the sign up form and creates a user that does not have an account.
+
+### Protected 
+
+* [/home](src/app/(tabs)/home/page.tsx): Core feature of the base game where the user can tap or idle to earn game currency.
+* [/prestige](src/app/(tabs)/prestige/page.tsx): Progression feature that allows restarting to gain permanent upgrades.
+* [/support](src/app/(tabs)/support/page.tsx): Optional developer support page for an indie game web app.
+* [/inbox](src/app/(tabs)/inbox/page.tsx): Contains minor one-way messages which the game only has a limited amount of.
+* [/profile](src/app/(tabs)/profile/page.tsx): View and manage user account as well as their settings preferences.
 
 ## Tech Stack
 
@@ -35,5 +35,4 @@ Agapay is an e-wallet inspired idle clicker game — a fusion of a digital walle
 
 ## License
 
-This project is licensed under the **MIT license**. Feel free to edit and distribute this template as you like.
-See [LICENSE](LICENSE) for more information.
+This project is licensed under the **[MIT license](LICENSE)**. Feel free to edit and distribute this project as you like.
