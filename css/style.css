@@ -84,8 +84,8 @@ a {
   display: flex;
   gap: 1rem;
   justify-content: center;
-  width: 100%;
   position: relative;
+  width: 100%;
 }
 
 .header__icon {
@@ -254,23 +254,23 @@ a {
   bottom: 0;
   display: flex;
   justify-content: space-between;
+  min-width: 100%;
   padding: 1rem;
   position: fixed;
-  min-width: 100%;
   z-index: 5;
 }
 
 .nav__list {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
   align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .nav__list-item {
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .nav__link {
@@ -404,6 +404,7 @@ a {
 .home-action__button {
   align-items: center;
   aspect-ratio: 1 / 1;
+  background-color: var(--color-background);
   border: none;
   border-radius: 100px;
   display: flex;
@@ -412,7 +413,6 @@ a {
   justify-content: center;
   transition: background-color 0.25s;
   width: 4rem;
-  background-color: var(--color-background);
 }
 
 .home-action__button:active {
@@ -518,11 +518,11 @@ a {
 
 .visa-card__number {
   color: var(--color-background);
+  font-size: 1rem;
   font-weight: bold;
   left: 1rem;
   position: absolute;
   top: 4rem;
-  font-size: 1rem;
 }
 
 .visa-card__icon {
@@ -589,8 +589,8 @@ a {
 }
 
 .id-card__title {
-  font-size: 1.25rem;
   color: var(--color-foreground);
+  font-size: 1.25rem;
   line-height: 1.2;
 }
 
@@ -613,8 +613,8 @@ a {
 }
 
 .id-card__profile-icon {
-  font-size: 3rem;
   color: var(--color-foreground);
+  font-size: 3rem;
 }
 
 .scan {
@@ -627,8 +627,8 @@ a {
 
 .scan__image {
   aspect-ratio: 1 / 1;
-  max-width: 100%;
   height: auto;
+  max-width: 100%;
   object-fit: contain;
 }
 
@@ -667,6 +667,108 @@ a {
   content: "";
   display: inline-block;
   width: 1.5rem;
+}
+
+.profile {
+  background-color: var(--color-primary);
+  border-radius: 0.5rem;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  transition: opacity 0.25s;
+}
+
+.profile:active {
+  opacity: 0.9;
+}
+
+.profile__picture {
+  align-items: center;
+  aspect-ratio: 1 / 1;
+  background-color: var(--color-background);
+  border-radius: 100px;
+  display: flex;
+  height: 4rem;
+  justify-content: center;
+  width: 4rem;
+}
+
+.profile__picture-icon {
+  color: var(--color-primary);
+  font-size: 2rem;
+}
+
+.profile__header {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: ellipsis;
+  width: 100%;
+}
+
+.profile__name {
+  color: var(--color-background);
+  font-size: 1.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.profile__phone-number {
+  color: var(--color-background);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.profile-action {
+  background-color: var(--color-primary);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+}
+
+.profile-action__list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.profile-action__list-item {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.profile-action__button {
+  align-items: center;
+  background-color: var(--color-primary);
+  border: none;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  text-overflow: ellipsis;
+  transition: background-color 0.25s;
+  width: 100%;
+}
+
+.profile-action__button:active {
+  background-color: var(--color-muted-surface);
+}
+
+.profile-action__icon {
+  color: var(--color-background);
+  font-size: 1rem;
+}
+
+.profile-action__text {
+  color: var(--color-background);
+  font-size: 1rem;
 }
 
 .content-container {
@@ -787,76 +889,14 @@ a {
   opacity: 0.9;
 }
 
-.profile-container {
-  background-color: var(--color-primary);
-  border-radius: 0.5rem;
-  display: flex;
-  gap: 1rem;
-  padding: 1rem;
-  transition: opacity 0.25s;
-}
-
-.profile-container:active {
-  opacity: 0.9;
-}
-
-.profile-picture-container {
-  align-items: center;
-  background-color: var(--color-background);
-  border-radius: 100px;
-  display: flex;
-  height: 4rem;
-  justify-content: center;
-  width: 4rem;
-}
-
-.profile-picture-icon {
-  color: var(--color-primary);
-  font-size: 2rem;
-}
-
-.profile-text-continer {
-  display: flex;
-  flex-direction: column;
+.sr-only {
+  border-width: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
   overflow: hidden;
-}
-
-.profile-header-text {
-  color: var(--color-background);
-  text-wrap: nowrap;
-}
-
-.profile-text {
-  color: var(--color-background);
-  text-wrap: nowrap;
-}
-
-.menu-container {
-  background-color: var(--color-primary);
-  border-radius: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.menu-field {
-  align-items: center;
-  color: var(--color-background);
-  display: flex;
-  padding: 1rem;
-  text-overflow: ellipsis;
-  transition: background-color 0.25s;
-}
-
-.menu-field:active {
-  background-color: var(--color-muted-surface);
-}
-
-.menu-icon {
-  color: var(--color-background);
-  width: 2rem;
-}
-
-.menu-text {
-  color: var(--color-background);
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
