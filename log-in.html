@@ -14,28 +14,34 @@
       <i class="warning__icon fa-solid fa-mobile-screen" aria-hidden="true"></i>
       <h2 class="warning__text">Please view on mobile</h2>
     </aside>
-    <form id="form" class="spaced-container">
-      <a class="back" href="./">
-        <i class="fa-solid fa-arrow-left"></i>
+    <header class="header">
+      <a class="header__back-link" href="./" aria-label="Previous Page">
+        <i class="header__back-link-icon fa-solid fa-arrow-left" aria-hidden="true"></i>
       </a>
-      <div class="content-container">
-        <h1 class="header-text">Log in</h1>
-        <div class="form-field">
-          <label for="phoneNumber">Phone Number</label>
-          <input class="form-field-input" id="phoneNumber" type="number" placeholder="+6390123456789" required>
-        </div>
-        <div class="form-field">
-          <label for="password">Password</label>
-          <input class="form-field-password-input" id="password" type="password" placeholder="************" minlength="8" required>
-        </div>
-      </div>
-      <div class="content-container">
-        <a class="clickable-text" href="forgot-password">Forgot Password?</a>
-        <button class="button" type="submit">Log in</button>
-        <p class="footer-text">2025 Agapay | All Rights Reserved</p>
-      </div>
-    </form>
-    <dialog id="modal" class="modal">
+      <h1 class="header__text">Log In</h1>
+    </header>
+    <main class="main">
+      <form id="login-form" class="form">
+        <section class="form__section">
+          <div class="form__input-field">
+            <label class="form__input-field-label" for="phone-number">Phone Number</label>
+            <input id="phone-number" class="form__input-field-input" name="phone-number" type="number" placeholder="+6390123456789" required>
+          </div>
+          <div class="form__input-field">
+            <label class="form__input-field-label" for="password">Password</label>
+            <input id="password" class="form__input-field-input" name="password" type="password" placeholder="************" minlength="8" required>
+          </div>
+        </section>
+        <section class="form__section">
+          <a class="button button--ghost" href="./forgot-password">Forgot Password?</a>
+          <button class="button" type="submit">Log In</button>
+        </section>
+      </form>
+    </main>
+    <footer class="footer">
+      <p class="footer__text">2025 Agapay | All Rights Reserved</p>
+    </footer>
+    <dialog id="success-dialog" class="modal">
       <div class="modal-container">
         <div class="content-container">
           <h1 class="header-text">Success</h1>

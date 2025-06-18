@@ -14,46 +14,57 @@
       <i class="warning__icon fa-solid fa-mobile-screen" aria-hidden="true"></i>
       <h2 class="warning__text">Please view on mobile</h2>
     </aside>
-    <form id="form" class="spaced-container">
-      <a class="back" href="./">
-        <i class="fa-solid fa-arrow-left"></i>
+    <header class="header">
+      <a class="header__back-link" href="./" aria-label="Previous Page">
+        <i class="header__back-link-icon fa-solid fa-arrow-left" aria-hidden="true"></i>
       </a>
-      <div class="content-container">
-        <h1 class="header-text">Sign up</h1>
-        <div class="form-field">
-          <label for="firstName">First Name</label>
-          <input class="form-field-input" id="firstName" type="text" placeholder="Jan Marti" pattern="[a-zA-Z\- ]+" required>
-        </div>
-        <div class="form-field">
-          <label for="middleName">Middle Name</label>
-          <input class="form-field-input" id="middleName" type="text" placeholder="Mendoza" pattern="[a-zA-Z\- ]+" required>
-        </div>
-        <div class="form-field">
-          <label for="lastName">Last Name</label>
-          <input class="form-field-input" id="lastName" type="text" placeholder="Dizon" pattern="[a-zA-Z\- ]+" required>
-        </div>
-        <div class="form-field">
-          <label for="phoneNumber">Phone Number</label>
-          <input class="form-field-input" id="phoneNumber" type="number" placeholder="+6390123456789" required>
-        </div>
-        <div class="form-field">
-          <label for="password">Password</label>
-          <input class="form-field-password-input" id="password" type="password" placeholder="************" minlength="8" required>
-        </div>
-        <div class="form-field">
-          <label for="confirmPassword">Confirm Password</label>
-          <input class="form-field-password-input" id="confirmPassword" type="password" placeholder="************" minlength="8" required>
-        </div>
-        <div class="form-field-checkbox">
-          <input class="form-field-checkbox-input" id="checkbox" type="checkbox" required>
-          <label for="checkbox">I agree to the <a>Terms and Conditions</a> and <a>Privacy Policy</a></label>
-        </div>
-      </div>
-      <div class="content-container">
-        <button class="button" type="submit">Sign up</button>
-        <p class="footer-text">2025 Agapay | All Rights Reserved</p>
-      </div>
-    </form>
+      <h1 class="header__text">Sign Up</h1>
+    </header>
+    <main class="main">
+      <form id="signup-form" class="form">
+        <section class="form__section">
+          <div class="form__input-field">
+            <label class="form__input-field-label" for="first-name">First Name</label>
+            <input id="first-name" class="form__input-field-input" name="first-name" type="text" placeholder="Jan Marti" pattern="[a-zA-Z\- ]+" required>
+          </div>
+          <div class="form__input-field">
+            <label class="form__input-field-label" for="middle-name">Middle Name</label>
+            <input id="middle-name" class="form__input-field-input" name="middle-name" type="text" placeholder="Mendoza" pattern="[a-zA-Z\- ]+" required>
+          </div>
+          <div class="form__input-field">
+            <label class="form__input-field-label" for="last-name">Last Name</label>
+            <input id="last-name" class="form__input-field-input" name="last-name" type="text" placeholder="Dizon" pattern="[a-zA-Z\- ]+" required>
+          </div>
+          <div class="form__input-field">
+            <label class="form__input-field-label" for="phone-number">Phone Number</label>
+            <input id="phone-number" class="form__input-field-input" name="phone-number" type="number" placeholder="+6390123456789" required>
+          </div>
+          <div class="form__input-field">
+            <label class="form__input-field-label" for="password">Password</label>
+            <input id="password" class="form__input-field-input" name="password" type="password" placeholder="************" minlength="8" required>
+          </div>
+          <div class="form__input-field">
+            <label class="form__input-field-label" for="confirm-password">Confirm Password</label>
+            <input id="confirm-password" class="form__input-field-input" name="confirm-password" type="password" placeholder="************" minlength="8" required>
+          </div>
+          <div class="form__input-field form__input-field--checkbox">
+            <input id="agree-to-terms" class="form__input-field-input form__input-field-input--checkbox" name="agree-to-terms" type="checkbox" required>
+            <label class="form__input-field-label" for="agree-to-terms">
+              <span class="form__input-field-label-text">I agree to the </span>
+              <a class="form__input-field-label-link" href="">Terms and Conditions</a> 
+              <span class="form__input-field-label-text"> and </span>
+              <a class="form__input-field-label-link" href="">Privacy Policy</a>
+            </label>
+          </div>
+        </section>
+        <section class="form__section">
+          <button class="button" type="submit">Sign up</button>
+        </section>
+      </form>
+    </main>
+    <footer class="footer">
+      <p class="footer__text">2025 Agapay | All Rights Reserved</p>
+    </footer>
     <dialog id="modal" class="modal">
       <form id="modalForm" class="modal-container">
         <div class="content-container">
