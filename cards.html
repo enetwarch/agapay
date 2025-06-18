@@ -14,41 +14,74 @@
       <i class="warning__icon fa-solid fa-mobile-screen" aria-hidden="true"></i>
       <h2 class="warning__text">Please view on mobile</h2>
     </aside>
-    <div id="navContainer" class="nav-container">
-        
-    </div>
-    <main class="content-container">
-      <p class="header-text">Cards</p>
-      <article class="visa-card-container">
-        <div class="visa-card-emv-chip"></div>
-        <p class="visa-card-number">0000 0000 0000 0000</p>
-        <i class="visa-card-icon fa-brands fa-cc-visa"></i>
-        <i class="visa-card-agapay fa-solid fa-building-columns"></i>
+    <header class="header">
+      <h1 class="header__text">Cards</h1>
+    </header>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__list-item">
+          <a class="nav__link" href="./home">
+            <i class="nav__icon fa-solid fa-house" aria-hidden="true"></i>
+            <p class="nav__text">Home</p>
+          </a>
+        </li>
+        <li class="nav__list-item">
+          <a class="nav__link" href="./cards" aria-current="page">
+            <i class="nav__icon fa-solid fa-credit-card" aria-hidden="true"></i>
+            <p class="nav__text">Cards</p>
+          </a>
+        </li>
+        <li class="nav__list-item">
+          <a class="nav__link" href="./scan">
+            <i class="nav__icon fa-solid fa-qrcode" aria-hidden="true"></i>
+            <p class="nav__text">Scan</p>
+          </a>
+        </li>
+        <li class="nav__list-item">
+          <a class="nav__link" href="./inbox">
+            <i class="nav__icon fa-solid fa-envelope" aria-hidden="true"></i>
+            <p class="nav__text">Inbox</p>
+          </a>
+        </li>
+        <li class="nav__list-item">
+          <a class="nav__link" href="./profile">
+            <i class="nav__icon fa-solid fa-user" aria-hidden="true"></i>
+            <p class="nav__text">Profile</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main class="main">
+      <article class="visa-card" aria-label="Visa Card">
+        <span class="visa-card__emv-chip" aria-hidden="true"></span>
+        <h2 class="visa-card__number">0000 0000 0000 0000</h2>
+        <i class="visa-card__icon fa-brands fa-cc-visa" aria-hidden="true"></i>
+        <i class="visa-card__agapay fa-solid fa-building-columns" aria-hidden="true"></i>
       </article>
-      <article class="button-container">
+      <section class="button-group" aria-label="Button Group">
         <button class="button" type="button">Order</button>
         <button class="button" type="button">Link</button>
+      </section>
+      <article class="id-card">
+        <strong class="id-card__status" data-status="verified" aria-label="Status">Verified</strong>
+        <header class="id-card__header">
+          <h2 class="id-card__title">National ID</h2>
+          <p class="id-card__description">No expiration</p>
+        </header>
+        <section class="id-card__profile">
+          <i class="id-card__profile-icon fa-solid fa-user" aria-hidden="true"></i>
+        </section>
       </article>
-      <article class="id-card-container">
-        <div class="id-card-status-verified"></div>
-        <div class="id-card-text-container">
-          <h3 class="id-card-header-text">National ID</h3>
-          <p class="id-card-text">No expiration</p>
-        </div>
-        <div class="id-card-profile-container">
-          <i class="id-card-profile-icon fa-solid fa-user" aria-hidden="true"></i>
-        </div>
+      <article class="id-card">
+        <strong class="id-card__status" data-status="expired" aria-label="Status">Expired</strong>
+        <header class="id-card__header">
+          <h2 class="id-card__title">Driver's License</h2>
+          <p class="id-card__description">Expiration: April 10, 2022</p>
+        </header>
+        <section class="id-card__profile">
+          <i class="id-card__profile-icon fa-solid fa-user" aria-hidden="true"></i>
+        </section>
       </article>
-      <div class="id-card-container">
-      <div class="id-card-status-expired"></div>
-      <div class="id-card-text-container">
-        <h3 class="id-card-header-text">Driver's License</h3>
-        <p class="id-card-text">Expiration: April 10, 2022</p>
-      </div>
-      <div class="id-card-profile-container">
-        <i class="id-card-profile-icon fa-solid fa-user" aria-hidden="true"></i>
-      </div>
     </main>
-    <script type="module" src="js/main.js" async defer></script>
   </body>
 </html>

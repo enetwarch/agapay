@@ -484,6 +484,129 @@ a {
   transform: rotate(-80deg);
 }
 
+.visa-card {
+  background-color: var(--color-primary);
+  border-radius: 0.5rem;
+  display: flex;
+  height: 12rem;
+  position: relative;
+  transition: opacity 0.25s;
+  width: 100%;
+}
+
+.visa-card:active {
+  opacity: 0.9;
+}
+
+.visa-card__emv-chip {
+  background: var(--gradient-emv-chip);
+  border-radius: 0.5rem;
+  height: 2rem;
+  left: 1rem;
+  position: absolute;
+  top: 2rem;
+  width: 3rem;
+}
+
+.visa-card__number {
+  color: var(--color-background);
+  font-weight: bold;
+  left: 1rem;
+  position: absolute;
+  top: 4rem;
+  font-size: 1rem;
+}
+
+.visa-card__icon {
+  bottom: 1rem;
+  color: var(--color-background);
+  font-size: 3rem;
+  left: 1rem;
+  position: absolute;
+}
+
+.visa-card__agapay {
+  color: var(--color-surface);
+  font-size: 6rem;
+  opacity: 0.5;
+  position: absolute;
+  right: 2rem;
+  top: 3rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.id-card {
+  background-color: var(--color-surface);
+  border-radius: 0.5rem;
+  display: flex;
+  height: 12rem;
+  position: relative;
+  transition: background-color 0.25s;
+  width: 100%;
+}
+
+.id-card:active {
+  background-color: var(--color-muted-primary);
+}
+
+.id-card__status {
+  border-radius: 0.5rem;
+  color: var(--color-background);
+  left: 1rem;
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+  position: absolute;
+  top: 1rem;
+}
+
+.id-card__status[data-status="verified"] {
+  background-color: var(--color-success);
+}
+
+.id-card__status[data-status="expired"] {
+  background-color: var(--color-error);
+}
+
+.id-card__header {
+  left: 1rem;
+  position: absolute;
+  top: 4rem;
+  width: 50%;
+}
+
+.id-card__title {
+  font-size: 1.25rem;
+  color: var(--color-foreground);
+}
+
+.id-card__description {
+  color: var(--color-foreground);
+}
+
+.id-card__profile {
+  align-items: center;
+  background-color: var(--color-background);
+  border-radius: 0.6rem;
+  display: flex;
+  height: 6rem;
+  justify-content: center;
+  position: absolute;
+  right: 1rem;
+  top: 3rem;
+  width: 6rem;
+}
+
+.id-card__profile-icon {
+  font-size: 3rem;
+  color: var(--color-foreground);
+}
+
 .content-container {
   display: flex;
   flex-direction: column;
@@ -575,130 +698,6 @@ a {
   background-color: var(--color-muted-primary);
   border-radius: 0.5rem;
   padding: 1rem;
-}
-
-.visa-card-container {
-  background-color: var(--color-primary);
-  border-radius: 0.5rem;
-  display: flex;
-  height: 12rem;
-  position: relative;
-  transition: opacity 0.25s;
-  width: 100%;
-}
-
-.visa-card-container:active {
-  opacity: 0.9;
-}
-
-.visa-card-emv-chip {
-  background: var(--gradient-emv-chip);
-  border-radius: 0.5rem;
-  height: 2rem;
-  left: 1rem;
-  position: absolute;
-  top: 2rem;
-  width: 3rem;
-}
-
-.visa-card-number {
-  color: var(--color-background);
-  font-weight: bold;
-  left: 1rem;
-  position: absolute;
-  top: 4rem;
-}
-
-.visa-card-icon {
-  bottom: 1rem;
-  color: var(--color-background);
-  font-size: 3rem;
-  left: 1rem;
-  position: absolute;
-}
-
-.visa-card-agapay {
-  color: var(--color-surface);
-  font-size: 6rem;
-  opacity: 0.5;
-  position: absolute;
-  right: 2rem;
-  top: 3rem;
-}
-
-.button-container {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  width: 100%;
-}
-
-.id-card-container {
-  background-color: var(--color-surface);
-  border-radius: 0.5rem;
-  display: flex;
-  height: 12rem;
-  position: relative;
-  transition: background-color 0.25s;
-  width: 100%;
-}
-
-.id-card-container:active {
-  background-color: var(--color-muted-primary);
-}
-
-.id-card-status-verified {
-  background-color: var(--color-success);
-  border-radius: 0.5rem;
-  color: var(--color-background);
-  left: 1rem;
-  padding-block: 0.5rem;
-  padding-inline: 1rem;
-  position: absolute;
-  top: 1rem;
-}
-
-.id-card-status-verified::before {
-  content: "Verified";
-}
-
-.id-card-status-expired {
-  background-color: var(--color-error);
-  border-radius: 0.5rem;
-  color: var(--color-background);
-  left: 1rem;
-  padding-block: 0.5rem;
-  padding-inline: 1rem;
-  position: absolute;
-  top: 1rem;
-}
-
-.id-card-status-expired::before {
-  content: "Expired";
-}
-
-.id-card-text-container {
-  left: 1rem;
-  position: absolute;
-  top: 4rem;
-  width: 50%;
-}
-
-.id-card-profile-container {
-  align-items: center;
-  background-color: var(--color-background);
-  border-radius: 0.6rem;
-  display: flex;
-  height: 6rem;
-  justify-content: center;
-  position: absolute;
-  right: 1rem;
-  top: 3rem;
-  width: 6rem;
-}
-
-.id-card-profile-icon {
-  font-size: 3rem;
 }
 
 .scan-container {
