@@ -1,7 +1,12 @@
 window.addEventListener("DOMContentLoaded", () => {
-  // GitHub pages will have a domain name based on the current repo.
-  // In this case, it would be "/agapay/".
+  // This is a somewhat robust workaround to GitHub pages default deployment config.
 
-  const timeoutId = setTimeout(() => window.location.href = "/agapay/", 3000);
+  const timeoutId = setTimeout(() => {
+    const redirectionLink = document.createElement("a");
+    redirectionLink.href = "./";
+
+    redirectionLink.click();    
+  }, 3000);
+
   window.addEventListener("beforeunload", () => clearTimeout(timeoutId));
 });

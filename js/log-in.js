@@ -5,7 +5,11 @@ window.addEventListener("DOMContentLoaded", () => {
   const loginFormElement = document.getElementById("login-form");
   loginFormElement.addEventListener("submit", (event) => {
     event.preventDefault();
-    window.location.href = "home";
+
+    const redirectionLink = document.createElement("a");
+    redirectionLink.href = "./dashboard";
+
+    redirectionLink.click();    
   }, { signal });
 
   window.addEventListener("beforeunload", () => controller.abort());
