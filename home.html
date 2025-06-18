@@ -14,42 +14,124 @@
       <i class="warning__icon fa-solid fa-mobile-screen" aria-hidden="true"></i>
       <h2 class="warning__text">Please view on mobile</h2>
     </aside>
-    <div id="navContainer" class="nav-container">
-        
-    </div>
-    <div class="content-container">
-      <p class="header-text">Home</p>
-      <div class="balance-card-container">
-        <div class="balance-card-balance-field">
-          <h3 class="balance-card-balance-header-text">BALANCE</h3>
-          <h1 class="balance-card-balance-text">₱6,999</h1>
-        </div>
-        <div class="balance-card-action-container">
-          <a class="balance-card-action-field">
-            <i class="balance-card-action-icon fa-solid fa-wallet"></i>
-            <p class="balance-card-action-text">Cash In</p>
+    <header class="header">
+      <h1 class="header__text">Home</h1>
+    </header>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__list-item">
+          <a class="nav__link" href="./home" aria-current="page">
+            <i class="nav__icon fa-solid fa-house" aria-hidden="true"></i>
+            <p class="nav__text">Home</p>
           </a>
-          <a class="balance-card-action-field">
-            <i class="balance-card-action-icon fa-solid fa-money-bill-transfer"></i>
-            <p class="balance-card-action-text">Transfer</p>
+        </li>
+        <li class="nav__list-item">
+          <a class="nav__link" href="./cards">
+            <i class="nav__icon fa-solid fa-credit-card" aria-hidden="true"></i>
+            <p class="nav__text">Cards</p>
           </a>
-        </div>
-      </div>
-      <div id="actionContainer" class="action-container">
-
-      </div>
-      <div class="promo-container">
-        <div class="promo-one">
-          <div class="promo-one-text-container">
-            <h3 class="promo-one-header-text">30% OFF<br>Black Friday Deal</h1>
-            <p class="promo-one-text">Get discount for every topup transfer and payment.</p>        
-          </div>
-          <div class="promo-one-shape">
-            <h1 class="promo-one-shape-text">30%</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script type="module" src="js/main.js" async defer></script>
+        </li>
+        <li class="nav__list-item">
+          <a class="nav__link" href="./scan">
+            <i class="nav__icon fa-solid fa-qrcode" aria-hidden="true"></i>
+            <p class="nav__text">Scan</p>
+          </a>
+        </li>
+        <li class="nav__list-item">
+          <a class="nav__link" href="./inbox">
+            <i class="nav__icon fa-solid fa-envelope" aria-hidden="true"></i>
+            <p class="nav__text">Inbox</p>
+          </a>
+        </li>
+        <li class="nav__list-item">
+          <a class="nav__link" href="./profile">
+            <i class="nav__icon fa-solid fa-user" aria-hidden="true"></i>
+            <p class="nav__text">Profile</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main class="main">
+      <article class="balance-card" aria-label="Balance Card">
+        <header class="balance-card__header">
+          <h2 class="balance-card__title">BALANCE</h2>
+          <p class="balance-card__description">₱6,999</p>
+        </header>
+        <footer class="balance-card__footer">
+          <button id="cash-in" class="balance-card__action">
+            <i class="balance-card__action-icon fa-solid fa-wallet" aria-hidden="true"></i>
+            <p class="balance-card__action-text">Cash In</p>
+          </button>
+          <button id="transfer" class="balance-card__action">
+            <i class="balance-card__action-icon fa-solid fa-money-bill-transfer" aria-hidden="true"></i>
+            <p class="balance-card__action-text">Transfer</p>
+          </button>
+        </footer>
+      </article>
+      <section class="home-action" aria-label="Home Actions">
+        <ul class="home-action__list">
+          <li class="home-action__list-item">
+            <button id="pay" class="home-action__button">
+              <i class="home-action__button-icon fa-solid fa-file-invoice-dollar" aria-hidden="true"></i>
+              <p class="home-action__button-text">Pay</p>
+            </button>
+          </li>
+          <li class="home-action__list-item">
+            <button id="load" class="home-action__button">
+              <i class="home-action__button-icon fa-solid fa-mobile" aria-hidden="true"></i>
+              <p class="home-action__button-text">Load</p>
+            </button>
+          </li>
+          <li class="home-action__list-item">
+            <button id="voucher" class="home-action__button">
+              <i class="home-action__button-icon fa-solid fa-ticket" aria-hidden="true"></i>
+              <p class="home-action__button-text">Voucher</p>
+            </button>
+          </li>
+          <li class="home-action__list-item">
+            <button id="send" class="home-action__button">
+              <i class="home-action__button-icon fa-solid fa-comments-dollar" aria-hidden="true"></i>
+              <p class="home-action__button-text">Send</p>
+            </button>
+          </li>
+          <li class="home-action__list-item">
+            <button id="market" class="home-action__button">
+              <i class="home-action__button-icon fa-solid fa-store" aria-hidden="true"></i>
+              <p class="home-action__button-text">Market</p>
+            </button>
+          </li>
+          <li class="home-action__list-item">
+            <button id="top-up" class="home-action__button">
+              <i class="home-action__button-icon fa-solid fa-gamepad" aria-hidden="true"></i>
+              <p class="home-action__button-text">Top Up</p>
+            </button>
+          </li>
+          <li class="home-action__list-item">
+            <button id="crypto" class="home-action__button">
+              <i class="home-action__button-icon fa-solid fa-bitcoin-sign" aria-hidden="true"></i>
+              <p class="home-action__button-text">Crypto</p>
+            </button>
+          </li>
+          <li class="home-action__list-item">
+            <button id="more" class="home-action__button">
+              <i class="home-action__button-icon fa-solid fa-ellipsis" aria-hidden="true"></i>
+              <p class="home-action__button-text">More</p>
+            </button>
+          </li>
+        </ul>
+      </section>
+      <section class="promo" aria-label="Limited Promos">
+        <article class="promo-one">
+          <header class="promo-one__header">
+            <h2 class="promo-one__title">30% OFF<br>Black Friday Deal</h2>
+            <p class="promo-one__description">Get discount for every topup transfer and payment.</p>        
+          </header>
+          <footer class="promo-one__voucher" aria-label="Discount Percent">
+            <p class="promo-one__voucher-text">30%</p>
+          </footer>
+        </article>
+      </section>
+    </main>
+    <script src="./js/main.js" async defer></script>
   </body>
 </html>
