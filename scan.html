@@ -14,15 +14,47 @@
       <i class="warning__icon fa-solid fa-mobile-screen" aria-hidden="true"></i>
       <h2 class="warning__text">Please view on mobile</h2>
     </aside>
-    <div id="navContainer" class="nav-container">
-        
-    </div>
-    <div class="content-container">
-      <p class="header-text">Scan</p>
-      <div class="scan-container">
-        <img class="scan-image" src="img/qr-code.png" alt="QR Code">
-      </div>
-    </div>
-    <script type="module" src="js/main.js" async defer></script>
+    <header class="header">
+      <h1 class="header__text">Scan</h1>
+    </header>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__list-item">
+          <a class="nav__link" href="./home">
+            <i class="nav__icon fa-solid fa-house" aria-hidden="true"></i>
+            <p class="nav__text">Home</p>
+          </a>
+        </li>
+        <li class="nav__list-item">
+          <a class="nav__link" href="./cards">
+            <i class="nav__icon fa-solid fa-credit-card" aria-hidden="true"></i>
+            <p class="nav__text">Cards</p>
+          </a>
+        </li>
+        <li class="nav__list-item">
+          <a class="nav__link" href="./scan" aria-current="page">
+            <i class="nav__icon fa-solid fa-qrcode" aria-hidden="true"></i>
+            <p class="nav__text">Scan</p>
+          </a>
+        </li>
+        <li class="nav__list-item">
+          <a class="nav__link" href="./inbox">
+            <i class="nav__icon fa-solid fa-envelope" aria-hidden="true"></i>
+            <p class="nav__text">Inbox</p>
+          </a>
+        </li>
+        <li class="nav__list-item">
+          <a class="nav__link" href="./profile">
+            <i class="nav__icon fa-solid fa-user" aria-hidden="true"></i>
+            <p class="nav__text">Profile</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main class="main main--justify-center">
+      <section class="scan">
+        <img class="scan__image" src="./img/qr-code.png" alt="QR Code">
+      </section>
+    </main>
   </body>
 </html>
