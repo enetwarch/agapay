@@ -8,6 +8,8 @@
     <link rel="icon" type="image/svg+xml" href="./img/agapay.svg">
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://kit.fontawesome.com/0541e3b46f.js" crossorigin="anonymous"></script>
+    <script src="./js/main.js" defer></script>
+    <script src="./js/sign-up.js" defer></script>
   </head>
   <body data-page="sign-up">
     <aside class="warning">
@@ -25,27 +27,27 @@
         <section class="form__section">
           <div class="form__input-field">
             <label class="form__input-field-label" for="first-name">First Name</label>
-            <input id="first-name" class="form__input-field-input" name="first-name" type="text" placeholder="Jan Marti" pattern="[a-zA-Z\- ]+" required>
+            <input id="first-name" class="form__input-field-input" name="first-name" type="text" placeholder="Jan Marti" pattern="[a-zA-Z\- ]+" autocomplete="on" required>
           </div>
           <div class="form__input-field">
             <label class="form__input-field-label" for="middle-name">Middle Name</label>
-            <input id="middle-name" class="form__input-field-input" name="middle-name" type="text" placeholder="Mendoza" pattern="[a-zA-Z\- ]+" required>
+            <input id="middle-name" class="form__input-field-input" name="middle-name" type="text" placeholder="Mendoza" pattern="[a-zA-Z\- ]+" autocomplete="on" required>
           </div>
           <div class="form__input-field">
             <label class="form__input-field-label" for="last-name">Last Name</label>
-            <input id="last-name" class="form__input-field-input" name="last-name" type="text" placeholder="Dizon" pattern="[a-zA-Z\- ]+" required>
+            <input id="last-name" class="form__input-field-input" name="last-name" type="text" placeholder="Dizon" pattern="[a-zA-Z\- ]+" autocomplete="on" required>
           </div>
           <div class="form__input-field">
             <label class="form__input-field-label" for="phone-number">Phone Number</label>
-            <input id="phone-number" class="form__input-field-input" name="phone-number" type="number" placeholder="+6390123456789" required>
+            <input id="phone-number" class="form__input-field-input" name="phone-number" type="text" inputmode="numeric" placeholder="+6390123456789" minlength="7" maxlength="15" pattern="^[0-9\+\-]{7,15}$" required>
           </div>
-          <div class="form__input-field">
+          <div class="form__input-field form__input-field--password">
             <label class="form__input-field-label" for="password">Password</label>
-            <input id="password" class="form__input-field-input" name="password" type="password" placeholder="************" minlength="8" required>
+            <input id="password" class="form__input-field-input form__input-field-input--password" name="password" type="password" placeholder="************" minlength="8" required>
           </div>
-          <div class="form__input-field">
+          <div class="form__input-field form__input-field--password">
             <label class="form__input-field-label" for="confirm-password">Confirm Password</label>
-            <input id="confirm-password" class="form__input-field-input" name="confirm-password" type="password" placeholder="************" minlength="8" required>
+            <input id="confirm-password" class="form__input-field-input form__input-field-input--password" name="confirm-password" type="password" placeholder="************" minlength="8" required>
           </div>
           <div class="form__input-field form__input-field--checkbox">
             <input id="agree-to-terms" class="form__input-field-input form__input-field-input--checkbox" name="agree-to-terms" type="checkbox" required>
@@ -54,6 +56,7 @@
               <a class="form__input-field-label-link" href="">Terms and Conditions</a> 
               <span class="form__input-field-label-text"> and </span>
               <a class="form__input-field-label-link" href="">Privacy Policy</a>
+              <span class="form__input-field-label-text">.</span>
             </label>
           </div>
         </section>
@@ -65,33 +68,5 @@
     <footer class="footer">
       <p class="footer__text">2025 Agapay | All Rights Reserved</p>
     </footer>
-    <dialog id="modal" class="modal">
-      <form id="modalForm" class="modal-container">
-        <div class="content-container">
-          <div class="back">
-            <i class="modal-close fa-solid fa-xmark"></i>
-          </div>
-          <h1 class="header-text">Auth</h1>
-          <div class="form-field-code">
-            <input id="codeNumberOne" class="form-field-code-input" type="number" min="0" max="9" required>
-            <input id="codeNumberTwo" class="form-field-code-input" type="number" min="0" max="9" required>
-            <input id="codeNumberThree" class="form-field-code-input" type="number" min="0" max="9" required>
-            <input id="codeNumberFour" class="form-field-code-input" type="number" min="0" max="9" required>
-          </div>
-          <p class="information-text">We sent a 4-digit code to <strong id="phoneNumberModal" class="sign-up__important-text">###########</strong>.<br> This code will expire in 5 minutes.</p>
-          <p id="resendCode" class="clickable-text">Resend Code</p>
-          <button class="button" type="submit">Continue</button>
-        </div>
-      </form>
-    </dialog>
-    <dialog id="successModal" class="modal">
-      <div class="modal-container">
-        <div class="content-container">
-          <h1 class="header-text">Success</h1>
-          <p class="information-text">Account created successfully. You will be redirected to the log in page shortly.</p>
-        </div>
-      </div>
-    </dialog>
-    <script src="./js/main.js" async defer></script>
   </body>
 </html>
