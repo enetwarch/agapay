@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
 
     const redirectionLink = document.createElement("a");
-    redirectionLink.href = "./dashboard";
+    redirectionLink.href = "./home";
 
     redirectionLink.click();    
   }, { signal });
