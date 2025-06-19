@@ -13,7 +13,7 @@ This is a **mobile e-wallet app coded in as a website**. Just like [hau-campus-e
 * [`/scan`](./scan.html): Use a QR code to simulate scanning for payments or receive funds.
 * [`/inbox`](./inbox.html): Check messages, alerts, or simulated notifications relevant to your account.
 * [`/profile`](./profile.html): Edit personal information, manage settings, and view account details.
-* [`/404`](./404.html): The page you’re looking for doesn’t exist. Head back to the homepage or try a different link.
+* [`/404`](./404.html): The page you're looking for doesn't exist. Head back to the homepage or try a different link.
 
 ## Tech Stack
 
