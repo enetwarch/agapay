@@ -27,7 +27,7 @@ This is a **mobile e-wallet app coded in as a website**. Just like [hau-campus-e
 
 * [Google Fonts](https://fonts.google.com/): Used for the [Poppins](https://fonts.google.com/specimen/Poppins) font which is used in the styling of this website.
 * [Font Awesome](https://fontawesome.com/): Source of most of the icons in this project.
-  * [Building Columns](https://fontawesome.com/icons/building-columns): This serves as the website's favicon and logo.
+    * [Building Columns](https://fontawesome.com/icons/building-columns): This serves as the website's favicon and logo.
 * [QR Code Generator](https://www.qr-code-generator.com/): Used to generate the website's QR Code which is used in the [`/scan`](./scan.html) page.
 
 ## License
