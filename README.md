@@ -32,4 +32,4 @@ This is a **mobile e-wallet app coded in as a website**. Just like [hau-campus-e
 
 ## License
 
-This project is licensed under the [MIT license](./LICENSE).
+This project is licensed under the [MIT license](./LICENSE). You're welcome to reference or reuse the code as long as attribution is preserved.
