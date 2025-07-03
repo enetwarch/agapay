@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Create a new Agapay account by filling out a simple registration form with essential user details."
+    />
+    <title>Sign Up</title>
+    <link rel="icon" type="image/svg+xml" href="./img/agapay.svg" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://kit.fontawesome.com/0541e3b46f.js" crossorigin="anonymous"></script>
+    <script src="./js/main.js" defer></script>
+    <script src="./js/sign-up.js" defer></script>
+  </head>
+  <body data-page="sign-up">
+    <aside class="warning">
+      <i class="warning__icon fa-solid fa-mobile-screen" aria-hidden="true"></i>
+      <h2 class="warning__text">Please view on mobile</h2>
+    </aside>
+    <header class="header">
+      <a class="header__back-link" href="./" aria-label="Previous Page">
+        <i class="header__back-link-icon fa-solid fa-arrow-left" aria-hidden="true"></i>
+      </a>
+      <h1 class="header__text">Sign Up</h1>
+    </header>
+    <main class="main">
+      <form id="signup-form" class="form">
+        <section class="form__section">
+          <div class="form__input-field">
+            <label class="form__input-field-label" for="first-name">First Name</label>
+            <input
+              id="first-name"
+              class="form__input-field-input"
+              name="first-name"
+              type="text"
+              placeholder="Jan Marti"
+              pattern="[a-zA-Z\- ]+"
+              autocomplete="on"
+              required
+            />
+          </div>
+          <div class="form__input-field">
+            <label class="form__input-field-label" for="middle-name">Middle Name</label>
+            <input
+              id="middle-name"
+              class="form__input-field-input"
+              name="middle-name"
+              type="text"
+              placeholder="Mendoza"
+              pattern="[a-zA-Z\- ]+"
+              autocomplete="on"
+              required
+            />
+          </div>
+          <div class="form__input-field">
+            <label class="form__input-field-label" for="last-name">Last Name</label>
+            <input
+              id="last-name"
+              class="form__input-field-input"
+              name="last-name"
+              type="text"
+              placeholder="Dizon"
+              pattern="[a-zA-Z\- ]+"
+              autocomplete="on"
+              required
+            />
+          </div>
+          <div class="form__input-field">
+            <label class="form__input-field-label" for="phone-number">Phone Number</label>
+            <input
+              id="phone-number"
+              class="form__input-field-input"
+              name="phone-number"
+              type="text"
+              inputmode="numeric"
+              placeholder="+6390123456789"
+              minlength="7"
+              maxlength="15"
+              pattern="^[0-9\+\-]{7,15}$"
+              required
+            />
+          </div>
+          <div class="form__input-field form__input-field--password">
+            <label class="form__input-field-label" for="password">Password</label>
+            <input
+              id="password"
+              class="form__input-field-input form__input-field-input--password"
+              name="password"
+              type="password"
+              placeholder="************"
+              minlength="8"
+              required
+            />
+          </div>
+          <div class="form__input-field form__input-field--password">
+            <label class="form__input-field-label" for="confirm-password">Confirm Password</label>
+            <input
+              id="confirm-password"
+              class="form__input-field-input form__input-field-input--password"
+              name="confirm-password"
+              type="password"
+              placeholder="************"
+              minlength="8"
+              required
+            />
+          </div>
+          <div class="form__input-field form__input-field--checkbox">
+            <input
+              id="agree-to-terms"
+              class="form__input-field-input form__input-field-input--checkbox"
+              name="agree-to-terms"
+              type="checkbox"
+              required
+            />
+            <label class="form__input-field-label" for="agree-to-terms">
+              <span class="form__input-field-label-text">I agree to the </span>
+              <a class="form__input-field-label-link" href="">Terms and Conditions</a>
+              <span class="form__input-field-label-text"> and </span>
+              <a class="form__input-field-label-link" href="">Privacy Policy</a>
+              <span class="form__input-field-label-text">.</span>
+            </label>
+          </div>
+        </section>
+        <section class="form__section">
+          <button class="button" type="submit">Sign up</button>
+        </section>
+      </form>
+    </main>
+    <footer class="footer">
+      <p class="footer__text">2025 Agapay | All Rights Reserved</p>
+    </footer>
+  </body>
+</html>
