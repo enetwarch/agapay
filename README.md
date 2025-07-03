@@ -4,16 +4,16 @@ This is a **mobile e-wallet app coded in as a website**. Just like [hau-campus-e
 
 ## Pages
 
-- [`/`](./index.html): Welcome to Agapay! A sleek, mobile-first e-wallet interface made for practicing modern web development skills.
-- [`/sign-up`](./sign-up.html): Create a new Agapay account by filling out a simple registration form with essential user details.
-- [`/log-in`](./log-in.html): Access your Agapay account securely by entering your email and password.
-- [`/forgot-password`](./forgot-password.html): Recover your Agapay account if you’ve forgotten your login credentials.
-- [`/home`](./home.html): Get an overview of your current balance, recent transactions, and quick navigation to key features.
-- [`/cards`](./cards.html): View and manage your stored virtual cards — add, remove, or update card details.
-- [`/scan`](./scan.html): Use a QR code to simulate scanning for payments or receive funds.
-- [`/inbox`](./inbox.html): Check messages, alerts, or simulated notifications relevant to your account.
-- [`/profile`](./profile.html): Edit personal information, manage settings, and view account details.
-- [`/404`](./404.html): The page you're looking for doesn't exist. Head back to the homepage or try a different link.
+- [`/`](./src/index.html): Welcome to Agapay! A sleek, mobile-first e-wallet interface made for practicing modern web development skills.
+- [`/sign-up`](./src/sign-up.html): Create a new Agapay account by filling out a simple registration form with essential user details.
+- [`/log-in`](./src/log-in.html): Access your Agapay account securely by entering your email and password.
+- [`/forgot-password`](./src/forgot-password.html): Recover your Agapay account if you’ve forgotten your login credentials.
+- [`/home`](./src/home.html): Get an overview of your current balance, recent transactions, and quick navigation to key features.
+- [`/cards`](./src/cards.html): View and manage your stored virtual cards — add, remove, or update card details.
+- [`/scan`](./src/scan.html): Use a QR code to simulate scanning for payments or receive funds.
+- [`/inbox`](./src/inbox.html): Check messages, alerts, or simulated notifications relevant to your account.
+- [`/profile`](./src/profile.html): Edit personal information, manage settings, and view account details.
+- [`/404`](./src/404.html): The page you're looking for doesn't exist. Head back to the homepage or try a different link.
 
 ## Tech Stack
 
